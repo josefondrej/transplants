@@ -1,14 +1,14 @@
 from typing import List
 
-from transplants.core.patients.patient_data.hla_antibody import Antibody
-from transplants.core.patients.patient_data.hla_antigen import Antigen
-from transplants.core.patients.patient_data.blood_group import BloodGroup
+from transplants.core.patients.patient_data.hla_antibody import HLAAntibody
+from transplants.core.patients.patient_data.hla_antigen import HLAAntigen
+from transplants.core.patients.patient_data.blood_type import BloodType
 
 
 class PatientData:
-    def __init__(self, blood_group: BloodGroup, acceptable_blood_groups: List[BloodGroup],
-                 antigens: List[Antigen] = None, antibodies: List[Antibody] = None):
-        self._blood_group = blood_group
-        self._acceptable_blood_groups = acceptable_blood_groups
-        self._antigens = antigens
-        self._antibodies = antibodies
+    def __init__(self, blood_type: BloodType, acceptable_blood_types: List[BloodType],
+                 hla_antigens: List[HLAAntigen] = None, hla_antibodies: List[HLAAntibody] = None):
+        self._blood_type = blood_type
+        self._acceptable_blood_types = acceptable_blood_types
+        self._hla_antigens = hla_antigens
+        self._hla_antibodies = hla_antibodies
