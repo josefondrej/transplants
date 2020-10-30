@@ -1,9 +1,9 @@
 from typing import Set
 
-VALID_CODES = ["0", "A", "B", "AB"]
-
 
 class BloodType:
+    _VALID_ANTIGEN_ANTIBODY_CODES = ["0", "A", "B", "AB"]
+
     def __init__(self, antigen_codes: Set[str], antibody_codes: Set[str]):
         self._antigen_codes = tuple(sorted(antigen_codes))
         self._antibody_codes = tuple(sorted(antibody_codes))
@@ -27,7 +27,7 @@ class BloodType:
 
     @property
     def code(self) -> str:
-        return "".join(self._antigen_codes) or "0"
+        return "".join(sorted(self._antigen_codes)) or "0"
 
     def can_give_to(self, blood_group: "BloodType") -> bool:
         for code in self._antigen_codes:
@@ -40,30 +40,29 @@ class BloodType:
 
     def _validate(self):
         for code in self._antigen_codes + self._antibody_codes:
-            if code not in VALID_CODES:
+            if code not in BloodType._VALID_ANTIGEN_ANTIBODY_CODES:
                 raise AssertionError(f"Invalid code {self._code}")
 
 
-BT_0 = BloodType(antigen_codes={}, antibody_codes={"A", "B"})
-BT_A = BloodType(antigen_codes={"A"}, antibody_codes={"B"})
-BT_B = BloodType(antigen_codes={"B"}, antibody_codes={"A"})
-BT_AB = BloodType(antigen_codes={"A", "B"}, antibody_codes={})
+BloodType.ZERO = BloodType(antigen_codes={}, antibody_codes={"A", "B"})
+BloodType.A = BloodType(antigen_codes={"A"}, antibody_codes={"B"})
+BloodType.B = BloodType(antigen_codes={"B"}, antibody_codes={"A"})
+BloodType.AB = BloodType(antigen_codes={"A", "B"}, antibody_codes={})
 
-BLOOD_TYPES = [BT_0, BT_A, BT_B, BT_AB]
-
-code_to_blood_type = dict(zip(VALID_CODES, BLOOD_TYPES))
-blood_type_to_code = dict(zip(BLOOD_TYPES, VALID_CODES))
+BloodType.O = BloodType.ZERO  # 0 is not valid name, but O is
+BloodType.ALL = [BloodType.ZERO, BloodType.A, BloodType.B, BloodType.AB]
 
 if __name__ == '__main__':
     def display(flag) -> str:
         return "o" if flag else "x"
 
 
-    print("Compatibility table donor (column) -> recipient (row)")
-    print("-" * 70)
-    print(" \t" + "\t".join(list(map(str, BLOOD_TYPES))))
-    for blood_type_recipient in BLOOD_TYPES:
+    title = "Compatibility table donor (column) -> recipient (row)"
+    print(title)
+    print("-" * len(title))
+    print(" \t" + "\t".join(list(map(str, BloodType.ALL))))
+    for blood_type_recipient in BloodType.ALL:
         transplant_ok = [display(blood_type_donor.can_give_to(blood_type_recipient))
-                         for blood_type_donor in BLOOD_TYPES]
+                         for blood_type_donor in BloodType.ALL]
         transplant_ok = str(blood_type_recipient) + "\t" + "\t".join(transplant_ok)
         print(transplant_ok)
