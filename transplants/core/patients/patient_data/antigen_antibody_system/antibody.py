@@ -1,13 +1,31 @@
-from dataclasses import dataclass
-
 from transplants.core.patients.patient_data.antigen_antibody_system.antigen import Antigen
 
 
-@dataclass(frozen=True)
 class Antibody:
     """Generic class for antibody."""
-    antigen: Antigen
-    mmol_per_dm_3: float = None
+
+    def __init__(self, antigen: Antigen):
+        self._antigen = antigen
+
+    def __eq__(self, other):
+        if not isinstance(other, self.__class__):
+            return False
+        else:
+            return self.code == other.code
+
+    def __hash__(self):
+        return hash(self.code)
 
     def __str__(self):
-        return f"anti{str(self.antigen)}"
+        return self.code
+
+    def __repr__(self):
+        return self.code
+
+    @property
+    def antigen(self) -> Antigen:
+        return self._antigen
+
+    @property
+    def code(self) -> str:
+        return self._antigen.code

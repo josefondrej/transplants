@@ -1,4 +1,4 @@
-from transplants.core.patients.patient_data.blood_type import BloodType
+from transplants.core.patients.patient_data.blood_group_system.blood_type import BloodType
 from transplants.core.patients.patient_data.hla_system.hla_system import HLASystem
 
 
