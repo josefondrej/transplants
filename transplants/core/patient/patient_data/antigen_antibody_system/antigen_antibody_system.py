@@ -1,7 +1,7 @@
 from typing import Set, Dict, Union
 
-from transplants.core.patients.patient_data.antigen_antibody_system.antibody import Antibody
-from transplants.core.patients.patient_data.antigen_antibody_system.antigen import Antigen
+from transplants.core.patient.patient_data.antigen_antibody_system.antibody import Antibody
+from transplants.core.patient.patient_data.antigen_antibody_system.antigen import Antigen
 
 
 class AntigenAntibodySystem:

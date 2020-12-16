@@ -1,6 +1,6 @@
 from typing import Optional
 
-from transplants.core.patients.patient_data.antigen_antibody_system.antigen import Antigen
+from transplants.core.patient.patient_data.antigen_antibody_system.antigen import Antigen
 
 
 class HLAAntigen(Antigen):

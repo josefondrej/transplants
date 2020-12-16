@@ -1,8 +1,8 @@
 from typing import List
 
-from transplants.core.patients.donor import Donor
-from transplants.core.patients.patient import Patient
-from transplants.core.patients.patient_data.patient_data import PatientData
+from transplants.core.patient.donor import Donor
+from transplants.core.patient.patient import Patient
+from transplants.core.patient.patient_data.patient_data import PatientData
 
 
 class Recipient(Patient):
