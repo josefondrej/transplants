@@ -1,10 +1,11 @@
+from abc import ABC
 from typing import Set, Dict, Union
 
 from transplants.core.patient.patient_data.antigen_antibody_system.antibody import Antibody
 from transplants.core.patient.patient_data.antigen_antibody_system.antigen import Antigen
 
 
-class AntigenAntibodySystem:
+class AntigenAntibodySystem(ABC):
     def __init__(self, antigens: Set[Antigen], antibodies: Union[Set[Antibody], Dict[Antibody, float]]):
         self._antigens = antigens
 

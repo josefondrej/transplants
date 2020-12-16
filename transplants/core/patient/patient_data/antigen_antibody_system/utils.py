@@ -1,5 +1,3 @@
-from typing import Optional
-
 from transplants.core.patient.patient_data.antigen_antibody_system.antibody import Antibody
 from transplants.core.patient.patient_data.antigen_antibody_system.antigen import Antigen
 from transplants.core.patient.patient_data.blood_group_system.blood_type_antibody import BloodTypeAntibody

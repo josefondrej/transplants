@@ -4,6 +4,8 @@ from transplants.core.solution.scored_mixin import ScoredMixin
 
 
 class Transplant(ScoredMixin):
+    """Single transplant from donor to recipient"""
+
     def __init__(self, donor: Donor, recipient: Recipient):
         self._donor = donor
         self._recipient = recipient

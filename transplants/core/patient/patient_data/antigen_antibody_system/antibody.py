@@ -1,7 +1,9 @@
+from abc import ABC
+
 from transplants.core.patient.patient_data.antigen_antibody_system.antigen import Antigen
 
 
-class Antibody:
+class Antibody(ABC):
     """Generic class for antibody."""
 
     def __init__(self, antigen: Antigen):

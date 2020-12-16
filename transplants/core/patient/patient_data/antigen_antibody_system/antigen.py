@@ -1,4 +1,7 @@
-class Antigen:
+from abc import ABC
+
+
+class Antigen(ABC):
     """Generic class for antigen."""
 
     def __init__(self, code: str):
