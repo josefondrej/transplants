@@ -8,13 +8,13 @@ from transplants.core.solution.transplant import Transplant
 class Chain(ABC, ScoredMixin):
     """General base class for chain of transplants"""
 
-    def __init__(self, pairs: List[Transplant], is_cycle: bool = None):
-        self._pairs = pairs
+    def __init__(self, transplants: List[Transplant], is_cycle: bool = None):
+        self._transplants = transplants
         self._is_cycle = is_cycle
 
     @property
-    def pairs(self) -> List[Transplant]:
-        return self._pairs
+    def transplants(self) -> List[Transplant]:
+        return self._transplants
 
     @property
     def is_cycle(self) -> bool:
