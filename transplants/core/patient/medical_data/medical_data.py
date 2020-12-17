@@ -1,5 +1,5 @@
-from transplants.core.patient.patient_data.blood_group_system.blood_type import BloodType
-from transplants.core.patient.patient_data.hla_system.hla_system import HLASystem
+from transplants.core.patient.medical_data.blood_group_system.blood_type import BloodType
+from transplants.core.patient.medical_data.hla_system.hla_system import HLASystem
 
 
 class MedicalData:

@@ -1,6 +1,6 @@
-import transplants.core.patient.patient_data.blood_group_system.blood_type_antigen_definitions as blood_antigen
-from transplants.core.patient.patient_data.antigen_antibody_system.utils import anti
-from transplants.core.patient.patient_data.blood_group_system.blood_type import BloodType
+import transplants.core.patient.medical_data.blood_group_system.blood_type_antigen_definitions as blood_antigen
+from transplants.core.patient.medical_data.antigen_antibody_system.utils import anti
+from transplants.core.patient.medical_data.blood_group_system.blood_type import BloodType
 
 ZERO = BloodType(antigens={}, antibodies={anti(blood_antigen.A), anti(blood_antigen.B)})
 O = ZERO

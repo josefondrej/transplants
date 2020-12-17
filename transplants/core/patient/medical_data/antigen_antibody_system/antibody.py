@@ -1,6 +1,6 @@
 from abc import ABC
 
-from transplants.core.patient.patient_data.antigen_antibody_system.antigen import Antigen
+from transplants.core.patient.medical_data.antigen_antibody_system.antigen import Antigen
 
 
 class Antibody(ABC):

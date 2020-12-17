@@ -2,7 +2,7 @@ from typing import List
 
 from transplants.core.patient.donor import Donor
 from transplants.core.patient.patient import Patient
-from transplants.core.patient.patient_data.medical_data import MedicalData
+from transplants.core.patient.medical_data.medical_data import MedicalData
 
 
 class Recipient(Patient):

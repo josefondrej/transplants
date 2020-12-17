@@ -1,7 +1,7 @@
 # List taken from:  
 # http://hla.alleles.org/antigens/recognised_serology.html
 
-from transplants.core.patient.patient_data.hla_system.hla_antigen import HLAAntigen
+from transplants.core.patient.medical_data.hla_system.hla_antigen import HLAAntigen
 
 A1 = HLAAntigen(code="A1")
 A2 = HLAAntigen(code="A2")

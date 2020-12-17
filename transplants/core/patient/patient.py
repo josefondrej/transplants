@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from transplants.core.patient.patient_data.medical_data import MedicalData
+from transplants.core.patient.medical_data.medical_data import MedicalData
 
 
 class Patient(ABC):

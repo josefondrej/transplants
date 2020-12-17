@@ -1,4 +1,4 @@
-from transplants.core.patient.patient_data.antigen_antibody_system.antigen_antibody_system import AntigenAntibodySystem
+from transplants.core.patient.medical_data.antigen_antibody_system.antigen_antibody_system import AntigenAntibodySystem
 
 
 class BloodType(AntigenAntibodySystem):
