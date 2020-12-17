@@ -4,13 +4,14 @@ from transplants.core.patient.medical_data.medical_data import MedicalData
 
 
 class Patient(ABC):
+    """Base class representing patient. It should not be instantiated
+
+    Args:
+        identifier: Unique identifier for the patient
+        medical_data: Patient's medical data
+    """
+
     def __init__(self, identifier: str, medical_data: MedicalData):
-        """
-        Base class representing patient. It should not be instantiated
-        Args:
-            identifier: Unique identifier for the patient
-            medical_data: Patient's medical data
-        """
         self._identifier = identifier
         self._medical_data = medical_data
 

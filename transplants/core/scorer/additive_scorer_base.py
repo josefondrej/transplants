@@ -7,8 +7,16 @@ from transplants.core.solution.transplant import Transplant
 
 
 class AdditiveScorerBase(ScorerBase, ABC):
-    """Special scorer class that calculates the score of matching as sum of scores of its transplants
-    If this is the case, then the optimal solution to the exchange problem can be found in polynomial time"""
+    """
+    Special scorer class that calculates the score of matching as sum of scores of its transplants
+    If this is the case, then the optimal solution to the exchange problem can be found in polynomial time
+
+    Args:
+        forbidden_transplants: Transplants that we explicitly do not allow. These should usually be all transplants
+            (related donor, recipient) for recipients that have require_better_than_related_match = False
+        min_required_base_score: If the result of the score_transplant_base function is less than this value,
+            we score the transplant as impossible
+    """
 
     def __init__(self, forbidden_transplants: Optional[List[Transplant]] = None, min_required_base_score: float = 0.0):
         self._forbidden_transplants = forbidden_transplants or []
