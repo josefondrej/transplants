@@ -152,6 +152,9 @@ DR1404 = HLAAntigen(code="DR1404")
 DR_antigens = [DR1, DR2, DR3, DR4, DR5, DR6, DR7, DR8, DR9, DR10, DR11, DR12, DR13, DR14, DR15, DR16, DR17, DR18, DR51,
                DR52, DR53, DR103, DR1403, DR1404]
 
+DRB1_antigens = [DR1, DR2, DR3, DR4, DR5, DR6, DR7, DR8, DR9, DR10, DR11, DR12, DR13, DR14, DR15, DR16, DR17, DR18,
+                 DR1403, DR1404, DR103]
+
 Dw1 = HLAAntigen(code="Dw1")
 Dw2 = HLAAntigen(code="Dw2")
 Dw3 = HLAAntigen(code="Dw3")
