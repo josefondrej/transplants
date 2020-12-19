@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 
 from transplants.core.patient.medical_data.medical_data import MedicalData
+from transplants.core.patient.patient_type import PatientType
 
 
 class Patient(ABC):
@@ -40,3 +41,8 @@ class Patient(ABC):
     @abstractmethod
     def is_recipient(self) -> bool:
         pass
+
+    @property
+    def type(self) -> PatientType:
+        patient_type = PatientType.DONOR if self.is_donor else PatientType.RECIPIENT
+        return patient_type
