@@ -1,0 +1,2982 @@
+[
+  {
+    "identifier": "a1b3398",
+    "patient_type": "donor",
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A11",
+          "A26",
+          "B62",
+          "B38",
+          "DR4",
+          "DR11",
+          "DR53",
+          "DR52",
+          "DQ7",
+          "DQ8",
+          "DP2",
+          "DP10",
+          "Cw9",
+          "Cw12"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "300ffe8",
+    "patient_type": "donor",
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A68",
+          "B8",
+          "B53",
+          "DR9",
+          "DR13",
+          "DR53",
+          "DR52",
+          "DQ9",
+          "DQ6"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "1959daa",
+    "patient_type": "donor",
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A11",
+          "B62",
+          "B46",
+          "DR9",
+          "DR15",
+          "DR53",
+          "DR51",
+          "DQ9",
+          "DQ5"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "B",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "11c0286",
+    "patient_type": "donor",
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "B35",
+          "B44",
+          "DR4",
+          "DR15",
+          "DR53",
+          "DR51",
+          "DQ7",
+          "DQ6"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "02c454e",
+    "patient_type": "donor",
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A29",
+          "B44",
+          "B57",
+          "Cw6",
+          "Cw16",
+          "DR7",
+          "DR12",
+          "DR53",
+          "DR52",
+          "DQ2",
+          "DQ7"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "9b85c30",
+    "patient_type": "donor",
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A26",
+          "A74",
+          "B38",
+          "B44",
+          "DR7",
+          "DR13",
+          "DR53",
+          "DR52",
+          "DQ2",
+          "DQ6"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "a10feba",
+    "patient_type": "donor",
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A3",
+          "B7",
+          "B44",
+          "DR4",
+          "DR15",
+          "DR53",
+          "DR51",
+          "DQ7",
+          "DQ6"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "81274ba",
+    "patient_type": "donor",
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A3",
+          "B7",
+          "B13",
+          "DR7",
+          "DR11",
+          "DR53",
+          "DR52",
+          "DQ2",
+          "DQ7"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "180effe",
+    "patient_type": "donor",
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "B13",
+          "DR7",
+          "DR53",
+          "DQ2"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "c999a2c",
+    "patient_type": "donor",
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A11",
+          "A24",
+          "B35",
+          "B55",
+          "DR13",
+          "DR14",
+          "DR52",
+          "DQ7",
+          "DQ5"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "aa5d720",
+    "patient_type": "donor",
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A23",
+          "A32",
+          "B61",
+          "B44",
+          "DR7",
+          "DR11",
+          "DR53",
+          "DR52",
+          "DQ2",
+          "DQ7"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "AB",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "3567fde",
+    "patient_type": "donor",
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A3",
+          "B7",
+          "B8",
+          "DR17",
+          "DR15",
+          "DR52",
+          "DR51",
+          "DQ2",
+          "DQ6"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "007f19f",
+    "patient_type": "donor",
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A29",
+          "A68",
+          "B44",
+          "B58",
+          "DR8",
+          "DR13",
+          "DR52",
+          "DQ4",
+          "DQ6"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "07c54b8",
+    "patient_type": "donor",
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A3",
+          "B62",
+          "B35",
+          "Cw9",
+          "Cw5",
+          "DR17",
+          "DR11",
+          "DR52",
+          "DQ2",
+          "DQ7",
+          "DP3",
+          "DP4"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "826a39c",
+    "patient_type": "donor",
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A23",
+          "B8",
+          "B35",
+          "DR17",
+          "DR11",
+          "DR52",
+          "DQ2",
+          "DQ7"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "B",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "b60e385",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A3",
+          "A24",
+          "B39",
+          "B65",
+          "Cw7",
+          "Cw8",
+          "DR8",
+          "DR16",
+          "DR51",
+          "DQ5",
+          "DQ7"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "fe2ba8c",
+    "patient_type": "donor",
+    "country": "IL",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A3",
+          "B7",
+          "B62",
+          "Cw9",
+          "Cw7",
+          "DR4",
+          "DR15",
+          "DR51",
+          "DR53",
+          "DQ8",
+          "DQ6"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "9c05afd",
+    "patient_type": "donor",
+    "country": "IL",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A33",
+          "B44",
+          "B58",
+          "Cw10",
+          "Cw5",
+          "DR4",
+          "DR13",
+          "DR53",
+          "DR52",
+          "DQ7",
+          "DQ6"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "b68688a",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A11",
+          "A31",
+          "B35",
+          "B51",
+          "Cw4",
+          "Cw15",
+          "DR14",
+          "DR15",
+          "DR52",
+          "DR51",
+          "DQ5",
+          "DQ6"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "B",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "92421d9",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A26",
+          "B8",
+          "B38",
+          "Cw7",
+          "Cw12",
+          "DR13",
+          "DR52",
+          "DQ6",
+          "DQ8"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "62f0075",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A3",
+          "A31",
+          "B7",
+          "B51",
+          "Cw7",
+          "Cw15",
+          "DR7",
+          "DR8",
+          "DR53",
+          "DQ9",
+          "DQ4"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "b3fc00a",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A68",
+          "B8",
+          "B60",
+          "Cw10",
+          "Cw7",
+          "DR1",
+          "DR17",
+          "DR52",
+          "DQ5",
+          "DQ2"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "496086e",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A3",
+          "A31",
+          "B51",
+          "B57",
+          "Cw6",
+          "Cw14",
+          "DR4",
+          "DR13",
+          "DR52",
+          "DR53",
+          "DQ7",
+          "DQ8"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "2c82235",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A24",
+          "B8",
+          "B39",
+          "Cw7",
+          "DR1",
+          "DR7",
+          "DR53",
+          "DQ9",
+          "DQ5"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "2f94b5b",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A3",
+          "B27",
+          "B39",
+          "Cw2",
+          "Cw12",
+          "DR11",
+          "DR16",
+          "DR52",
+          "DR51",
+          "DQ7",
+          "DQ5"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "8581a3e",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A3",
+          "B8",
+          "B18",
+          "Cw7",
+          "DR17",
+          "DR12",
+          "DR52",
+          "DQ2",
+          "DQ7"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "B",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "5ee38ba",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A68",
+          "B65",
+          "B27",
+          "Cw2",
+          "Cw8",
+          "DR1",
+          "DR13",
+          "DR52",
+          "DQ5",
+          "DQ7"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "7764141",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "B41",
+          "B52",
+          "Cw7",
+          "Cw12",
+          "DR17",
+          "DR15",
+          "DR52",
+          "DQ2",
+          "DQ5"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "AB",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "02000e6",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A26",
+          "B35",
+          "DR4",
+          "DR11",
+          "DR53",
+          "DR52",
+          "DQ3",
+          "DQ7",
+          "DQ8",
+          "DQ9"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "7e4427f",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A30",
+          "B13",
+          "B38",
+          "DR4",
+          "DR7",
+          "DR53",
+          "DQ2",
+          "DQ3",
+          "DQ7",
+          "DQ8",
+          "DQ9"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "B",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "24e6d5a",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A3",
+          "B15",
+          "B62",
+          "B63",
+          "B75",
+          "B76",
+          "B77",
+          "B50",
+          "DR4",
+          "DR7",
+          "DR53",
+          "DQ2",
+          "DQ3",
+          "DQ7",
+          "DQ8",
+          "DQ9"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "21444ce",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A24",
+          "B35",
+          "B41",
+          "DR8",
+          "DR11",
+          "DR52",
+          "DQ3",
+          "DQ7",
+          "DQ8",
+          "DQ9",
+          "DQ4"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "dbc9028",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A24",
+          "B49",
+          "B38",
+          "DR7",
+          "DR14",
+          "DR53",
+          "DR52",
+          "DQ2",
+          "DQ5"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "8adda96",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A11",
+          "B51",
+          "B52",
+          "DR11",
+          "DR15",
+          "DR52",
+          "DR51",
+          "DQ3",
+          "DQ7",
+          "DQ8",
+          "DQ9",
+          "DQ6"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "4943b22",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A26",
+          "A30",
+          "B38",
+          "B57",
+          "Cw7",
+          "C12",
+          "DR14",
+          "DR15",
+          "DR52",
+          "DR51",
+          "DQ5",
+          "DQ6"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "c17fb5b",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A68",
+          "B7",
+          "B51",
+          "Cw15",
+          "DR10",
+          "DR15",
+          "DR51",
+          "DQ5",
+          "DQ6"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "3ad4cac",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A26",
+          "B13",
+          "B35",
+          "Cw4",
+          "Cw6",
+          "DR4",
+          "DR7",
+          "DR53",
+          "DQ2",
+          "DQ3",
+          "DQ7",
+          "DQ8",
+          "DQ9"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "78ee9c5",
+    "patient_type": "donor",
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A24",
+          "B15",
+          "B62",
+          "B63",
+          "B75",
+          "B76",
+          "B77",
+          "B55",
+          "Cw3",
+          "Cw7",
+          "DR3",
+          "DR17",
+          "DR18",
+          "DR11",
+          "DR52",
+          "DQ2",
+          "DQ3",
+          "DQ7",
+          "DQ8",
+          "DQ9"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "B",
+        "forbidden_types": null
+      }
+    }
+  },
+  {
+    "identifier": "22f4f7b",
+    "patient_type": "recipient",
+    "related_donors": [
+      "a1b3398"
+    ],
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A3",
+          "A26",
+          "B8",
+          "B38",
+          "DR17",
+          "DR4"
+        ],
+        "antibodies": {
+          "B7": null,
+          "B81": null,
+          "B27": null,
+          "DQ6": null,
+          "DQ5": null,
+          "DQ4": null,
+          "DR15": null,
+          "DR51": null
+        }
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": [
+          "A",
+          "AB",
+          "B"
+        ]
+      }
+    }
+  },
+  {
+    "identifier": "78de922",
+    "patient_type": "recipient",
+    "related_donors": [
+      "300ffe8"
+    ],
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "B7",
+          "B8",
+          "DR17",
+          "DR4"
+        ],
+        "antibodies": {
+          "A25": null,
+          "A3": null,
+          "A66": null,
+          "A26": null,
+          "A34": null,
+          "A43": null,
+          "A11": null,
+          "A31": null,
+          "A80": null,
+          "A32": null,
+          "A74": null,
+          "B55": null,
+          "A33": null,
+          "A68": null,
+          "A29": null,
+          "A1": null,
+          "A69": null,
+          "A30": null,
+          "A36": null,
+          "B63": null,
+          "B67": null,
+          "B76": null,
+          "B54": null,
+          "B46": null,
+          "B56": null,
+          "B42": null,
+          "B58": null,
+          "B45": null,
+          "B78": null,
+          "B49": null,
+          "B50": null,
+          "B18": null,
+          "B35": null,
+          "B72": null,
+          "B71": null,
+          "B44": null,
+          "B62": null,
+          "A24": null,
+          "B57": null,
+          "Cw9": null,
+          "B27": null,
+          "B77": null,
+          "B75": null,
+          "B53": null,
+          "B13": null,
+          "B59": null,
+          "B52": null,
+          "Cw10": null,
+          "B82": null,
+          "B64": null,
+          "B51": null,
+          "Cw8": null,
+          "B39": null,
+          "B65": null,
+          "B47": null,
+          "B37": null,
+          "B38": null,
+          "A2": null,
+          "Cw1": null,
+          "B73": null,
+          "B41": null,
+          "A23": null,
+          "Cw12": null,
+          "Cw14": null,
+          "Cw15": null,
+          "Cw16": null,
+          "Cw2": null,
+          "B61": null,
+          "Cw17": null,
+          "Cw18": null,
+          "Cw4": null,
+          "Cw6": null,
+          "Cw5": null,
+          "Cw7": null,
+          "DP3": null,
+          "DP9": null,
+          "DP20": null,
+          "DP14": null,
+          "DP6": null,
+          "DP17": null,
+          "DP19": null,
+          "DP1": null,
+          "DP5": null,
+          "DP11": null,
+          "DR11": null,
+          "DP10": null,
+          "DP13": null,
+          "DR16": null,
+          "DR52": null,
+          "DP18": null,
+          "DR51": null,
+          "DR12": null,
+          "DR13": null,
+          "DP15": null,
+          "DR8": null,
+          "DR4": null,
+          "DR103": null,
+          "DR7": null,
+          "DQ7": null
+        }
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "2e4d95d",
+    "patient_type": "recipient",
+    "related_donors": [
+      "1959daa"
+    ],
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A11",
+          "B46",
+          "DR9"
+        ],
+        "antibodies": {
+          "B41": null,
+          "B60": null,
+          "B48": null,
+          "B7": null,
+          "B42": null,
+          "B61": null,
+          "A1": null,
+          "B81": null,
+          "B8": null,
+          "B62": null,
+          "B76": null,
+          "B67": null,
+          "B71": null,
+          "B73": null,
+          "B27": null,
+          "B50": null,
+          "B51": null,
+          "B39": null,
+          "B49": null,
+          "B52": null,
+          "B18": null,
+          "B45": null,
+          "B44": null,
+          "B72": null,
+          "B13": null,
+          "B77": null,
+          "B35": null,
+          "B55": null,
+          "B56": null,
+          "B38": null,
+          "B53": null,
+          "B59": null,
+          "B64": null,
+          "B37": null,
+          "B75": null,
+          "B47": null,
+          "A36": null,
+          "A80": null,
+          "B54": null,
+          "B78": null,
+          "B65": null,
+          "A32": null,
+          "A23": null,
+          "B82": null,
+          "A66": null,
+          "B63": null,
+          "B57": null,
+          "B58": null,
+          "Cw2": null,
+          "A24": null,
+          "A25": null,
+          "A29": null,
+          "Cw17": null,
+          "DR13": null,
+          "DR14": null,
+          "DR8": null,
+          "DR17": null,
+          "DR16": null,
+          "DR15": null,
+          "DR12": null,
+          "DR52": null,
+          "DR11": null,
+          "DR18": null,
+          "DR10": null,
+          "DR103": null,
+          "DR4": null,
+          "DR1": null,
+          "DR51": null,
+          "DQ6": null
+        }
+      },
+      "blood_type": {
+        "type": "B",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "a3bc39a",
+    "patient_type": "recipient",
+    "related_donors": [
+      "11c0286"
+    ],
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A26",
+          "B27",
+          "B62",
+          "DR1",
+          "DR8"
+        ],
+        "antibodies": {
+          "A2": null,
+          "A3": null,
+          "A24": null,
+          "A29": null,
+          "A30": null,
+          "A31": null,
+          "A33": null,
+          "A34": null,
+          "A66": null,
+          "A68": null,
+          "A69": null,
+          "B8": null,
+          "B18": null,
+          "B38": null,
+          "B39": null,
+          "B42": null,
+          "B51": null,
+          "B54": null,
+          "B59": null,
+          "B64": null,
+          "B65": null,
+          "B67": null,
+          "B77": null,
+          "Cw5": null,
+          "DR53": null,
+          "DR7": null,
+          "DQ2": null,
+          "DQ7": null,
+          "DQ9": null,
+          "DR52": null,
+          "DQ4": null,
+          "DR12": null,
+          "DR9": null,
+          "DQ8": null,
+          "DR10": null
+        }
+      },
+      "blood_type": {
+        "type": "B",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "68935e2",
+    "patient_type": "recipient",
+    "related_donors": [
+      "02c454e"
+    ],
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A26",
+          "B7",
+          "B51",
+          "DR15"
+        ],
+        "antibodies": {
+          "B57": null,
+          "B58": null,
+          "A1": null,
+          "B76": null,
+          "DQ7": null,
+          "DQ9": null,
+          "DQ8": null,
+          "DR4": null,
+          "DR53": null,
+          "DR9": null,
+          "DR52": null,
+          "DR7": null
+        }
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": [
+          "A",
+          "AB"
+        ]
+      }
+    }
+  },
+  {
+    "identifier": "4b19e05",
+    "patient_type": "recipient",
+    "related_donors": [
+      "9b85c30"
+    ],
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "B8",
+          "DR17"
+        ],
+        "antibodies": {
+          "B46": null,
+          "Cw12": null,
+          "Cw10": null,
+          "Cw15": null,
+          "Cw16": null
+        }
+      },
+      "blood_type": {
+        "type": "B",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "d180d1c",
+    "patient_type": "recipient",
+    "related_donors": [
+      "a10feba"
+    ],
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A2",
+          "B8",
+          "B18",
+          "DR17",
+          "DR11"
+        ],
+        "antibodies": {
+          "B51": null,
+          "B52": null,
+          "B49": null,
+          "B59": null,
+          "B63": null,
+          "B77": null,
+          "B53": null,
+          "A25": null,
+          "B37": null,
+          "B78": null,
+          "B58": null,
+          "B57": null,
+          "B38": null,
+          "A32": null,
+          "Cw15": null,
+          "B13": null,
+          "Cw10": null,
+          "Cw9": null,
+          "Cw5": null,
+          "B62": null,
+          "A23": null,
+          "Cw16": null,
+          "B71": null,
+          "B75": null,
+          "Cw6": null,
+          "A11": null,
+          "A24": null,
+          "Cw12": null,
+          "DQ5": null,
+          "DQ6": null,
+          "DP9": null,
+          "DP14": null,
+          "DP17": null,
+          "DP20": null,
+          "DP3": null,
+          "DP6": null,
+          "DP5": null,
+          "DP10": null,
+          "DQ4": null,
+          "DP1": null,
+          "DP13": null,
+          "DP11": null,
+          "DP19": null,
+          "DP15": null,
+          "DP28": null,
+          "DP18": null,
+          "DR1": null
+        }
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "cb06d95",
+    "patient_type": "recipient",
+    "related_donors": [
+      "81274ba"
+    ],
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A3",
+          "B35",
+          "B38",
+          "DR13"
+        ],
+        "antibodies": {
+          "B8": null,
+          "DQ4": null,
+          "DP14": null,
+          "DR10": null,
+          "DP9": null,
+          "DP20": null,
+          "DQ8": null,
+          "DR53": null,
+          "DQ9": null,
+          "DQ7": null,
+          "DP3": null,
+          "DP6": null,
+          "DP5": null,
+          "DR9": null,
+          "DP17": null,
+          "DP1": null,
+          "DP10": null,
+          "DQ2": null,
+          "DP19": null,
+          "DP13": null,
+          "DP11": null,
+          "DP28": null,
+          "DP15": null,
+          "DR7": null,
+          "DR1": null,
+          "DR14": null,
+          "DP18": null,
+          "DQ6": null,
+          "DR4": null,
+          "DR103": null,
+          "DQ5": null,
+          "DR11": null,
+          "DR15": null,
+          "DR51": null,
+          "DR16": null,
+          "DR8": null,
+          "DR13": null
+        }
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": [
+          "AB",
+          "B"
+        ]
+      }
+    }
+  },
+  {
+    "identifier": "dfa96d8",
+    "patient_type": "recipient",
+    "related_donors": [
+      "180effe"
+    ],
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A3",
+          "B35",
+          "DR12",
+          "DR15"
+        ],
+        "antibodies": {
+          "A2": null,
+          "A68": null,
+          "A69": null,
+          "A24": null,
+          "B57": null,
+          "B58": null,
+          "A23": null,
+          "Cw7": null
+        }
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": [
+          "AB",
+          "B"
+        ]
+      }
+    }
+  },
+  {
+    "identifier": "15fe2d9",
+    "patient_type": "recipient",
+    "related_donors": [
+      "c999a2c"
+    ],
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "B60",
+          "B62",
+          "DR4"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "B",
+        "forbidden_types": [
+          "A",
+          "AB"
+        ]
+      }
+    }
+  },
+  {
+    "identifier": "4394ac9",
+    "patient_type": "recipient",
+    "related_donors": [
+      "aa5d720"
+    ],
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A2",
+          "B8",
+          "DR3",
+          "DR17",
+          "DR18"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": [
+          "AB",
+          "B"
+        ]
+      }
+    }
+  },
+  {
+    "identifier": "03f543f",
+    "patient_type": "recipient",
+    "related_donors": [
+      "3567fde"
+    ],
+    "country": "CZE",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A25",
+          "B18",
+          "B35",
+          "DR4",
+          "DR11"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "B",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "913b7c2",
+    "patient_type": "recipient",
+    "related_donors": [
+      "b60e385"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A11",
+          "A68",
+          "B35",
+          "B62",
+          "DR4",
+          "DR11"
+        ],
+        "antibodies": {
+          "A23": null,
+          "A24": null,
+          "Cw8": null,
+          "Cw5": null,
+          "B38": null,
+          "B39": null,
+          "B64": null,
+          "B65": null,
+          "A25": null,
+          "A32": null,
+          "B27": null,
+          "B2708": null,
+          "B67": null,
+          "B8": null,
+          "B18": null,
+          "B59": null,
+          "Cw7": null,
+          "B73": null,
+          "B54": null,
+          "B37": null,
+          "B49": null,
+          "B51": null,
+          "B63": null,
+          "B57": null,
+          "B58": null,
+          "B53": null,
+          "DR1": null,
+          "DR103": null,
+          "DR8": null,
+          "DR9": null,
+          "DR10": null,
+          "DR12": null,
+          "DR1404": null,
+          "DR15": null,
+          "DR16": null,
+          "DR51": null,
+          "DQ4": null,
+          "DQ5": null,
+          "DQ6": null,
+          "DP1": null,
+          "DP2": null,
+          "DP3": null,
+          "DP4": null,
+          "DP5": null,
+          "DP6": null,
+          "DP9": null,
+          "DP11": null,
+          "DP13": null,
+          "DP14": null,
+          "DP17": null,
+          "DP18": null,
+          "DP19": null,
+          "DP28": null
+        }
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "4461d3f",
+    "patient_type": "recipient",
+    "related_donors": [
+      "fe2ba8c"
+    ],
+    "country": "IL",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A24",
+          "A32",
+          "B18",
+          "B44",
+          "DR1",
+          "DR11"
+        ],
+        "antibodies": {
+          "A2": null,
+          "A68": null,
+          "A69": null,
+          "A29": null,
+          "B57": null,
+          "B58": null,
+          "DQ2": null,
+          "DQ6": null
+        }
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "e1db7c3",
+    "patient_type": "recipient",
+    "related_donors": [
+      "9c05afd"
+    ],
+    "country": "IL",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "B7",
+          "DR13",
+          "DR15"
+        ],
+        "antibodies": {
+          "DR4": null,
+          "DQ7": null,
+          "DQ8": null,
+          "DQ9": null
+        }
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "96b3513",
+    "patient_type": "recipient",
+    "related_donors": [
+      "b68688a"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A30",
+          "A31",
+          "B13",
+          "B51",
+          "DR7",
+          "DR15"
+        ],
+        "antibodies": {
+          "A24": null,
+          "A23": null,
+          "A1": null,
+          "A36": null,
+          "A3": null,
+          "A11": null,
+          "B37": null,
+          "B76": null,
+          "A2": null,
+          "B57": null,
+          "A69": null,
+          "A68": null,
+          "A29": null,
+          "A25": null,
+          "A80": null,
+          "B27": null,
+          "B73": null,
+          "A34": null,
+          "A66": null,
+          "DQ7": null,
+          "DQ9": null,
+          "DQ8": null,
+          "DQ4": null,
+          "DR12": null,
+          "DR8": null,
+          "DR13": null,
+          "DR14": null,
+          "DR17": null,
+          "DR11": null,
+          "DR18": null,
+          "DP28": null,
+          "DR52": null,
+          "B35": null,
+          "Cw4": null
+        }
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "b3d071e",
+    "patient_type": "recipient",
+    "related_donors": [
+      "92421d9"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A68",
+          "B8",
+          "B35",
+          "DR1",
+          "DR7"
+        ],
+        "antibodies": {
+          "B76": null,
+          "DR4": null,
+          "DR8": null,
+          "DR11": null,
+          "DR13": null,
+          "DR14": null,
+          "DR15": null,
+          "DR16": null,
+          "DR17": null,
+          "DR18": null,
+          "DR52": null,
+          "DR53": null
+        }
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "0be3f0b",
+    "patient_type": "recipient",
+    "related_donors": [
+      "62f0075"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "B27",
+          "B38",
+          "DR15",
+          "DR13"
+        ],
+        "antibodies": {
+          "A1": null,
+          "A11": null,
+          "A25": null,
+          "A26": null,
+          "A34": null,
+          "A43": null,
+          "A66": null,
+          "A32": null,
+          "B62": null,
+          "A68": null,
+          "B35": null,
+          "B49": null,
+          "B50": null,
+          "B51": null,
+          "B52": null,
+          "B56": null,
+          "B57": null,
+          "B63": null,
+          "B71": null,
+          "B72": null,
+          "B75": null,
+          "B76": null,
+          "B77": null,
+          "Cw9": null,
+          "Cw10": null,
+          "DQ2": null,
+          "DQ4": null,
+          "DQ7": null,
+          "DQ8": null,
+          "DQ9": null,
+          "DR7": null,
+          "DR9": null,
+          "DR10": null,
+          "DR53": null,
+          "DR14": null,
+          "DR4": null,
+          "B13": null,
+          "B78": null,
+          "B53": null,
+          "DP2": null,
+          "DP4": null
+        }
+      },
+      "blood_type": {
+        "type": "B",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "cd62d13",
+    "patient_type": "recipient",
+    "related_donors": [
+      "b3fc00a"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A68",
+          "B35",
+          "B51",
+          "DR8",
+          "DR9"
+        ],
+        "antibodies": {
+          "A1": null,
+          "A3": null,
+          "A11": null,
+          "A23": null,
+          "A24": null,
+          "A26": null,
+          "A29": null,
+          "A36": null,
+          "A80": null,
+          "B13": null,
+          "B27": null,
+          "B41": null,
+          "B44": null,
+          "B45": null,
+          "B47": null,
+          "B49": null,
+          "B50": null,
+          "B60": null,
+          "B61": null,
+          "B76": null,
+          "DQ2": null
+        }
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "9c66b64",
+    "patient_type": "recipient",
+    "related_donors": [
+      "496086e"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "B65",
+          "B60",
+          "DR13",
+          "DR14"
+        ],
+        "antibodies": {
+          "A23": null,
+          "A24": null,
+          "A25": null,
+          "A32": null,
+          "B18": null,
+          "B27": null,
+          "B35": null,
+          "B37": null,
+          "B38": null,
+          "B44": null,
+          "B47": null,
+          "B49": null,
+          "B51": null,
+          "B52": null,
+          "B53": null,
+          "B57": null,
+          "B58": null,
+          "B59": null,
+          "B63": null,
+          "B77": null,
+          "A66": null,
+          "B13": null,
+          "B78": null,
+          "A11": null,
+          "A26": null,
+          "A33": null,
+          "A34": null,
+          "A43": null,
+          "A68": null,
+          "A69": null,
+          "B62": null,
+          "B72": null,
+          "B75": null,
+          "B76": null,
+          "Cw4": null,
+          "Cw6": null,
+          "Cw7": null,
+          "Cw12": null,
+          "Cw17": null,
+          "DR1": null,
+          "DR51": null,
+          "DR9": null,
+          "DR10": null,
+          "DR53": null
+        }
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "5f0cf93",
+    "patient_type": "recipient",
+    "related_donors": [
+      "2c82235"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A3",
+          "B8",
+          "B13",
+          "DR1",
+          "DR16"
+        ],
+        "antibodies": {
+          "A2": null,
+          "B77": null,
+          "Cw5": null,
+          "DQ2": null,
+          "DQ6": null,
+          "DQ7": null,
+          "DQ8": null,
+          "DQ9": null,
+          "DQ4": null
+        }
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "eef7c20",
+    "patient_type": "recipient",
+    "related_donors": [
+      "2f94b5b"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A3",
+          "A24",
+          "B27",
+          "DR16"
+        ],
+        "antibodies": {
+          "A2": null,
+          "A68": null,
+          "A69": null,
+          "B57": null,
+          "B73": null,
+          "B46": null,
+          "Cw10": null,
+          "A34": null,
+          "Cw8": null,
+          "B58": null,
+          "Cw7": null,
+          "Cw12": null,
+          "A31": null,
+          "Cw9": null,
+          "A25": null,
+          "A33": null,
+          "Cw14": null,
+          "A29": null,
+          "A11": null,
+          "Cw1": null,
+          "A66": null,
+          "A24": null,
+          "A26": null,
+          "Cw16": null,
+          "A30": null,
+          "A43": null,
+          "A36": null,
+          "Cw17": null,
+          "A74": null,
+          "A32": null,
+          "B55": null,
+          "B54": null,
+          "DQ6": null,
+          "DQ9": null,
+          "DQ7": null,
+          "DQ8": null,
+          "DQ4": null,
+          "DQ2": null,
+          "DR9": null,
+          "B45": null
+        }
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "056e712",
+    "patient_type": "recipient",
+    "related_donors": [
+      "8581a3e"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A68",
+          "B71",
+          "DR17",
+          "DR15"
+        ],
+        "antibodies": {
+          "A23": null,
+          "A24": null,
+          "A25": null,
+          "A32": null,
+          "B13": null,
+          "B27": null,
+          "B37": null,
+          "B38": null,
+          "B44": null,
+          "B47": null,
+          "B49": null,
+          "B51": null,
+          "B52": null,
+          "B53": null,
+          "B57": null,
+          "B58": null,
+          "B59": null,
+          "B63": null,
+          "B77": null,
+          "B35": null,
+          "B45": null,
+          "B50": null,
+          "B54": null,
+          "B55": null,
+          "B56": null,
+          "B62": null,
+          "B73": null,
+          "B76": null,
+          "B82": null,
+          "Cw1": null,
+          "Cw2": null,
+          "Cw4": null,
+          "Cw5": null,
+          "Cw6": null,
+          "Cw7": null,
+          "Cw8": null,
+          "Cw12": null,
+          "Cw14": null,
+          "Cw15": null,
+          "Cw16": null,
+          "Cw17": null,
+          "Cw18": null,
+          "A1": null,
+          "B39": null,
+          "B41": null,
+          "B48": null,
+          "B60": null,
+          "B61": null,
+          "B67": null,
+          "B75": null,
+          "B46": null
+        }
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "359988f",
+    "patient_type": "recipient",
+    "related_donors": [
+      "5ee38ba"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A2",
+          "B27",
+          "B37",
+          "DR1",
+          "DR10"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "26fe98e",
+    "patient_type": "recipient",
+    "related_donors": [
+      "7764141"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "B61",
+          "DR14"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": []
+      }
+    }
+  },
+  {
+    "identifier": "a464a62",
+    "patient_type": "recipient",
+    "related_donors": [
+      "02000e6"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "B35",
+          "B51",
+          "DR4"
+        ],
+        "antibodies": {
+          "A1": null,
+          "A3": null,
+          "A11": null,
+          "A23": null,
+          "A24": null,
+          "A26": null,
+          "A29": null,
+          "A30": null,
+          "A31": null,
+          "A32": null,
+          "A33": null,
+          "A34": null,
+          "A36": null,
+          "A43": null,
+          "A66": null,
+          "A68": null,
+          "A69": null,
+          "A74": null,
+          "A80": null,
+          "B7": null,
+          "B8": null,
+          "B14": null,
+          "B64": null,
+          "B65": null,
+          "B15": null,
+          "B62": null,
+          "B63": null,
+          "B75": null,
+          "B76": null,
+          "B77": null,
+          "B18": null,
+          "B27": null,
+          "B40": null,
+          "B60": null,
+          "B61": null,
+          "B41": null,
+          "B42": null,
+          "B44": null,
+          "B45": null,
+          "B48": null,
+          "B57": null,
+          "B58": null,
+          "B59": null,
+          "B81": null,
+          "B82": null,
+          "DQ3": null,
+          "DQ7": null,
+          "DQ8": null,
+          "DQ9": null,
+          "DQ6": null,
+          "DR1": null,
+          "DR2": null,
+          "DR3": null,
+          "DR17": null,
+          "DR18": null,
+          "DR4": null,
+          "DR7": null,
+          "DR8": null,
+          "DR9": null,
+          "DR11": null,
+          "DR12": null,
+          "DR13": null,
+          "DR14": null,
+          "DR15": null,
+          "DR16": null
+        }
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": [
+          "A",
+          "AB",
+          "B"
+        ]
+      }
+    }
+  },
+  {
+    "identifier": "fd2fee8",
+    "patient_type": "recipient",
+    "related_donors": [
+      "7e4427f"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A11",
+          "A2",
+          "B35",
+          "B38",
+          "DR14",
+          "DR4"
+        ],
+        "antibodies": {
+          "DR7": null,
+          "DP1": null,
+          "DP3": null,
+          "DP6": null,
+          "DP14": null
+        }
+      },
+      "blood_type": {
+        "type": "B",
+        "forbidden_types": [
+          "A",
+          "AB"
+        ]
+      }
+    }
+  },
+  {
+    "identifier": "a0b674b",
+    "patient_type": "recipient",
+    "related_donors": [
+      "24e6d5a"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "A3",
+          "B49",
+          "B35",
+          "DR4",
+          "DR7"
+        ],
+        "antibodies": {
+          "A1": null,
+          "A11": null,
+          "A23": null,
+          "A24": null,
+          "A25": null,
+          "A26": null,
+          "A32": null,
+          "A33": null,
+          "A34": null,
+          "A36": null,
+          "A43": null,
+          "A66": null,
+          "A68": null,
+          "B7": null,
+          "B8": null,
+          "B13": null,
+          "B27": null,
+          "B35": null,
+          "B40": null,
+          "B60": null,
+          "B61": null,
+          "B42": null,
+          "B46": null,
+          "B47": null,
+          "B48": null,
+          "B51": null,
+          "B53": null,
+          "B55": null,
+          "B73": null,
+          "B78": null,
+          "B81": null,
+          "Cw1": null,
+          "Cw3": null,
+          "Cw4": null,
+          "Cw5": null,
+          "Cw8": null,
+          "Cw12": null,
+          "Cw16": null,
+          "Cw18": null,
+          "DP2": null,
+          "DP4": null,
+          "DP6": null,
+          "DP9": null,
+          "DP11": null,
+          "DP13": null,
+          "DP14": null,
+          "DP15": null,
+          "DP17": null,
+          "DP18": null,
+          "DP19": null,
+          "DP28": null,
+          "DQ3": null,
+          "DQ7": null,
+          "DQ8": null,
+          "DQ9": null,
+          "DQ4": null,
+          "DQ5": null,
+          "DQ6": null,
+          "DR2": null,
+          "DR15": null,
+          "DR16": null,
+          "DR3": null,
+          "DR17": null,
+          "DR18": null,
+          "DR8": null,
+          "DR11": null,
+          "DR12": null,
+          "DR13": null,
+          "DR14": null
+        }
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": [
+          "A",
+          "AB",
+          "B"
+        ]
+      }
+    }
+  },
+  {
+    "identifier": "af75e73",
+    "patient_type": "recipient",
+    "related_donors": [
+      "21444ce"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A30",
+          "B14",
+          "B64",
+          "B65",
+          "B15",
+          "B62",
+          "B63",
+          "B75",
+          "B76",
+          "B77",
+          "DR4",
+          "DR11"
+        ],
+        "antibodies": {
+          "A2": null,
+          "A23": null,
+          "A24": null,
+          "A68": null,
+          "A69": null,
+          "Cw2": null,
+          "Cw5": null,
+          "Cw6": null,
+          "Cw7": null,
+          "Cw17": null,
+          "Cw18": null,
+          "DQ2": null,
+          "DP3": null,
+          "DP6": null,
+          "DP9": null,
+          "DP14": null,
+          "DP17": null
+        }
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": [
+          "AB",
+          "B"
+        ]
+      }
+    }
+  },
+  {
+    "identifier": "d39b597",
+    "patient_type": "recipient",
+    "related_donors": [
+      "dbc9028"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "B49",
+          "DR7"
+        ],
+        "antibodies": {
+          "A24": null,
+          "A80": null,
+          "B38": null,
+          "B39": null,
+          "B54": null,
+          "B67": null,
+          "Cw1": null,
+          "Cw2": null,
+          "Cw3": null,
+          "Cw4": null,
+          "Cw5": null,
+          "Cw6": null,
+          "Cw7": null,
+          "Cw8": null,
+          "Cw12": null,
+          "Cw14": null,
+          "Cw15": null,
+          "Cw16": null,
+          "Cw18": null,
+          "DP1": null,
+          "DP2": null,
+          "DP3": null,
+          "DP4": null,
+          "DP6": null,
+          "DP13": null,
+          "DP18": null,
+          "DQ5": null,
+          "DQ6": null,
+          "DR1": null,
+          "DR2": null,
+          "DR15": null,
+          "DR16": null,
+          "DR3": null,
+          "DR17": null,
+          "DR18": null,
+          "DR4": null,
+          "DR8": null,
+          "DR9": null,
+          "DR10": null,
+          "DR11": null,
+          "DR12": null,
+          "DR13": null,
+          "DR14": null
+        }
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": [
+          "A",
+          "AB",
+          "B"
+        ]
+      }
+    }
+  },
+  {
+    "identifier": "cb1ef5a",
+    "patient_type": "recipient",
+    "related_donors": [
+      "8adda96"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "B51",
+          "DR11"
+        ],
+        "antibodies": {
+          "A2": null,
+          "A3": null,
+          "A11": null,
+          "A23": null,
+          "A24": null,
+          "A25": null,
+          "A26": null,
+          "A29": null,
+          "A30": null,
+          "A31": null,
+          "A32": null,
+          "A33": null,
+          "A34": null,
+          "A36": null,
+          "A43": null,
+          "A66": null,
+          "A68": null,
+          "A74": null,
+          "A80": null,
+          "B7": null,
+          "B8": null,
+          "B13": null,
+          "B14": null,
+          "B64": null,
+          "B65": null,
+          "B15": null,
+          "B62": null,
+          "B63": null,
+          "B75": null,
+          "B76": null,
+          "B77": null,
+          "B18": null,
+          "B27": null,
+          "B35": null,
+          "B37": null,
+          "B38": null,
+          "B39": null,
+          "B40": null,
+          "B60": null,
+          "B61": null,
+          "B41": null,
+          "B42": null,
+          "B44": null,
+          "B45": null,
+          "B46": null,
+          "B47": null,
+          "B48": null,
+          "B49": null,
+          "B50": null,
+          "B52": null,
+          "B54": null,
+          "B55": null,
+          "B56": null,
+          "B57": null,
+          "B58": null,
+          "B59": null,
+          "B67": null,
+          "B73": null,
+          "B78": null,
+          "B81": null,
+          "B82": null,
+          "Cw1": null,
+          "Cw3": null,
+          "Cw5": null,
+          "Cw7": null,
+          "Cw8": null,
+          "Cw12": null,
+          "Cw14": null,
+          "Cw15": null,
+          "Cw16": null,
+          "Cw17": null,
+          "DP1": null,
+          "DP3": null,
+          "DP4": null,
+          "DP5": null,
+          "DP6": null,
+          "DP9": null,
+          "DP10": null,
+          "DP11": null,
+          "DP13": null,
+          "DP14": null,
+          "DP15": null,
+          "DP17": null,
+          "DP18": null,
+          "DP19": null,
+          "DP20": null,
+          "DP23": null,
+          "DP28": null,
+          "DQ2": null,
+          "DQ3": null,
+          "DQ7": null,
+          "DQ8": null,
+          "DQ9": null,
+          "DQ4": null,
+          "DQ5": null,
+          "DQ6": null,
+          "DR1": null,
+          "DR2": null,
+          "DR15": null,
+          "DR16": null,
+          "DR3": null,
+          "DR17": null,
+          "DR18": null,
+          "DR4": null,
+          "DR7": null,
+          "DR8": null,
+          "DR9": null,
+          "DR10": null,
+          "DR12": null,
+          "DR13": null,
+          "DR14": null
+        }
+      },
+      "blood_type": {
+        "type": "A",
+        "forbidden_types": [
+          "AB",
+          "B"
+        ]
+      }
+    }
+  },
+  {
+    "identifier": "e4e0ff8",
+    "patient_type": "recipient",
+    "related_donors": [
+      "4943b22"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A2",
+          "B44",
+          "B52",
+          "DR4",
+          "DR15"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": [
+          "A",
+          "AB",
+          "B"
+        ]
+      }
+    }
+  },
+  {
+    "identifier": "435eb00",
+    "patient_type": "recipient",
+    "related_donors": [
+      "c17fb5b"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A33",
+          "A66",
+          "B41",
+          "B53",
+          "DR8",
+          "DR13"
+        ],
+        "antibodies": {
+          "A1": null,
+          "A2": null,
+          "A3": null,
+          "A11": null,
+          "A24": null,
+          "A29": null,
+          "A30": null,
+          "A31": null,
+          "A32": null,
+          "A36": null,
+          "A43": null,
+          "A68": null,
+          "A69": null,
+          "A74": null,
+          "A80": null,
+          "B14": null,
+          "B64": null,
+          "B65": null,
+          "B46": null,
+          "B49": null,
+          "B50": null,
+          "B57": null,
+          "B58": null,
+          "Cw1": null,
+          "Cw3": null,
+          "Cw7": null,
+          "Cw8": null,
+          "Cw12": null,
+          "Cw14": null,
+          "Cw16": null,
+          "DQ3": null,
+          "DQ7": null,
+          "DQ8": null,
+          "DQ9": null,
+          "DQ4": null,
+          "DQ5": null,
+          "DQ6": null
+        }
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": [
+          "A",
+          "AB",
+          "B"
+        ]
+      }
+    }
+  },
+  {
+    "identifier": "067eeb6",
+    "patient_type": "recipient",
+    "related_donors": [
+      "3ad4cac"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "A2",
+          "B15",
+          "B62",
+          "B63",
+          "B75",
+          "B76",
+          "B77",
+          "B41",
+          "DR7",
+          "DR11"
+        ],
+        "antibodies": {
+          "A24": null,
+          "A3": null,
+          "A32": null,
+          "A25": null,
+          "A11": null,
+          "A74": null,
+          "A34": null,
+          "A43": null,
+          "A66": null,
+          "A36": null,
+          "A26": null,
+          "A29": null,
+          "A31": null,
+          "A30": null,
+          "B63": null,
+          "B52": null,
+          "B58": null,
+          "B57": null,
+          "B51": null,
+          "B49": null,
+          "B59": null,
+          "B55": null,
+          "B13": null,
+          "B54": null,
+          "B42": null
+        }
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": [
+          "A",
+          "AB",
+          "B"
+        ]
+      }
+    }
+  },
+  {
+    "identifier": "7cb6d98",
+    "patient_type": "recipient",
+    "related_donors": [
+      "78ee9c5"
+    ],
+    "country": "AUT",
+    "medical_data": {
+      "hla_system": {
+        "antigens": [
+          "A1",
+          "B35",
+          "B37",
+          "DR4",
+          "DR11"
+        ],
+        "antibodies": {}
+      },
+      "blood_type": {
+        "type": "0",
+        "forbidden_types": [
+          "A",
+          "AB",
+          "B"
+        ]
+      }
+    }
+  }
+]
