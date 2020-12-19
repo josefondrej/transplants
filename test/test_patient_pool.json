@@ -1190,7 +1190,7 @@
       },
       "blood_type": {
         "type": "A",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -1283,7 +1283,7 @@
       },
       "blood_type": {
         "type": "B",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -1344,7 +1344,7 @@
       },
       "blood_type": {
         "type": "B",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -1412,7 +1412,7 @@
       },
       "blood_type": {
         "type": "B",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -1485,7 +1485,7 @@
       },
       "blood_type": {
         "type": "0",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -1664,7 +1664,7 @@
       },
       "blood_type": {
         "type": "B",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -1743,7 +1743,7 @@
       },
       "blood_type": {
         "type": "A",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -1777,7 +1777,7 @@
       },
       "blood_type": {
         "type": "0",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -1805,7 +1805,7 @@
       },
       "blood_type": {
         "type": "0",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -1865,7 +1865,7 @@
       },
       "blood_type": {
         "type": "0",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -1903,7 +1903,7 @@
       },
       "blood_type": {
         "type": "A",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -1969,7 +1969,7 @@
       },
       "blood_type": {
         "type": "B",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -2016,7 +2016,7 @@
       },
       "blood_type": {
         "type": "0",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -2085,7 +2085,7 @@
       },
       "blood_type": {
         "type": "A",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -2120,7 +2120,7 @@
       },
       "blood_type": {
         "type": "0",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -2184,7 +2184,7 @@
       },
       "blood_type": {
         "type": "0",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -2259,7 +2259,7 @@
       },
       "blood_type": {
         "type": "0",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -2284,7 +2284,7 @@
       },
       "blood_type": {
         "type": "0",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },
@@ -2306,7 +2306,7 @@
       },
       "blood_type": {
         "type": "A",
-        "forbidden_types": []
+        "forbidden_types": null
       }
     }
   },

@@ -3,6 +3,7 @@ from typing import Set, Dict, Union
 
 from transplants.core.patient.medical_data.antigen_antibody_system.antibody import Antibody
 from transplants.core.patient.medical_data.antigen_antibody_system.antigen import Antigen
+from transplants.core.patient.medical_data.hla_system.hla_antibody import HLAAntibody
 
 
 class AntigenAntibodySystem(ABC):
@@ -27,3 +28,7 @@ class AntigenAntibodySystem(ABC):
 
     def has_antibodies_for(self, antigens: Set[Antigen]) -> bool:
         return len(set.intersection({antibody.antigen for antibody in self.antibodies}, antigens)) > 0
+
+    @property
+    def antibody_to_concentration(self) -> Dict[HLAAntibody, float]:
+        return self._antibody_to_concentration
