@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Callable
 
 
 class ScoredMixin:
@@ -13,3 +13,14 @@ class ScoredMixin:
             return self._score
         else:
             return None
+
+
+def assign_result_to_argument(function: Callable[["ScoredMixin"], float]) -> Callable[["ScoredMixin"], float]:
+    """Adds side effect which assigns value returned by `function` to it's `ScoredMixin` argument"""
+
+    def decorated_function(self, scored_mixin: "ScoredMixin") -> float:
+        score = function(self, scored_mixin)
+        scored_mixin.set_score(score)
+        return score
+
+    return decorated_function

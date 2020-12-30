@@ -2,7 +2,9 @@ from abc import ABC, abstractmethod
 from typing import List, Optional
 
 from transplants.core.scorer.scorer_base import ScorerBase, TRANSPLANT_IMPOSSIBLE
+from transplants.core.solution.chain import Chain
 from transplants.core.solution.matching import Matching
+from transplants.core.solution.scored_mixin import assign_result_to_argument
 from transplants.core.solution.transplant import Transplant
 
 
@@ -22,14 +24,23 @@ class AdditiveScorerBase(ScorerBase, ABC):
         self._forbidden_transplants = forbidden_transplants or []
         self._min_required_base_score = min_required_base_score
 
+    @assign_result_to_argument
     def score(self, matching: Matching) -> float:
         score = 0.0
         for chain in matching.chains:
-            for transplant in chain.transplants:
-                score += self.score_transplant(transplant=transplant)
+            score += self.score_chain(chain)
 
         return score
 
+    @assign_result_to_argument
+    def score_chain(self, chain: Chain) -> float:
+        score = 0.0
+        for transplant in chain.transplants:
+            score += self.score_transplant(transplant)
+
+        return score
+
+    @assign_result_to_argument
     def score_transplant(self, transplant: Transplant) -> float:
         """Score transplant considering the results of score_transplant_base and the context of
             (1) explicitly forbidden transplants
