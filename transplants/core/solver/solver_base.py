@@ -5,6 +5,7 @@ import numpy as np
 
 from transplants.core.patient.donor import Donor
 from transplants.core.patient.recipient import Recipient
+from transplants.core.scorer.additive_scorer_base import AdditiveScorerBase
 from transplants.core.scorer.scorer_base import ScorerBase
 from transplants.core.solution.matching import Matching
 from transplants.core.solver.find_chains import get_arguments_from_transplant_matrix_and_patients, find_chains, \
@@ -44,3 +45,9 @@ class SolverBase(ABC):
             vertex_to_patient=vertex_to_patient
         )
         return Matching(chains=patient_chains)
+
+    @staticmethod
+    def get_score_matrix(donors: List[Donor], recipients: List[Recipient], scorer: AdditiveScorerBase) -> np.ndarray:
+        score_matrix = [[scorer.score_transplant(donor, recipient) for recipient in recipients]
+                        for donor in donors]
+        return np.array(score_matrix)
