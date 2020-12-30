@@ -7,7 +7,7 @@ from ortools.linear_solver import pywraplp
 from ortools.linear_solver.pywraplp import Solver, Variable
 from pip._vendor.colorama import Fore
 
-from test.load_test_patient_pool import load_donors_recipients
+from test.test_utils.load_test_patient_pool import load_donors_recipients
 from transplants.core.scorer.hla_blood_type_additive_scorer import HLABloodTypeAdditiveScorer
 from transplants.core.scorer.scorer_base import TRANSPLANT_IMPOSSIBLE
 from transplants.core.solution.transplant import Transplant
@@ -67,7 +67,7 @@ def solution_to_str(solution: np.ndarray, left_padding: int = 3,
 
 def main():
     scorer = HLABloodTypeAdditiveScorer()
-    donors, recipients = load_donors_recipients(data_path="../../../test/test_patient_pool.json")
+    donors, recipients = load_donors_recipients(data_path="../../../test/test_utils/test_patient_pool.json")
 
     i_to_donor = dict(enumerate(donors))
     donor_to_i = {value: key for key, value in i_to_donor.items()}

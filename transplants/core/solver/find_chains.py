@@ -5,15 +5,17 @@ import numpy as np
 from transplants.core.patient.donor import Donor
 from transplants.core.patient.recipient import Recipient
 from transplants.core.solution.chain import Chain
+from transplants.core.solution.cycle import Cycle
+from transplants.core.solution.sequence import Sequence
 from transplants.core.solution.transplant import Transplant
 
 
-def find_chains(edges: List[Tuple[int, int]]) -> Set[List[int]]:
+def find_chains(edges: List[Tuple[int, int]]) -> List[Tuple[List[int], bool]]:
     to_next = {i: j for i, j in edges}
     to_previous = {j: i for i, j in edges}
     vertices = set([v for edge in edges for v in edge])
-    chains = set()
-    while len(edges) > 0:
+    chains = list()
+    while len(vertices) > 0:
         initial_vertex = vertices.pop()
         next_vertex = to_next.get(initial_vertex)
         prev_vertex = to_previous.get(initial_vertex)
@@ -25,12 +27,20 @@ def find_chains(edges: List[Tuple[int, int]]) -> Set[List[int]]:
             right_chain.append(next_vertex)
             next_vertex = to_next.get(next_vertex)
 
-        while prev_vertex is not None and prev_vertex != initial_vertex:
-            left_chain.append(prev_vertex)
-            prev_vertex = to_previous.get(prev_vertex)
+        if next_vertex is None:
+            is_cycle = False
+
+            while prev_vertex is not None and prev_vertex != initial_vertex:
+                left_chain.append(prev_vertex)
+                prev_vertex = to_previous.get(prev_vertex)
+
+        else:
+            is_cycle = True
 
         chain = list(reversed(left_chain)) + [initial_vertex] + right_chain
-        chain.append(chain)
+
+        chains.append((chain, is_cycle))
+        vertices -= set(chain)
 
     return chains
 
@@ -74,12 +84,13 @@ def get_arguments_from_transplant_matrix_and_patients(transplant_matrix: np.ndar
 def index_chains_to_patient_chains(index_chains: Set[List[int]],
                                    vertex_to_patient: Dict[int, Union[Donor, Recipient]]) -> Set[Chain]:
     patient_chains = set()
-    for index_chain in index_chains:
+    for index_chain, is_cycle in index_chains:
         # Ensure we always start the chain with donor -- this does not have to be so for cycles
         if vertex_to_patient[index_chain[0]].is_recipient:
             index_chain = index_chain[1:] + [index_chain[0]]
 
-        chain = Chain(
+        chain_constructor = Cycle if is_cycle else Sequence
+        chain = chain_constructor(
             transplants=[
                 Transplant(
                     donor=vertex_to_patient[index_chain[2 * i]],
