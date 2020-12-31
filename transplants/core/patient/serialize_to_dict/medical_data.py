@@ -1,8 +1,8 @@
 from typing import Dict
 
 from transplants.core.patient.medical_data.medical_data import MedicalData
-from transplants.core.serdes.blood_type import to_dict as blood_type_to_dict, from_dict as blood_type_from_dict
-from transplants.core.serdes.hla_system import to_dict as hla_system_to_dict, from_dict as hla_system_from_dict
+from transplants.core.patient.serialize_to_dict.blood_type import to_dict as blood_type_to_dict, from_dict as blood_type_from_dict
+from transplants.core.patient.serialize_to_dict.hla_system import to_dict as hla_system_to_dict, from_dict as hla_system_from_dict
 
 
 def to_dict(medical_data: MedicalData) -> Dict:

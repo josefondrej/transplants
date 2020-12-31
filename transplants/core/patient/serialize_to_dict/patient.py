@@ -4,8 +4,10 @@ from transplants.core.patient.donor import Donor
 from transplants.core.patient.patient import Patient
 from transplants.core.patient.patient_type import PatientType
 from transplants.core.patient.recipient import Recipient
-from transplants.core.serdes.medical_data import to_dict as medical_data_to_dict, from_dict as medical_data_from_dict
-from transplants.core.serdes.patient_type import to_str as patient_type_to_str, from_str as patient_type_from_str
+from transplants.core.patient.serialize_to_dict.medical_data import to_dict as medical_data_to_dict, \
+    from_dict as medical_data_from_dict
+from transplants.core.patient.serialize_to_dict.patient_type import to_str as patient_type_to_str, \
+    from_str as patient_type_from_str
 
 
 def to_dict(patient: Patient) -> Dict:
