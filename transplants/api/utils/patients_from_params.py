@@ -7,7 +7,7 @@ from transplants.core.patient.serialize_to_dict.patient import from_dict as pati
     to_dict as patient_to_dict
 
 
-def load_donors_recipients(serialized_patients: List) -> Tuple[List[Donor], List[Recipient]]:
+def patients_from_params(serialized_patients: List) -> Tuple[List[Donor], List[Recipient]]:
     patients = [patient_from_dict(dictionary) for dictionary in serialized_patients]
     donors: List[Donor] = [patient for patient in patients if patient.is_donor]
     recipients: List[Recipient] = [patient for patient in patients if patient.is_recipient]
@@ -18,10 +18,10 @@ def load_donors_recipients(serialized_patients: List) -> Tuple[List[Donor], List
 
 
 if __name__ == '__main__':
-    with open("../../../../test/test_utils/test_patient_pool.json", "r") as serialized_patients_file:
+    with open("./test/test_utils/test_patient_pool.json", "r") as serialized_patients_file:
         test_serialized_patients = json.load(serialized_patients_file)
 
-    test_donors, test_recipients = load_donors_recipients(test_serialized_patients)
+    test_donors, test_recipients = patients_from_params(test_serialized_patients)
     test_patients = test_donors + test_recipients
 
     for test_patient in test_patients:

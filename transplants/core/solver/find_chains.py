@@ -1,3 +1,4 @@
+# Utility functions for finding cycles and sequences in a graph given by it's adjacency matrix
 from typing import List, Tuple, Dict, Set, Union
 
 import numpy as np
