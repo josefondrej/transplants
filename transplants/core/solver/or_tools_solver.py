@@ -13,6 +13,12 @@ from transplants.core.solver.solver_base import SolverBase
 
 
 class ORToolsSolver(SolverBase):
+    """Solver using Google's MIP library
+
+    For more details see:
+        - https://developers.google.com/optimization/mip/integer_opt
+    """
+
     @staticmethod
     def _create_transplant_indicators(solver: Solver, donor_to_recipient_scores: np.ndarray) -> np.ndarray:
         donor_to_recipient_transplant_performed = np.zeros_like(donor_to_recipient_scores, dtype="object")

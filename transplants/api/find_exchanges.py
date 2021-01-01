@@ -23,9 +23,9 @@
 
 from typing import Dict
 
-from transplants.api.utils.patients_from_params import patients_from_params
-from transplants.api.utils.scorer_from_params import scorer_from_params
-from transplants.api.utils.solver_from_params import solver_from_params
+from transplants.api_utils.patients_from_params import patients_from_params
+from transplants.api_utils.scorer_from_params import scorer_from_params
+from transplants.api_utils.solver_from_params import solver_from_params
 from transplants.core.solution.serialize_to_dict.matching import to_dict as matching_to_dict
 
 
