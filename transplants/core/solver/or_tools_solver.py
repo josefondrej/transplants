@@ -92,4 +92,7 @@ class ORToolsSolver(SolverBase):
             logging.error("No solution found")
             matchings = []
 
+        for matching in matchings:
+            scorer.score(matching)
+
         return matchings

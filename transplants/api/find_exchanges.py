@@ -38,7 +38,8 @@ def find_exchanges(exchange_parameters: Dict) -> Dict:
     donors, recipients = patients_from_params(serialized_patients=serialized_patients)
 
     # Scorer
-    scorer = scorer_from_params(scorer_parameters=scorer_parameters, patients=donors + recipients)
+    scorer = scorer_from_params(scorer_parameters=scorer_parameters, patients=donors + recipients,
+                                add_related_to_forbidden=True)
 
     # Solver
     solver = solver_from_params(solver_parameters=solver_parameters)

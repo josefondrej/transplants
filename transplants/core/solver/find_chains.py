@@ -63,9 +63,10 @@ def get_arguments_from_transplant_matrix_and_patients(transplant_matrix: np.ndar
         vertex_to_patient: Dict[int, Patient]
     """
     vertex_to_patient = {pat_ix: patient for pat_ix, patient in enumerate(donors + recipients)}
-    patient_to_vertex: Dict[Union[Donor, Recipient], int] = {patient: pat_ix for pat_ix, patient in vertex_to_patient}
+    patient_to_vertex: Dict[Union[Donor, Recipient], int] = {patient: pat_ix for pat_ix, patient
+                                                             in vertex_to_patient.items()}
 
-    transplant_donor_recipient_indices = list(np.zip(*np.where(transplant_matrix)))
+    transplant_donor_recipient_indices = list(zip(*np.where(transplant_matrix)))
     transplants = [(donors[donor_ix], recipients[recipient_ix]) for donor_ix, recipient_ix
                    in transplant_donor_recipient_indices]
     was_used = {donor: True for donor, recipient in transplants}

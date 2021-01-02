@@ -8,19 +8,40 @@ from transplants.core.scorer.scorer_base import TRANSPLANT_IMPOSSIBLE
 from transplants.core.solution.transplant import Transplant
 
 
-def scorer_from_params(params: Dict, patients: List[Patient]):
-    scorer_type = params["type"]
+def scorer_from_params(scorer_parameters: Dict, patients: List[Patient], add_related_to_forbidden: bool = True):
+    """API utility function that creates Scorer according to the specified parameters
+
+    Args:
+        scorer_parameters: parameter specification
+        patients: patients -- used for resolving the actual patients from their identifiers in the scorer_parameters
+            argument
+        add_related_to_forbidden: add (related donor, recipient) pairs if the recipient is not looking for a better
+            donor than he already has
+
+    Returns:
+        Scorer object that assigns {-inf, float} value to Matching (in special cases also to Chains and Transplants)
+    """
+    forbidden_transplants = list(scorer_parameters.get("forbidden_transplants", []))
+    if add_related_to_forbidden:
+        additional_forbidden_transplants = [(donor.identifier, patient.identifier)
+                                            for patient in patients
+                                            if patient.is_recipient and not patient.require_better_than_related_match
+                                            for donor in patient.related_donors]
+        forbidden_transplants.extend(additional_forbidden_transplants)
+
+    scorer_type = scorer_parameters["type"]
     code_to_patient = {patient.identifier: patient for patient in patients}
 
-    compatible_blood_group_bonus = params.get("compatible_blood_group_bonus", 10.0)
-    incompatible_blood_group_malus = params.get("incompatible_blood_group_malus", TRANSPLANT_IMPOSSIBLE)
-    hla_allele_compatibility_bonus = params.get("hla_allele_compatibility_bonus", None)
-    max_allowed_antibody_concentration = {HLAAntibody(code_to_antigen.get(antibody_code)): concentration for
-                                          antibody_code, concentration
-                                          in params.get("max_allowed_antibody_concentration", dict())}
+    compatible_blood_group_bonus = scorer_parameters.get("compatible_blood_group_bonus", 10.0)
+    incompatible_blood_group_malus = scorer_parameters.get("incompatible_blood_group_malus", TRANSPLANT_IMPOSSIBLE)
+    hla_allele_compatibility_bonus = scorer_parameters.get("hla_allele_compatibility_bonus", None)
+    max_allowed_antibody_concentration = {
+        HLAAntibody(code_to_antigen.get(antibody_code)): concentration for antibody_code, concentration
+        in scorer_parameters.get("max_allowed_antibody_concentration", dict()).items()
+    }
     forbidden_transplants = [Transplant(donor=code_to_patient[donor_code], recipient=code_to_patient[recipient_code])
-                             for donor_code, recipient_code in params.get("forbidden_transplants", [])]
-    min_required_base_score = float(params.get("min_required_base_score", 0.0))
+                             for donor_code, recipient_code in forbidden_transplants]
+    min_required_base_score = float(scorer_parameters.get("min_required_base_score", 0.0))
     if scorer_type == "HLABloodTypeAdditiveScorer":
         scorer = HLABloodTypeAdditiveScorer(
             compatible_blood_group_bonus=compatible_blood_group_bonus,

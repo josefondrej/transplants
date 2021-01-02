@@ -16,6 +16,7 @@ class AdditiveScorerBase(ScorerBase, ABC):
     Args:
         forbidden_transplants: Transplants that we explicitly do not allow. These should usually be all transplants
             (related donor, recipient) for recipients that have require_better_than_related_match = False
+            BEWARE: This has to be explicitly specified!
         min_required_base_score: If the result of the score_transplant_base function is less than this value,
             we score the transplant as impossible
     """

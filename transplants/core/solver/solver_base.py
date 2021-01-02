@@ -8,6 +8,7 @@ from transplants.core.patient.recipient import Recipient
 from transplants.core.scorer.additive_scorer_base import AdditiveScorerBase
 from transplants.core.scorer.scorer_base import ScorerBase
 from transplants.core.solution.matching import Matching
+from transplants.core.solution.transplant import Transplant
 from transplants.core.solver.find_chains import get_arguments_from_transplant_matrix_and_patients, find_chains, \
     index_chains_to_patient_chains
 
@@ -48,6 +49,7 @@ class SolverBase(ABC):
 
     @staticmethod
     def get_score_matrix(donors: List[Donor], recipients: List[Recipient], scorer: AdditiveScorerBase) -> np.ndarray:
-        score_matrix = [[scorer.score_transplant(donor, recipient) for recipient in recipients]
+        score_matrix = [[scorer.score_transplant(Transplant(donor=donor, recipient=recipient))
+                         for recipient in recipients]
                         for donor in donors]
         return np.array(score_matrix)
