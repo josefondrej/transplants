@@ -4,7 +4,7 @@ import numpy as np
 
 
 def standardize_chain(chain: Dict):
-    """Reorder transplants to standard order if the chain is cycle
+    """Reorder transplants to standard order if the chain is cycle (in place)
 
     Cycle is in standard order if the first donor is the lowest one of all donors in lexicographical order
     """
@@ -16,7 +16,7 @@ def standardize_chain(chain: Dict):
 
 
 def standardize_matching(matching: Dict):
-    """Reorder chains to standard order
+    """Reorder chains to standard order (in place)
 
     List of chains is in standard order if the chains are in standard order (see `standardize_chain`) and the
     first donors of each chain are sorted lexicographically

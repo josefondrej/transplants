@@ -11,3 +11,6 @@ conda-update:
 
 conda-activate:
 	conda activate $(CONDA_ENV)
+
+run-tests:
+	python -m unittest

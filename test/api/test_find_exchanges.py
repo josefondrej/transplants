@@ -1,4 +1,5 @@
 import json
+from logging import info
 from unittest import TestCase
 
 from transplants.api.find_exchanges import find_exchanges
@@ -56,6 +57,10 @@ class TestFindExchanges(TestCase):
 
         # WARN! Here we sort the chains in the matching which is required to use assertDictEqual later on
         for exchange in [expected_exchanges, calculated_exchanges]:
-            exchange["matchings"] = [standardize_matching(matching) for matching in exchange["matchings"]]
+            for matching in exchange["matchings"]:
+                standardize_matching(matching)
+
+        print(expected_exchanges)
+        print(calculated_exchanges)
 
         self.assertDictEqual(expected_exchanges, calculated_exchanges)
