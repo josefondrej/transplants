@@ -1,6 +1,6 @@
 # Transplant Matching
 
-Web application providing endpoint for solving the
+REST API for solving the
 [kidney-exchange problem](https://en.wikipedia.org/wiki/Kidney_Paired_Donation)
 that uses compatibility in [blood type](#blood_types)
 and in the [human leukocyte antigen](#hla) (HLA)
