@@ -2,7 +2,7 @@ import json
 from unittest import TestCase
 
 from transplants.api.find_exchanges import find_exchanges
-from transplants.standardize_result import standardize_matching
+from transplants.api.standardize_result import standardize_matching
 
 
 class TestFindExchanges(TestCase):
