@@ -1,17 +1,30 @@
-from typing import List
+from typing import List, Tuple, Dict
 
 from transplants.patient.patient import Patient
-from transplants.solution.transplant import Transplant
+from transplants.patient.patient_type import PatientType
 
 
-def get_default_forbidden_transplants(patients: List[Patient]) -> List[Transplant]:
-    """List transplants that are forbidden by default -- if recipient is not looking for better match we assume by
+def get_default_forbidden_transplants(patients: List[Patient]) -> List[Tuple[str, str]]:
+    """List transplants represented by Tuple[donor.id, recipient.id] that are forbidden by default
+    -- if recipient is not looking for better match we assume by
     default he can't be transplanted with any of his related donors"""
     default_forbidden_transplants = [
-        Transplant(donor=donor, recipient=patient)
+        (donor.identifier, patient.identifier)
         for patient in patients
         if patient.is_recipient and not patient.require_better_than_related_match
         for donor in patient.related_donors
+    ]
+
+    return default_forbidden_transplants
+
+
+def get_default_forbidden_transplants_from_serialized(serialized_patients: List[Dict]) -> List[Tuple[str, str]]:
+    default_forbidden_transplants = [
+        (donor_id, patient["identifier"])
+        for patient in serialized_patients
+        if patient["patient_type"] == PatientType.RECIPIENT.value and not (patient.get(
+            "require_better_than_related_match") == True)
+        for donor_id in patient["related_donors"]
     ]
 
     return default_forbidden_transplants

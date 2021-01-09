@@ -1,4 +1,4 @@
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
 from transplants.patient.medical_data.blood_type_system.blood_type import BloodType
 from transplants.patient.medical_data.hla_system.antigen_definitions import A_antigens, B_antigens, DRB1_antigens
@@ -29,7 +29,7 @@ class HLABloodTypeAdditiveScorer(AdditiveScorerBase):
             incompatible_blood_group_malus: float = TRANSPLANT_IMPOSSIBLE,
             hla_allele_compatibility_bonus: Optional[Dict[str, float]] = None,
             max_allowed_antibody_concentration: Optional[Dict[HLAAntibody, float]] = None,
-            forbidden_transplants: Optional[List[Transplant]] = None,
+            forbidden_transplants: Optional[List[Tuple[str, str]]] = None,
             min_required_base_score: float = 0.0
     ):
         self._compatible_blood_group_bonus = compatible_blood_group_bonus
@@ -98,7 +98,7 @@ class HLABloodTypeAdditiveScorer(AdditiveScorerBase):
         """Counts the number of common alleles of specified gene
 
         Args:
-            gene_name: Name of gene for which to count the commone alleles (e.g. A, B, DRB1)
+            gene_name: Name of gene for which to count the common alleles (e.g. A, B, DRB1)
             donor_hla_system: HLA system of donor
             recipient_hla_system: HLA system of recipient
 

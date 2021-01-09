@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 from transplants.scorer.scorer_base import ScorerBase, TRANSPLANT_IMPOSSIBLE
 from transplants.solution.chain import Chain
@@ -14,14 +14,15 @@ class AdditiveScorerBase(ScorerBase, ABC):
     If this is the case, then the optimal solution to the exchange problem can be found in polynomial time
 
     Args:
-        forbidden_transplants: Transplants that we explicitly do not allow. These should usually be all transplants
-            (related donor, recipient) for recipients that have require_better_than_related_match = False
-            BEWARE: This has to be explicitly specified!
+        forbidden_transplants: Transplants that we explicitly do not allow represented by Tuple[donor.id, recipient.id].
+            BEWARE: These should usually be all transplants (related donor, recipient) for recipients that have
+            require_better_than_related_match = False, however this has to be explicitly specified!
         min_required_base_score: If the result of the score_transplant_base function is less than this value,
             we score the transplant as impossible
     """
 
-    def __init__(self, forbidden_transplants: Optional[List[Transplant]] = None, min_required_base_score: float = 0.0):
+    def __init__(self, forbidden_transplants: Optional[List[Tuple[str, str]]] = None,
+                 min_required_base_score: float = 0.0):
         self._forbidden_transplants = forbidden_transplants or []
         self._min_required_base_score = min_required_base_score
 
@@ -49,7 +50,7 @@ class AdditiveScorerBase(ScorerBase, ABC):
             (3) requirement for better donor than his relatives for patients that have this specified
         """
         # Impossible if explicitly forbidden
-        if transplant in self._forbidden_transplants:
+        if (transplant.donor.identifier, transplant.recipient.identifier) in self._forbidden_transplants:
             return TRANSPLANT_IMPOSSIBLE
 
         # Impossible if base score < min required score

@@ -1,6 +1,7 @@
 import json
 from unittest import TestCase
 
+from transplants.scorer.default_forbidden_transplants import get_default_forbidden_transplants_from_serialized
 from transplants.serialization.matching import standardize_matching_dict_representation
 from transplants.utils.find_exchanges import find_exchanges
 
@@ -13,13 +14,16 @@ class TestFindExchanges(TestCase):
         with open(patients_data_path, "r") as patients_data_file:
             serialized_patients = json.load(patients_data_file)
 
+        forbidden_transplants = get_default_forbidden_transplants_from_serialized(
+            serialized_patients=serialized_patients)
+
         scorer_parameters = {
             "type": "HLABloodTypeAdditiveScorer",
             "compatible_blood_group_bonus": 0.0,
             "incompatible_blood_group_malus": float("-inf"),
             "hla_allele_compatibility_bonus": {"A": 1.0, "B": 3.0, "DRB1": 9.0},
             "max_allowed_antibody_concentration": {},
-            "forbidden_transplants": [],
+            "forbidden_transplants": forbidden_transplants,
             "min_required_base_score": 0.0
         }
 
@@ -52,7 +56,9 @@ class TestFindExchanges(TestCase):
             ]
         }
 
-        calculated_exchanges = find_exchanges(exchange_problem_parameters=exchange_parameters)
+        calculated_exchanges = find_exchanges(
+            exchange_problem_parameters=exchange_parameters
+        )
 
         # WARN! Here we sort the chains in the matching which is required to use assertDictEqual later on
         for exchange in [expected_exchanges, calculated_exchanges]:
