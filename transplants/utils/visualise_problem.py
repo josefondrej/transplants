@@ -13,10 +13,10 @@ from transplants.scorer.additive_scorer_base import AdditiveScorerBase
 from transplants.scorer.default_forbidden_transplants import get_default_forbidden_transplants
 from transplants.scorer.hla_blood_type_additive_scorer import HLABloodTypeAdditiveScorer
 from transplants.scorer.scorer_base import TRANSPLANT_IMPOSSIBLE
+from transplants.serialization.load_donors_recipients import load_donors_recipients_from_file
 from transplants.solution.matching import Matching
 from transplants.solution.transplant import Transplant
 from transplants.solver.or_tools_solver import ORToolsSolver
-from transplants.utils.load_donors_recipients import load_donors_recipients_from_file
 
 
 def _get_node_attribute(graph: Graph, node: str, attribute_name: str) -> Any:

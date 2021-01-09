@@ -3,7 +3,7 @@ from unittest import TestCase
 
 from transplants.scorer.default_forbidden_transplants import get_default_forbidden_transplants_from_serialized
 from transplants.serialization.matching import standardize_matching_dict_representation
-from transplants.utils.find_exchanges import find_exchanges
+from transplants.find_solution.find_solution import find_solution_serialized
 
 
 class TestFindExchanges(TestCase):
@@ -56,8 +56,8 @@ class TestFindExchanges(TestCase):
             ]
         }
 
-        calculated_exchanges = find_exchanges(
-            exchange_problem_parameters=exchange_parameters
+        calculated_exchanges = find_solution_serialized(
+            serialized_problem_description=exchange_parameters
         )
 
         # WARN! Here we sort the chains in the matching which is required to use assertDictEqual later on
