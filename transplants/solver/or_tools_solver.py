@@ -1,14 +1,12 @@
 import logging
-from typing import Set, List
 
 import numpy as np
 from ortools.linear_solver.pywraplp import Solver, Variable
 
-from transplants.patient.donor import Donor
-from transplants.patient.recipient import Recipient
-from transplants.scorer.additive_scorer_base import AdditiveScorerBase
-from transplants.scorer.scorer_base import TRANSPLANT_IMPOSSIBLE
-from transplants.solution.matching import Matching
+from transplants.problem.problem import Problem
+from transplants.solver.scorer.additive_scorer_base import AdditiveScorerBase
+from transplants.solver.scorer.scorer_base import TRANSPLANT_IMPOSSIBLE
+from transplants.solution.solution import Solution
 from transplants.solver.solver_base import SolverBase
 
 
@@ -18,6 +16,9 @@ class ORToolsSolver(SolverBase):
     For more details see:
         - https://developers.google.com/optimization/mip/integer_opt
     """
+
+    def __init__(self, scorer: AdditiveScorerBase):
+        super().__init__(scorer=scorer)
 
     @staticmethod
     def _create_transplant_indicators(solver: Solver, donor_to_recipient_scores: np.ndarray) -> np.ndarray:
@@ -45,15 +46,15 @@ class ORToolsSolver(SolverBase):
 
         return solution_value
 
-    def solve(self, donors: Set[Donor], recipients: Set[Recipient], scorer: AdditiveScorerBase) -> List[Matching]:
-        donors, recipients = list(donors), list(recipients)
-        transplant_score_matrix = SolverBase.get_score_matrix(donors=donors, recipients=recipients, scorer=scorer)
+    def solve(self, problem: Problem) -> Solution:
+        donors, recipients = problem.donors, problem.recipients
+        transplant_score_matrix = self.get_score_matrix(donors=donors, recipients=recipients)
         i_to_donor = dict(enumerate(donors))
-        donor_to_i = {value: key for key, value in i_to_donor.items()}
+        donor_id_to_i = {donor.identifier: i for i, donor in i_to_donor.items()}
 
         j_to_recipient = dict(enumerate(recipients))
 
-        j_to_related_i = {j: [donor_to_i[donor] for donor in recipient.related_donors]
+        j_to_related_i = {j: [donor_id_to_i[donor_id] for donor_id in recipient.related_donor_ids]
                           for j, recipient in j_to_recipient.items()}
 
         solver = Solver.CreateSolver("GLOP")
@@ -84,8 +85,7 @@ class ORToolsSolver(SolverBase):
             transplant_matrix = transplant_matrix.astype("int64")
             matching = SolverBase.get_matching_from_transplant_matrix(
                 transplant_matrix=transplant_matrix,
-                donors=donors,
-                recipients=recipients
+                problem=problem
             )
             matchings = [matching]
         else:
@@ -93,6 +93,6 @@ class ORToolsSolver(SolverBase):
             matchings = []
 
         for matching in matchings:
-            scorer.score(matching)
+            self._scorer.score(matching)
 
-        return matchings
+        return Solution(solution_id=None, problem_id=problem.problem_id, matchings=matchings)

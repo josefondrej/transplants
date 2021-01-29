@@ -1,27 +1,26 @@
-from transplants.patient.donor import Donor
-from transplants.patient.recipient import Recipient
 from transplants.solution.scored_mixin import ScoredMixin
 
 
 class Transplant(ScoredMixin):
     """Single transplant represented by  (donor, recipient) pair of patients"""
 
-    def __init__(self, donor: Donor, recipient: Recipient):
-        self._donor = donor
-        self._recipient = recipient
+    def __init__(self, donor_id: str, recipient_id: str):
+        self._donor_id = donor_id
+        self._recipient_id = recipient_id
 
     def __eq__(self, other):
-        if not isinstance(other, self.__class__):
+        if not isinstance(other, Transplant):
             return False
-        return (self.donor == other.donor) and (self.recipient == other.recipient)
+
+        return (self.donor_id == other.donor_id) and (self.recipient_id == other.recipient_id)
 
     def __hash__(self):
-        return hash((hash(self.donor), hash(self.recipient)))
+        return hash((hash(self.donor_id), hash(self.recipient_id)))
 
     @property
-    def donor(self) -> Donor:
-        return self._donor
+    def donor_id(self) -> str:
+        return self._donor_id
 
     @property
-    def recipient(self) -> Recipient:
-        return self._recipient
+    def recipient_id(self) -> str:
+        return self._recipient_id

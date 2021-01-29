@@ -7,16 +7,17 @@ import matplotlib.pyplot as plt
 import networkx as nx
 from networkx import Graph
 
-from transplants.patient.donor import Donor
-from transplants.patient.recipient import Recipient
-from transplants.scorer.additive_scorer_base import AdditiveScorerBase
-from transplants.scorer.default_forbidden_transplants import get_default_forbidden_transplants
-from transplants.scorer.hla_blood_type_additive_scorer import HLABloodTypeAdditiveScorer
-from transplants.scorer.scorer_base import TRANSPLANT_IMPOSSIBLE
-from transplants.serialization.load_donors_recipients import load_donors_recipients_from_file
+from transplants.problem.patient.donor import Donor
+from transplants.problem.patient.recipient import Recipient
+from transplants.problem.problem import Problem
 from transplants.solution.matching import Matching
 from transplants.solution.transplant import Transplant
 from transplants.solver.or_tools_solver import ORToolsSolver
+from transplants.solver.scorer.additive_scorer_base import AdditiveScorerBase
+from transplants.solver.scorer.default_forbidden_transplants import get_default_forbidden_transplants
+from transplants.solver.scorer.hla_blood_type_additive_scorer import HLABloodTypeAdditiveScorer
+from transplants.solver.scorer.scorer_base import TRANSPLANT_IMPOSSIBLE
+from transplants.utils.load_donors_recipients import load_donors_recipients_from_file
 
 
 def _get_node_attribute(graph: Graph, node: str, attribute_name: str) -> Any:
@@ -47,13 +48,13 @@ def _build_networkx_graph(donors: List[Donor], recipients: List[Recipient], scor
 
     for donor in donors:
         for recipient in recipients:
-            score = scorer.score_transplant(Transplant(donor=donor, recipient=recipient))
+            score = scorer.score_transplant(Transplant(donor_id=donor.identifier, recipient_id=recipient.identifier))
             if score != TRANSPLANT_IMPOSSIBLE:
                 graph.add_edge(donor.identifier, recipient.identifier, score=score, is_transplant=True)
 
     for recipient in recipients:
-        for donor in recipient.related_donors:
-            graph.add_edge(recipient.identifier, donor.identifier, is_transplant=False)
+        for donor_id in recipient.related_donor_ids:
+            graph.add_edge(recipient.identifier, donor_id, is_transplant=False)
 
     return graph
 
@@ -92,17 +93,17 @@ def _highlight_solution(graph: Graph, solution: Matching, chain_colors: List[str
         chain_colors = ["#BF37BF", "#AE4FFF", "#917AFF", "#A7BAFF", "#D8F1FF", "#80215F"]
 
     for chain, chain_color in zip(solution.chains, itertools.cycle(chain_colors)):
-        first_node = chain.transplants[0].donor.identifier
+        first_node = chain.transplants[0].donor_id
         _set_node_attribute(graph, first_node, color=chain_color)
 
         for transplant in chain.transplants:
-            edge = (transplant.donor.identifier, transplant.recipient.identifier)
+            edge = (transplant.donor_id, transplant.recipient_id)
             score = _get_edge_attribute(graph, edge, "score")
             _set_edge_attribute(graph, edge, color=chain_color, line_width=line_width, label=score)
 
             next_transplant = chain.next_transplant(transplant)
             if next_transplant is not None:
-                edge = (transplant.recipient.identifier, next_transplant.donor.identifier)
+                edge = (transplant.recipient_id, next_transplant.donor_id)
                 _set_edge_attribute(graph, edge, color=chain_color, line_width=line_width)
 
 
@@ -150,23 +151,25 @@ if __name__ == '__main__':
     # Patients
     test_donors, test_recipients = load_donors_recipients_from_file("./test/test_utils/patient_pool_example.json")
     test_patients = test_donors + test_recipients
+    test_problem = Problem(problem_id="test_problem_id", patients=test_patients)
 
     # Scorer
     forbidden_transplants = get_default_forbidden_transplants(patients=test_patients)
     test_scorer = HLABloodTypeAdditiveScorer(
+        problem=test_problem,
         compatible_blood_group_bonus=0.0,
         forbidden_transplants=forbidden_transplants
     )
 
     # Solver
-    test_solver = ORToolsSolver()
+    test_solver = ORToolsSolver(scorer=test_scorer)
 
     # Find exchanges
-    matchings = test_solver.solve(
-        donors=set(test_donors),
-        recipients=set(test_recipients),
-        scorer=test_scorer
+    solution = test_solver.solve(
+        problem=test_problem
     )
+
+    matchings = solution.matchings
     test_solution = matchings[0]
 
     # Export solution to /tmp/transplants/problem_visualisation.pdf ----------------------------------------------------

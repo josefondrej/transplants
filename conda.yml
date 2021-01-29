@@ -1,8 +1,0 @@
-name: transplants
-channels:
-  - conda-forge
-  - defaults
-dependencies:
-  - numpy==1.19.2
-  - pip:
-      - ortools==8.1.8487

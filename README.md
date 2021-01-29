@@ -10,11 +10,13 @@ system to evaluate compatibility.
 
 ### Native
 
-Requires [anaconda](https://docs.anaconda.com/anaconda/install/). To create anaconda environment run:
+Requires `python-3.8.5` and [anaconda](https://docs.anaconda.com/anaconda/install/). To create anaconda environment run:
 
 ```commandline
 make conda-create
 ```
+
+All scripts are configured to be run from the path of the root `transplants` directory.
 
 ## Medical Background
 
@@ -42,7 +44,7 @@ Two people with the same blood group are compatible (in blood group). In additio
 
 In kidney exchanges it is possible to do a transplant even with incompatible blood groups, but the match is not so good.
 
-> Very often it is important to know so called Rh factor
+> Very often it is important to know so-called Rh factor
 > which can be (-) or (+), however for the kidney transplants
 > this does not play a role.
 
@@ -50,23 +52,23 @@ In kidney exchanges it is possible to do a transplant even with incompatible blo
 
 The HLA system is much more complicated than the blood groups but in many ways similar. This system is responsible for
 determining own from foreign in body and is the basis for our immune system. For our purposes it (similarly as the blood
-type) comprises of different protein structures (antigens) on the surface of cells and other protein structures (
+type) consists of different protein structures (antigens) on the surface of cells and other protein structures (
 antibodies) in blood stream.
 
 - In a transplant setting the situation is similar as for the blood groups -- if recipient has (unacceptably high
   concentration of)
   antibodies for donor's antigens, then the transplant can't be performed -- we call this **positive crossmatch**.
 - The secondary goal is to have the antigens of recipient and antigens of donor as similar as possible.
-- Healthy person does not have antibodies against their own antigens (this is the case with autoimmune diseases).
-- The antibodies can be created by the body itself for example in reaction to blood transfusion, during pregnancy etc.
+- A healthy person does not have antibodies against their own antigens (this is the case with autoimmune diseases).
+- The antibodies can be created by the body itself for example in reaction to blood transfusion, during a pregnancy etc.
   So basically genetically identical individuals can still have different antibodies. Normally they are not present.
 - The protein structures (antigens) on the other hand are coded in one's DNA by Major Histocompatibility Gene
   Complex (**MHC**)
-  that resides on a 3.6Mpb stretch within chromosome 6p21 and contains 224 genes (e.g. HLA-A, HLA-B, HLA-DR). Sometimes
+  that resides on a 3.6Mpb stretch within the chromosome 6p21 and contains 224 genes (e.g. HLA-A, HLA-B, HLA-DR). Sometimes
   it is also called HLA complex.
 - Each human has two [alleles](http://hla.alleles.org/alleles/class1.html) (=variants, e.g. <i>A\*01:01:01:07</i>,
-  <i>C\*01:02:01:08</i>, <i>B\*07:02:01:21</i>) for each MHC gene (one from mother and one from father).
-- [MHC genes](http://hla.alleles.org/genes/index.html) are very polymorphic - i.e. they have many different possible
+  <i>C\*01:02:01:08</i>, <i>B\*07:02:01:21</i>) for each MHC gene (one from the mother and one from the father).
+- [MHC genes](http://hla.alleles.org/genes/index.html) are very polymorphic - i.e. they have many possible
   alleles
 - The HLA genes can be divided in different groups:
     - MHC class I (e.g. HLA-A, HLA-B, HLA-C)
@@ -80,18 +82,17 @@ antibodies) in blood stream.
   the exact same antigens). See for
   example [Survival of DNA HLA-DR typed and matched cadaver kidney transplants](https://pubmed.ncbi.nlm.nih.gov/1678443/)
   .
-- Finding the exact allele match is however not always possible and it is also not always possible to use exact DNA
+- Finding the exact allele match is however not always possible, and it is also not always possible to use exact DNA
   based HLA typing. In our particular application, we focus on so
   called [serological antigen definitions](http://hla.alleles.org/antigens/recognised_serology.html)
   which define antigens based on serological reactions.
 - These definitions are not so precise - even a person that is completely matched on "serological level" (=has the same
   serologically defined antigens) does not have to be matched on the allele level (=does not have to have the same
-  alleles and not even the exact same antigens). However person that is matched on serological level is still much
+  alleles and not even the exact same antigens). However, person that is matched on serological level is still much
   better off than person not matched at all.
-- If we know the complete allele typing it is possible to find out the serological definition. A help with this can be
+- If we know the complete allele typing, it is possible to find out the serological definition. A help with this can be
   the
-  [HLA dictionary](https://www.ebi.ac.uk/ipd/imgt/hla/dictionary.html) which contains this information for a large
-  number of alleles.
+  [HLA dictionary](https://www.ebi.ac.uk/ipd/imgt/hla/dictionary.html) which contains this information for many alleles.
 
 The following is (as of 13. 12. 2020) list of recognized serologically
 defined [antigens](http://hla.alleles.org/antigens/recognised_serology.html).
@@ -152,7 +153,7 @@ A80 | B46 |   |   |   |   |
 #### Broads & Splits
 
 Sometimes due to development in the serological typing new antigens were defined which were previously recognized as one
-antigen. In the table above those are listed in parenthesis. For example antigens A23 and A24 were defined as splits of
+antigen. In the table above those are listed in parentheses. For example antigens A23 and A24 were defined as splits of
 A9.
 > If a donor has antigen A23 and recipient has antibody for A24 (=anti(A24)) then this is not a reason for positive crossmatch
 > (and thus not a reason for not performing the transplant).

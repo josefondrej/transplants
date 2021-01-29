@@ -3,8 +3,9 @@ from typing import List, Tuple, Dict, Set, Union
 
 import numpy as np
 
-from transplants.patient.donor import Donor
-from transplants.patient.recipient import Recipient
+from transplants.problem.patient.donor import Donor
+from transplants.problem.patient.recipient import Recipient
+from transplants.problem.problem import Problem
 from transplants.solution.chain import Chain
 from transplants.solution.cycle import Cycle
 from transplants.solution.sequence import Sequence
@@ -46,8 +47,7 @@ def find_chains(edges: List[Tuple[int, int]]) -> List[Tuple[List[int], bool]]:
     return chains
 
 
-def get_arguments_from_transplant_matrix_and_patients(transplant_matrix: np.ndarray, donors: List[Donor],
-                                                      recipients: List[Recipient]) \
+def get_arguments_from_transplant_matrix_and_patients(transplant_matrix: np.ndarray, problem: Problem) \
         -> Tuple[List[Tuple[int, int]], Dict[int, Union[Donor, Recipient]]]:
     """
     Get arguments for function `find_chains`
@@ -62,6 +62,8 @@ def get_arguments_from_transplant_matrix_and_patients(transplant_matrix: np.ndar
             - or that patient j is related donor to patient i AND that patient j leads to some transplant
         vertex_to_patient: Dict[int, Patient]
     """
+    donors = problem.donors
+    recipients = problem.recipients
     vertex_to_patient = {pat_ix: patient for pat_ix, patient in enumerate(donors + recipients)}
     patient_to_vertex: Dict[Union[Donor, Recipient], int] = {patient: pat_ix for pat_ix, patient
                                                              in vertex_to_patient.items()}
@@ -74,10 +76,10 @@ def get_arguments_from_transplant_matrix_and_patients(transplant_matrix: np.ndar
     transplant_edges = [(patient_to_vertex[donor], patient_to_vertex[recipient]) for donor, recipient in
                         transplants]
 
-    related_donor_edges = [(patient_to_vertex[recipient], patient_to_vertex[donor])
+    related_donor_edges = [(patient_to_vertex[recipient], patient_to_vertex[problem.get_patient(donor_id)])
                            for recipient in recipients
-                           for donor in recipient.related_donors
-                           if was_used.get(donor)]
+                           for donor_id in recipient.related_donor_ids
+                           if was_used.get(problem.get_patient(donor_id))]
 
     edges = transplant_edges + related_donor_edges
     return edges, vertex_to_patient
@@ -95,8 +97,8 @@ def index_chains_to_patient_chains(index_chains: List[Tuple[List[int], bool]],
         chain = chain_constructor(
             transplants=[
                 Transplant(
-                    donor=vertex_to_patient[index_chain[2 * i]],
-                    recipient=vertex_to_patient[index_chain[2 * i + 1]]
+                    donor_id=vertex_to_patient[index_chain[2 * i]].identifier,
+                    recipient_id=vertex_to_patient[index_chain[2 * i + 1]].identifier
                 ) for i in range(len(index_chain) // 2)
             ]
         )

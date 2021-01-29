@@ -1,13 +1,14 @@
 from abc import ABC, abstractmethod
-from typing import List, Set
+from typing import List
 
 import numpy as np
 
-from transplants.patient.donor import Donor
-from transplants.patient.recipient import Recipient
-from transplants.scorer.additive_scorer_base import AdditiveScorerBase
-from transplants.scorer.scorer_base import ScorerBase
+from transplants.problem.patient.donor import Donor
+from transplants.problem.patient.recipient import Recipient
+from transplants.problem.problem import Problem
+from transplants.solver.scorer.scorer_base import ScorerBase
 from transplants.solution.matching import Matching
+from transplants.solution.solution import Solution
 from transplants.solution.transplant import Transplant
 from transplants.solver.find_chains import get_arguments_from_transplant_matrix_and_patients, find_chains, \
     index_chains_to_patient_chains
@@ -16,14 +17,16 @@ from transplants.solver.find_chains import get_arguments_from_transplant_matrix_
 class SolverBase(ABC):
     """Base class for solver"""
 
+    def __init__(self, scorer: ScorerBase):
+        self._scorer = scorer
+
     @abstractmethod
-    def solve(self, donors: Set[Donor], recipients: Set[Recipient], scorer: ScorerBase) -> List[Matching]:
+    def solve(self, problem: Problem) -> Solution:
         """ Return list of scored matchings sorted by their .score"""
         pass
 
     @staticmethod
-    def get_matching_from_transplant_matrix(transplant_matrix: np.ndarray, donors: List[Donor],
-                                            recipients: List[Recipient]) -> Matching:
+    def get_matching_from_transplant_matrix(transplant_matrix: np.ndarray, problem: Problem) -> Matching:
         """Get Matching from transplant matrix
 
         Args:
@@ -37,8 +40,7 @@ class SolverBase(ABC):
         """
         edges, vertex_to_patient = get_arguments_from_transplant_matrix_and_patients(
             transplant_matrix=transplant_matrix,
-            donors=donors,
-            recipients=recipients
+            problem=problem
         )
         index_chains = find_chains(edges=edges)
         patient_chains = index_chains_to_patient_chains(
@@ -47,9 +49,9 @@ class SolverBase(ABC):
         )
         return Matching(chains=patient_chains)
 
-    @staticmethod
-    def get_score_matrix(donors: List[Donor], recipients: List[Recipient], scorer: AdditiveScorerBase) -> np.ndarray:
-        score_matrix = [[scorer.score_transplant(Transplant(donor=donor, recipient=recipient))
-                         for recipient in recipients]
-                        for donor in donors]
+    def get_score_matrix(self, donors: List[Donor], recipients: List[Recipient]) -> np.ndarray:
+        score_matrix = [
+            [self._scorer.score_transplant(Transplant(donor_id=donor.identifier, recipient_id=recipient.identifier))
+             for recipient in recipients]
+            for donor in donors]
         return np.array(score_matrix)
