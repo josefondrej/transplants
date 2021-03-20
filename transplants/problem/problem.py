@@ -16,6 +16,15 @@ class Problem:
 
         self._patient_id_to_patient = {patient.identifier: patient for patient in self._patients}
 
+    def __eq__(self, other):
+        if not isinstance(other, Problem):
+            return False
+
+        return set(self.patients) == set(other.patients)
+
+    def __hash__(self):
+        return hash(tuple(sorted(self.patients, key=hash)))
+
     @property
     def problem_id(self) -> str:
         return self._problem_id

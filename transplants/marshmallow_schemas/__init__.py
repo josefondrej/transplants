@@ -1,0 +1,31 @@
+from transplants.marshmallow_schemas.inject_serialization_methods import inject_serialization_methods
+from transplants.marshmallow_schemas.inject_serialization_methods import inject_serialization_methods
+from transplants.marshmallow_schemas.patient.medical_data.blood_type_schema import BloodTypeSchema
+from transplants.marshmallow_schemas.patient.medical_data.hla_system_schema import HLASystemSchema
+from transplants.marshmallow_schemas.patient.medical_data.medical_data_schema import MedicalDataSchema
+from transplants.marshmallow_schemas.patient.patient_schema import PatientSchema
+from transplants.marshmallow_schemas.problem.problem_schema import ProblemSchema
+from transplants.marshmallow_schemas.solution.chain_schema import ChainSchema
+from transplants.marshmallow_schemas.solution.matching_schema import MatchingSchema
+from transplants.marshmallow_schemas.solution.solution_schema import SolutionSchema
+from transplants.marshmallow_schemas.solution.transplant_schema import TransplantSchema
+from transplants.problem.patient.medical_data.blood_type_system.blood_type import BloodType
+from transplants.problem.patient.medical_data.hla_system.hla_system import HLASystem
+from transplants.problem.patient.medical_data.medical_data import MedicalData
+from transplants.problem.patient.patient import Patient
+from transplants.problem.problem import Problem
+from transplants.solution.chain import Chain
+from transplants.solution.matching import Matching
+from transplants.solution.solution import Solution
+from transplants.solution.transplant import Transplant
+
+inject_serialization_methods(model_class=BloodType, schema_class=BloodTypeSchema)
+inject_serialization_methods(model_class=HLASystem, schema_class=HLASystemSchema)
+inject_serialization_methods(model_class=MedicalData, schema_class=MedicalDataSchema)
+inject_serialization_methods(model_class=Patient, schema_class=PatientSchema)
+inject_serialization_methods(model_class=Problem, schema_class=ProblemSchema)
+
+inject_serialization_methods(model_class=Transplant, schema_class=TransplantSchema)
+inject_serialization_methods(model_class=Chain, schema_class=ChainSchema)
+inject_serialization_methods(model_class=Matching, schema_class=MatchingSchema)
+inject_serialization_methods(model_class=Solution, schema_class=SolutionSchema)

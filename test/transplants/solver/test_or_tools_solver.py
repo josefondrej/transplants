@@ -7,11 +7,12 @@ from transplants.marshmallow_schemas.solution.solution_schema import SolutionSch
 from transplants.solver.or_tools_solver import ORToolsSolver
 from transplants.solver.scorer.default_forbidden_transplants import get_default_forbidden_transplants
 from transplants.solver.scorer.hla_blood_type_additive_scorer import HLABloodTypeAdditiveScorer
+from transplants.utils.paths import get_abs_path
 
 
 class TestFindExchanges(TestCase):
     def setUp(self) -> None:
-        patients_data_path = "./test/test_utils/patient_pool_example.json"
+        patients_data_path = get_abs_path("test/test_utils/patient_pool_example.json")
 
         with open(patients_data_path, "r") as patients_data_file:
             serialized_patients = json.load(patients_data_file)

@@ -18,6 +18,7 @@ from transplants.solver.scorer.default_forbidden_transplants import get_default_
 from transplants.solver.scorer.hla_blood_type_additive_scorer import HLABloodTypeAdditiveScorer
 from transplants.solver.scorer.scorer_base import TRANSPLANT_IMPOSSIBLE
 from transplants.utils.load_donors_recipients import load_donors_recipients_from_file
+from transplants.utils.paths import get_abs_path
 
 
 def _get_node_attribute(graph: Graph, node: str, attribute_name: str) -> Any:
@@ -149,7 +150,8 @@ def visualise_problem(donors: List[Donor], recipients: List[Recipient], scorer: 
 if __name__ == '__main__':
     # Load patients, scorer & solver and use it to get a solution ------------------------------------------------------
     # Patients
-    test_donors, test_recipients = load_donors_recipients_from_file("./test/test_utils/patient_pool_example.json")
+    test_donors, test_recipients = load_donors_recipients_from_file(
+        get_abs_path("test/test_utils/patient_pool_example.json"))
     test_patients = test_donors + test_recipients
     test_problem = Problem(problem_id="test_problem_id", patients=test_patients)
 
