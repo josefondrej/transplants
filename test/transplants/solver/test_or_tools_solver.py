@@ -22,6 +22,7 @@ class TestFindExchanges(TestCase):
 
         self.solution_id = "test_solution_id"
         self.problem_id = "test_problem_id"
+        self.solver_config_id = "test_solver_config_id"
 
         self.problem_serialized = {
             "problem_id": self.problem_id,
@@ -32,6 +33,7 @@ class TestFindExchanges(TestCase):
         self.expected_solution_serialized = {
             "solution_id": self.solution_id,
             "problem_id": self.problem_id,
+            "solver_config_id": self.solver_config_id,
             "matchings": [
                 {"chains": [
                     {"transplants": [
@@ -54,7 +56,6 @@ class TestFindExchanges(TestCase):
         self.forbidden_transplants = get_default_forbidden_transplants(patients=self.problem.patients)
 
         self.scorer = HLABloodTypeAdditiveScorer(
-            problem=self.problem,
             compatible_blood_group_bonus=0.0,
             forbidden_transplants=self.forbidden_transplants
         )

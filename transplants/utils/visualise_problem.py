@@ -7,8 +7,6 @@ import matplotlib.pyplot as plt
 import networkx as nx
 from networkx import Graph
 
-from transplants.problem.patient.donor import Donor
-from transplants.problem.patient.recipient import Recipient
 from transplants.problem.problem import Problem
 from transplants.solution.matching import Matching
 from transplants.solution.transplant import Transplant
@@ -41,15 +39,17 @@ def _get_edge_attribute(graph: Graph, edge: Tuple[str, str], attribute_name: str
     return attribute_value
 
 
-def _build_networkx_graph(donors: List[Donor], recipients: List[Recipient], scorer: AdditiveScorerBase) -> Graph:
+def _build_networkx_graph(problem: Problem, scorer: AdditiveScorerBase) -> Graph:
     """Add edges from donors to recipients and from recipients to their related donors"""
     graph = nx.Graph()
+    donors, recipients = problem.donors, problem.recipients
     for patient in donors + recipients:
         graph.add_node(patient.identifier, is_donor=patient.is_donor)
 
     for donor in donors:
         for recipient in recipients:
-            score = scorer.score_transplant(Transplant(donor_id=donor.identifier, recipient_id=recipient.identifier))
+            score = scorer.score_transplant(Transplant(donor_id=donor.identifier, recipient_id=recipient.identifier),
+                                            problem)
             if score != TRANSPLANT_IMPOSSIBLE:
                 graph.add_edge(donor.identifier, recipient.identifier, score=score, is_transplant=True)
 
@@ -108,10 +108,11 @@ def _highlight_solution(graph: Graph, solution: Matching, chain_colors: List[str
                 _set_edge_attribute(graph, edge, color=chain_color, line_width=line_width)
 
 
-def visualise_problem(donors: List[Donor], recipients: List[Recipient], scorer: AdditiveScorerBase,
+def visualise_problem(problem: Problem, scorer: AdditiveScorerBase,
                       solution: Optional[Matching], align: str = "vertical",
                       make_transplants_transparent: bool = False):
-    graph = _build_networkx_graph(donors=donors, recipients=recipients, scorer=scorer)
+    graph = _build_networkx_graph(problem=problem, scorer=scorer)
+    donors, recipients = problem.donors, problem.recipients
     _color_nodes(graph)
     _style_edges(graph, make_transplants_transparent=make_transplants_transparent)
     _highlight_solution(graph, solution)
@@ -158,7 +159,6 @@ if __name__ == '__main__':
     # Scorer
     forbidden_transplants = get_default_forbidden_transplants(patients=test_patients)
     test_scorer = HLABloodTypeAdditiveScorer(
-        problem=test_problem,
         compatible_blood_group_bonus=0.0,
         forbidden_transplants=forbidden_transplants
     )
@@ -179,8 +179,7 @@ if __name__ == '__main__':
     plt.figure(figsize=(20, 10))
 
     visualise_problem(
-        donors=test_donors,
-        recipients=test_recipients,
+        problem=test_problem,
         scorer=test_scorer,
         solution=test_solution,
         align="horizontal",

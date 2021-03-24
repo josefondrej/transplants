@@ -3,7 +3,7 @@ from unittest import TestCase
 
 import numpy as np
 
-from transplants.solver.find_chains import find_chains
+from transplants.solver.matching_from_matrix import _find_chains
 
 
 class FindChainsTest(TestCase):
@@ -72,7 +72,7 @@ class FindChainsTest(TestCase):
         for test_case_name, test_case in self.test_cases.items():
             graph_description, expected_chains = test_case
             graph_edges = FindChainsTest.to_edges(graph_description)
-            calculated_chains = find_chains(graph_edges)
+            calculated_chains = _find_chains(graph_edges)
 
             expected_chains = list(map(FindChainsTest.standardize_chain, expected_chains))
             calculated_chains = list(map(FindChainsTest.standardize_chain, calculated_chains))

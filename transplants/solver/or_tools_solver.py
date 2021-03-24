@@ -4,13 +4,16 @@ import numpy as np
 from ortools.linear_solver.pywraplp import Solver, Variable
 
 from transplants.problem.problem import Problem
-from transplants.solver.scorer.additive_scorer_base import AdditiveScorerBase
-from transplants.solver.scorer.scorer_base import TRANSPLANT_IMPOSSIBLE
 from transplants.solution.solution import Solution
-from transplants.solver.solver_base import SolverBase
+from transplants.solver.additive_solver_base import AdditiveSolverBase
+from transplants.solver.matching_from_matrix import get_matching_from_transplant_matrix
+from transplants.solver.scorer.additive_scorer_base import AdditiveScorerBase
+from transplants.solver.scorer.hla_blood_type_additive_scorer import HLABloodTypeAdditiveScorer
+from transplants.solver.scorer.scorer_base import TRANSPLANT_IMPOSSIBLE
+from transplants.solver.solver_config import SolverConfig
 
 
-class ORToolsSolver(SolverBase):
+class ORToolsSolver(AdditiveSolverBase):
     """Solver using Google's MIP library
 
     For more details see:
@@ -48,7 +51,7 @@ class ORToolsSolver(SolverBase):
 
     def solve(self, problem: Problem) -> Solution:
         donors, recipients = problem.donors, problem.recipients
-        transplant_score_matrix = self.get_score_matrix(donors=donors, recipients=recipients)
+        transplant_score_matrix = self.get_score_matrix(problem=problem)
         i_to_donor = dict(enumerate(donors))
         donor_id_to_i = {donor.identifier: i for i, donor in i_to_donor.items()}
 
@@ -83,7 +86,7 @@ class ORToolsSolver(SolverBase):
         if status == Solver.OPTIMAL:
             transplant_matrix = ORToolsSolver._get_solution_value(transplant_indicator_matrix)
             transplant_matrix = transplant_matrix.astype("int64")
-            matching = SolverBase.get_matching_from_transplant_matrix(
+            matching = get_matching_from_transplant_matrix(
                 transplant_matrix=transplant_matrix,
                 problem=problem
             )
@@ -93,6 +96,17 @@ class ORToolsSolver(SolverBase):
             matchings = []
 
         for matching in matchings:
-            self._scorer.score(matching)
+            self._scorer.score(matching, problem=problem)
 
-        return Solution(solution_id=None, problem_id=problem.problem_id, matchings=matchings)
+        return Solution(
+            solution_id=None,
+            problem_id=problem.problem_id,
+            solver_config_id=None,
+            matchings=matchings
+        )
+
+    @classmethod
+    def build_from_config(cls, config: SolverConfig) -> "ORToolsSolver":
+        scorer_parameters = config.parameters["scorer_parameters"]
+        scorer = HLABloodTypeAdditiveScorer(**scorer_parameters)
+        return ORToolsSolver(scorer=scorer)

@@ -3,7 +3,8 @@ from transplants.marshmallow_schemas import SolutionSchema
 
 def load_solution():
     solution_serialized = {
-        "solution_id": "test_solution",
+        "solution_id": "test_problem_test_solver_config",
+        "solver_config_id": "test_solver_config",
         "problem_id": "test_problem",
         "matchings": [
             {"chains": [

@@ -29,6 +29,7 @@ class TestSolutionSchema(TestCase):
         solution_serialized = {
             "solution_id": "test_solution_id",
             "problem_id": "test_problem_id",
+            "solver_config_id": "test_solver_config_id",
             "matchings": [matching_serialized]
         }
 

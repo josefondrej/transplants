@@ -8,11 +8,12 @@ from transplants.problem.patient.recipient import Recipient
 from transplants.problem.problem import Problem
 from transplants.solution.chain import Chain
 from transplants.solution.cycle import Cycle
+from transplants.solution.matching import Matching
 from transplants.solution.sequence import Sequence
 from transplants.solution.transplant import Transplant
 
 
-def find_chains(edges: List[Tuple[int, int]]) -> List[Tuple[List[int], bool]]:
+def _find_chains(edges: List[Tuple[int, int]]) -> List[Tuple[List[int], bool]]:
     to_next = {i: j for i, j in edges}
     to_previous = {j: i for i, j in edges}
     vertices = set([v for edge in edges for v in edge])
@@ -47,7 +48,7 @@ def find_chains(edges: List[Tuple[int, int]]) -> List[Tuple[List[int], bool]]:
     return chains
 
 
-def get_arguments_from_transplant_matrix_and_patients(transplant_matrix: np.ndarray, problem: Problem) \
+def _get_arguments_from_transplant_matrix_and_patients(transplant_matrix: np.ndarray, problem: Problem) \
         -> Tuple[List[Tuple[int, int]], Dict[int, Union[Donor, Recipient]]]:
     """
     Get arguments for function `find_chains`
@@ -85,8 +86,8 @@ def get_arguments_from_transplant_matrix_and_patients(transplant_matrix: np.ndar
     return edges, vertex_to_patient
 
 
-def index_chains_to_patient_chains(index_chains: List[Tuple[List[int], bool]],
-                                   vertex_to_patient: Dict[int, Union[Donor, Recipient]]) -> Set[Chain]:
+def _index_chains_to_patient_chains(index_chains: List[Tuple[List[int], bool]],
+                                    vertex_to_patient: Dict[int, Union[Donor, Recipient]]) -> Set[Chain]:
     patient_chains = set()
     for index_chain, is_cycle in index_chains:
         # Ensure we always start the chain with donor -- this does not have to be so for cycles
@@ -105,3 +106,28 @@ def index_chains_to_patient_chains(index_chains: List[Tuple[List[int], bool]],
         patient_chains.add(chain)
 
     return patient_chains
+
+
+def get_matching_from_transplant_matrix(transplant_matrix: np.ndarray, problem: Problem) -> Matching:
+    """Gets Matching from transplant matrix
+
+    Args:
+
+        transplant_matrix (np.array(int64)): can have values 0 / 1
+            transplant_matrix[i,j] = 1 means transplant from donor i to recipient j is performed
+            transplant_matrix[i,j] = 0 means transplant from donor i to recipient j is NOT performed
+        problem: Problem containing the list of donors and list of recipients that are used to
+            transform the indices to the actual patient ids in the resulting matching
+
+    Returns: Matching containing the patient ids
+    """
+    edges, vertex_to_patient = _get_arguments_from_transplant_matrix_and_patients(
+        transplant_matrix=transplant_matrix,
+        problem=problem
+    )
+    index_chains = _find_chains(edges=edges)
+    patient_chains = _index_chains_to_patient_chains(
+        index_chains=index_chains,
+        vertex_to_patient=vertex_to_patient
+    )
+    return Matching(chains=patient_chains)

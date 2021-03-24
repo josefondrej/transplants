@@ -64,12 +64,11 @@ antibodies) in blood stream.
   So basically genetically identical individuals can still have different antibodies. Normally they are not present.
 - The protein structures (antigens) on the other hand are coded in one's DNA by Major Histocompatibility Gene
   Complex (**MHC**)
-  that resides on a 3.6Mpb stretch within the chromosome 6p21 and contains 224 genes (e.g. HLA-A, HLA-B, HLA-DR). Sometimes
-  it is also called HLA complex.
+  that resides on a 3.6Mpb stretch within the chromosome 6p21 and contains 224 genes (e.g. HLA-A, HLA-B, HLA-DR).
+  Sometimes it is also called HLA complex.
 - Each human has two [alleles](http://hla.alleles.org/alleles/class1.html) (=variants, e.g. <i>A\*01:01:01:07</i>,
   <i>C\*01:02:01:08</i>, <i>B\*07:02:01:21</i>) for each MHC gene (one from the mother and one from the father).
-- [MHC genes](http://hla.alleles.org/genes/index.html) are very polymorphic - i.e. they have many possible
-  alleles
+- [MHC genes](http://hla.alleles.org/genes/index.html) are very polymorphic - i.e. they have many possible alleles
 - The HLA genes can be divided in different groups:
     - MHC class I (e.g. HLA-A, HLA-B, HLA-C)
     - MHC class II (e.g. HLA-DP, HLA-DQ, HLA-DR)

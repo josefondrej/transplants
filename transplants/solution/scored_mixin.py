@@ -18,8 +18,8 @@ class ScoredMixin:
 def assign_result_to_argument(function: Callable[["ScoredMixin"], float]) -> Callable[["ScoredMixin"], float]:
     """Adds side effect which assigns value returned by `function` to it's `ScoredMixin` argument"""
 
-    def decorated_function(self, scored_mixin: "ScoredMixin") -> float:
-        score = function(self, scored_mixin)
+    def decorated_function(self, scored_mixin: "ScoredMixin", *args, **kwargs) -> float:
+        score = function(self, scored_mixin, *args, **kwargs)
         scored_mixin.set_score(score)
         return score
 

@@ -6,9 +6,9 @@ from transplants.problem.patient.medical_data.hla_system.antigen_definitions imp
 from transplants.problem.patient.medical_data.hla_system.hla_antibody import HLAAntibody
 from transplants.problem.patient.medical_data.hla_system.hla_system import HLASystem
 from transplants.problem.problem import Problem
+from transplants.solution.transplant import Transplant
 from transplants.solver.scorer.additive_scorer_base import AdditiveScorerBase
 from transplants.solver.scorer.scorer_base import TRANSPLANT_IMPOSSIBLE
-from transplants.solution.transplant import Transplant
 
 
 class HLABloodTypeAdditiveScorer(AdditiveScorerBase):
@@ -27,7 +27,6 @@ class HLABloodTypeAdditiveScorer(AdditiveScorerBase):
 
     def __init__(
             self,
-            problem: Problem,
             compatible_blood_group_bonus: float = 10.0,
             incompatible_blood_group_malus: float = TRANSPLANT_IMPOSSIBLE,
             hla_allele_compatibility_bonus: Optional[Dict[str, float]] = None,
@@ -35,17 +34,16 @@ class HLABloodTypeAdditiveScorer(AdditiveScorerBase):
             forbidden_transplants: Optional[List[Tuple[str, str]]] = None,
             min_required_base_score: float = 0.0
     ):
-        self._problem = problem
         self._compatible_blood_group_bonus = compatible_blood_group_bonus
         self._incompatible_blood_group_malus = incompatible_blood_group_malus
         self._hla_allele_compatibility_bonus = hla_allele_compatibility_bonus or {"A": 1.0, "B": 3.0, "DRB1": 9.0}
         self._max_allowed_antibody_concentration = max_allowed_antibody_concentration or {}
-        super().__init__(problem=problem, forbidden_transplants=forbidden_transplants,
+        super().__init__(forbidden_transplants=forbidden_transplants,
                          min_required_base_score=min_required_base_score)
 
-    def score_transplant_base(self, transplant: Transplant) -> float:
-        donor = self._problem.get_patient(transplant.donor_id)
-        recipient = self._problem.get_patient(transplant.recipient_id)
+    def score_transplant_base(self, transplant: Transplant, problem: Problem) -> float:
+        donor = problem.get_patient(transplant.donor_id)
+        recipient = problem.get_patient(transplant.recipient_id)
 
         transplant_score = 0.0
 

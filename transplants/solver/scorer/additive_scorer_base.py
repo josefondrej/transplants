@@ -2,11 +2,11 @@ from abc import ABC, abstractmethod
 from typing import List, Optional, Tuple
 
 from transplants.problem.problem import Problem
-from transplants.solver.scorer.scorer_base import ScorerBase, TRANSPLANT_IMPOSSIBLE
 from transplants.solution.chain import Chain
 from transplants.solution.matching import Matching
 from transplants.solution.scored_mixin import assign_result_to_argument
 from transplants.solution.transplant import Transplant
+from transplants.solver.scorer.scorer_base import ScorerBase, TRANSPLANT_IMPOSSIBLE
 
 
 class AdditiveScorerBase(ScorerBase, ABC):
@@ -22,44 +22,43 @@ class AdditiveScorerBase(ScorerBase, ABC):
             we score the transplant as impossible
     """
 
-    def __init__(self, problem: Problem, forbidden_transplants: Optional[List[Tuple[str, str]]] = None,
+    def __init__(self, forbidden_transplants: Optional[List[Tuple[str, str]]] = None,
                  min_required_base_score: float = 0.0):
-        super().__init__(problem=problem)
         self._forbidden_transplants = forbidden_transplants or []
         self._min_required_base_score = min_required_base_score
 
     @assign_result_to_argument
-    def score(self, matching: Matching) -> float:
+    def score(self, matching: Matching, problem: Problem) -> float:
         score = 0.0
         for chain in matching.chains:
-            score += self.score_chain(chain)
+            score += self.score_chain(chain, problem)
 
         return score
 
     @assign_result_to_argument
-    def score_chain(self, chain: Chain) -> float:
+    def score_chain(self, chain: Chain, problem: Problem) -> float:
         score = 0.0
         for transplant in chain.transplants:
-            score += self.score_transplant(transplant)
+            score += self.score_transplant(transplant, problem)
 
         return score
 
     @assign_result_to_argument
-    def score_transplant(self, transplant: Transplant) -> float:
+    def score_transplant(self, transplant: Transplant, problem: Problem) -> float:
         """Score transplant considering the results of score_transplant_base and the context of
             (1) explicitly forbidden transplants
             (2) minimal required score
             (3) requirement for better donor than his relatives for patients that have this specified
         """
-        # Impossible if explicitly forbidden
-        donor = self._problem.get_patient(transplant.donor_id)
-        recipient = self._problem.get_patient(transplant.recipient_id)
+        donor = problem.get_patient(transplant.donor_id)
+        recipient = problem.get_patient(transplant.recipient_id)
 
+        # Impossible if explicitly forbidden
         if (donor.identifier, recipient.identifier) in self._forbidden_transplants:
             return TRANSPLANT_IMPOSSIBLE
 
         # Impossible if base score < min required score
-        base_score = self.score_transplant_base(transplant)
+        base_score = self.score_transplant_base(transplant, problem)
         if base_score < self._min_required_base_score:
             return TRANSPLANT_IMPOSSIBLE
 
@@ -70,8 +69,8 @@ class AdditiveScorerBase(ScorerBase, ABC):
                                              for donor in related_donors]
             potential_possible_related_transplants = [transplant for transplant in potential_related_transplants
                                                       if transplant not in self._forbidden_transplants]
-            potential_possible_related_transplant_scores = list(map(self.score_transplant_base,
-                                                                    potential_possible_related_transplants))
+            potential_possible_related_transplant_scores = [self.score_transplant_base(transplant, problem)
+                                                            for transplant in potential_possible_related_transplants]
             best_related_transplant_score = max(potential_possible_related_transplant_scores)
             if base_score < best_related_transplant_score:
                 return TRANSPLANT_IMPOSSIBLE
@@ -79,7 +78,7 @@ class AdditiveScorerBase(ScorerBase, ABC):
         return base_score
 
     @abstractmethod
-    def score_transplant_base(self, transplant: Transplant) -> float:
+    def score_transplant_base(self, transplant: Transplant, problem: Problem) -> float:
         """Score transplant as standalone operation without looking at context of the other patients
         or minimum required score"""
         pass

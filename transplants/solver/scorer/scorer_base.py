@@ -10,9 +10,6 @@ class ScorerBase(ABC):
     """Most general scorer class that assigns some value to patient matching
     The larger the value, the better the matching is"""
 
-    def __init__(self, problem: Problem):
-        self._problem = problem
-
     @abstractmethod
-    def score(self, matching: Matching) -> float:
+    def score(self, matching: Matching, problem: Problem) -> float:
         raise NotImplementedError("Has to be overridden")
