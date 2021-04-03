@@ -1,9 +1,10 @@
+from test.test_utils.default_ids import SOLVER_CONFIG_ID
 from transplants.solver.solver_config import SolverConfig
 
 
-def load_solver_config():
-    return SolverConfig(
-        solver_config_id="test_solver_config",
+def load_solver_config(solver_config_id: str = SOLVER_CONFIG_ID):
+    solver_config = SolverConfig(
+        solver_config_id=solver_config_id,
         solver_name="ORToolsSolver",
         parameters={
             "scorer_parameters": {
@@ -11,3 +12,5 @@ def load_solver_config():
             }
         }
     )
+
+    return solver_config

@@ -1,7 +1,7 @@
 from marshmallow import Schema, fields, post_load
 
 from transplants.problem.problem import Problem as ProblemModel
-from transplants.marshmallow_schemas.patient.patient_schema import PatientSchema
+from transplants.marshmallow_schemas.problem.patient.patient_schema import PatientSchema
 
 
 class ProblemSchema(Schema):

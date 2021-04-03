@@ -1,11 +1,16 @@
+from test.test_utils.default_ids import PROBLEM_ID, SOLVER_CONFIG_ID
 from transplants.marshmallow_schemas import SolutionSchema
 
 
-def load_solution():
+def load_solution(problem_id: str = PROBLEM_ID, solver_config_id: str = SOLVER_CONFIG_ID, solution_id: str = None):
+    if solution_id is None:
+        solution_id = f"{problem_id}_{solver_config_id}"
+
     solution_serialized = {
-        "solution_id": "test_problem_test_solver_config",
-        "solver_config_id": "test_solver_config",
-        "problem_id": "test_problem",
+        "problem_id": problem_id,
+        "solver_config_id": solver_config_id,
+        "solution_id": solution_id,
+
         "matchings": [
             {"chains": [
                 {"transplants": [

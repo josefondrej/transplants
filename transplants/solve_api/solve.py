@@ -26,13 +26,3 @@ def solve(problem: Problem, solver_config: SolverConfig) -> Solution:
     solution._solver_config_id = solver_config.solver_config_id
 
     return solution
-
-
-def solve_db(problem_id: str, solver_config_id: str) -> str:
-    problem = Problem.find_by_id(problem_id)
-    solver_config = SolverConfig.find_by_id(solver_config_id)
-
-    solution = solve(problem=problem, solver_config=solver_config)
-    solution.save_to_db()
-
-    return solution.solution_id

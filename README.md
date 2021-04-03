@@ -6,17 +6,35 @@ that uses compatibility in [blood type](#blood_types)
 and in the [human leukocyte antigen](#hla) (HLA)
 system to evaluate compatibility.
 
-## Installation
+## Install
 
 ### Native
 
-Requires `python-3.8.5` and [anaconda](https://docs.anaconda.com/anaconda/install/). To create anaconda environment run:
+Requires `python-3.8.5` and [anaconda](https://docs.anaconda.com/anaconda/install/). To create and activate anaconda
+environment run:
 
 ```commandline
 make conda-create
+make conda-activate
 ```
 
-All scripts are configured to be run from the path of the root `transplants` directory.
+## Run & Test
+
+To run tests run:
+
+```
+make run-test
+``` 
+
+To start the web api run:
+
+```
+make run-web-api
+```
+
+Once the API starts go to [localhost:5000/swagger-ui/](http://localhost:5000/swagger-ui/) to see automatically generated documentation. 
+
+To see some examples on how to use the API see this [postman collection](https://www.postman.com/josef-ondrej/workspace/kidney-exchange-problem-solver/).
 
 ## Medical Background
 

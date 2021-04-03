@@ -1,7 +1,7 @@
 import json
 from unittest import TestCase
 
-from transplants.marshmallow_schemas.patient.patient_schema import PatientSchema
+from transplants.marshmallow_schemas.problem.patient.patient_schema import PatientSchema
 from transplants.utils.paths import get_abs_path
 
 

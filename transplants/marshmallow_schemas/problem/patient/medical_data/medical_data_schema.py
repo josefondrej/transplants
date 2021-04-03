@@ -1,8 +1,8 @@
 from marshmallow import Schema, post_load, fields
 
 from transplants.problem.patient.medical_data.medical_data import MedicalData
-from transplants.marshmallow_schemas.patient.medical_data.blood_type_schema import BloodTypeSchema
-from transplants.marshmallow_schemas.patient.medical_data.hla_system_schema import HLASystemSchema
+from transplants.marshmallow_schemas.problem.patient.medical_data.blood_type_schema import BloodTypeSchema
+from transplants.marshmallow_schemas.problem.patient.medical_data.hla_system_schema import HLASystemSchema
 
 
 class MedicalDataSchema(Schema):

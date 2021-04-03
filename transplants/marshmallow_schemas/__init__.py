@@ -1,14 +1,15 @@
 from transplants.marshmallow_schemas.inject_serialization_methods import inject_serialization_methods
 from transplants.marshmallow_schemas.inject_serialization_methods import inject_serialization_methods
-from transplants.marshmallow_schemas.patient.medical_data.blood_type_schema import BloodTypeSchema
-from transplants.marshmallow_schemas.patient.medical_data.hla_system_schema import HLASystemSchema
-from transplants.marshmallow_schemas.patient.medical_data.medical_data_schema import MedicalDataSchema
-from transplants.marshmallow_schemas.patient.patient_schema import PatientSchema
+from transplants.marshmallow_schemas.problem.patient.medical_data.blood_type_schema import BloodTypeSchema
+from transplants.marshmallow_schemas.problem.patient.medical_data.hla_system_schema import HLASystemSchema
+from transplants.marshmallow_schemas.problem.patient.medical_data.medical_data_schema import MedicalDataSchema
+from transplants.marshmallow_schemas.problem.patient.patient_schema import PatientSchema
 from transplants.marshmallow_schemas.problem.problem_schema import ProblemSchema
 from transplants.marshmallow_schemas.solution.chain_schema import ChainSchema
 from transplants.marshmallow_schemas.solution.matching_schema import MatchingSchema
 from transplants.marshmallow_schemas.solution.solution_schema import SolutionSchema
 from transplants.marshmallow_schemas.solution.transplant_schema import TransplantSchema
+from transplants.marshmallow_schemas.solve_api.job_schema import JobSchema
 from transplants.marshmallow_schemas.solver.solver_config_schema import SolverConfigSchema
 from transplants.problem.patient.medical_data.blood_type_system.blood_type import BloodType
 from transplants.problem.patient.medical_data.hla_system.hla_system import HLASystem
@@ -19,6 +20,7 @@ from transplants.solution.chain import Chain
 from transplants.solution.matching import Matching
 from transplants.solution.solution import Solution
 from transplants.solution.transplant import Transplant
+from transplants.solve_api.job import Job
 from transplants.solver.solver_config import SolverConfig
 
 inject_serialization_methods(model_class=BloodType, schema_class=BloodTypeSchema)
@@ -33,3 +35,5 @@ inject_serialization_methods(model_class=Matching, schema_class=MatchingSchema)
 inject_serialization_methods(model_class=Solution, schema_class=SolutionSchema)
 
 inject_serialization_methods(model_class=SolverConfig, schema_class=SolverConfigSchema)
+
+inject_serialization_methods(model_class=Job, schema_class=JobSchema)

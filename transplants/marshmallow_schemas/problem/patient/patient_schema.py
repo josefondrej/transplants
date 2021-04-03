@@ -1,6 +1,7 @@
 from marshmallow import Schema, fields, post_load, pre_dump
+from marshmallow.validate import OneOf
 
-from transplants.marshmallow_schemas.patient.medical_data.medical_data_schema import MedicalDataSchema
+from transplants.marshmallow_schemas.problem.patient.medical_data.medical_data_schema import MedicalDataSchema
 from transplants.problem.patient.donor import Donor
 from transplants.problem.patient.patient import Patient
 from transplants.problem.patient.patient_type import PatientType
@@ -8,10 +9,12 @@ from transplants.problem.patient.recipient import Recipient
 
 _code_to_patient_type = {patient_type.value: patient_type for patient_type in PatientType}
 
+_patient_type_validator = OneOf([patient_type for patient_type in list(_code_to_patient_type.keys())])
+
 
 class PatientSchema(Schema):
     identifier = fields.Str()
-    patient_type = fields.Str()
+    patient_type = fields.Str(validate=_patient_type_validator)
     medical_data = fields.Nested(MedicalDataSchema)
     related_donors = fields.List(fields.Str(), attribute="related_donor_ids", required=False)
     require_better_than_related_match = fields.Bool(required=False)

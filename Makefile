@@ -10,4 +10,7 @@ conda-activate:
 	conda activate $(CONDA_ENV)
 
 run-tests:
-	python -m unittest
+	bash ./run_tests.sh
+
+run-web-api:
+	bash ./run_web_api.sh
