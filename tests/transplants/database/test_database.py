@@ -1,10 +1,10 @@
 from datetime import datetime
 from unittest import TestCase
 
-from test.test_utils.load_job import load_job
-from test.test_utils.load_problem import load_problem
-from test.test_utils.load_solution import load_solution
-from test.test_utils.load_solver_config import load_solver_config
+from tests.test_utils.load_job import load_job
+from tests.test_utils.load_problem import load_problem
+from tests.test_utils.load_solution import load_solution
+from tests.test_utils.load_solver_config import load_solver_config
 from transplants.database.mongo_db import kidney_exchange_database, initialize_db
 from transplants.database.purge_db import purge_db
 from transplants.problem.problem import Problem

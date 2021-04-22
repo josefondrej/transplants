@@ -8,7 +8,7 @@ from transplants.utils.paths import get_abs_path
 class TestPatient(TestCase):
     def test_de_serialization(self):
         """Test if the deserialization and back serialization even finishes"""
-        patients_data_path = get_abs_path("test/test_utils/patient_pool_example.json")
+        patients_data_path = get_abs_path("tests/test_utils/patient_pool_example.json")
 
         with open(patients_data_path, "r") as patients_data_file:
             serialized_patients = json.load(patients_data_file)

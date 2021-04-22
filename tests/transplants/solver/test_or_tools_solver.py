@@ -12,7 +12,7 @@ from transplants.utils.paths import get_abs_path
 
 class TestFindExchanges(TestCase):
     def setUp(self) -> None:
-        patients_data_path = get_abs_path("test/test_utils/patient_pool_example.json")
+        patients_data_path = get_abs_path("tests/test_utils/patient_pool_example.json")
 
         with open(patients_data_path, "r") as patients_data_file:
             serialized_patients = json.load(patients_data_file)

@@ -1,4 +1,4 @@
-from test.test_utils.default_ids import PROBLEM_ID, SOLVER_CONFIG_ID
+from tests.test_utils.default_ids import PROBLEM_ID, SOLVER_CONFIG_ID
 from transplants.marshmallow_schemas import SolutionSchema
 
 

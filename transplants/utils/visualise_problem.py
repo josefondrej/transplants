@@ -152,7 +152,7 @@ if __name__ == '__main__':
     # Load patients, scorer & solver and use it to get a solution ------------------------------------------------------
     # Patients
     test_donors, test_recipients = load_donors_recipients_from_file(
-        get_abs_path("test/test_utils/patient_pool_example.json"))
+        get_abs_path("tests/test_utils/patient_pool_example.json"))
     test_patients = test_donors + test_recipients
     test_problem = Problem(problem_id="test_problem_id", patients=test_patients)
 

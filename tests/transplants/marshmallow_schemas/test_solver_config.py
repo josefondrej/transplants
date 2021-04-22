@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from test.test_utils.load_solver_config import load_solver_config
+from tests.test_utils.load_solver_config import load_solver_config
 from transplants.marshmallow_schemas import SolverConfigSchema
 
 

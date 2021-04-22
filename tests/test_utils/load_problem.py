@@ -1,13 +1,13 @@
 import json
 
-from test.test_utils.default_ids import PROBLEM_ID
+from tests.test_utils.default_ids import PROBLEM_ID
 from transplants.marshmallow_schemas.problem.patient.patient_schema import PatientSchema
 from transplants.problem.problem import Problem
 from transplants.utils.paths import get_abs_path
 
 
 def load_problem(problem_id: str = PROBLEM_ID) -> Problem:
-    patients_data_path = get_abs_path("test/test_utils/patient_pool_example.json")
+    patients_data_path = get_abs_path("tests/test_utils/patient_pool_example.json")
 
     with open(patients_data_path, "r") as patients_data_file:
         serialized_patients = json.load(patients_data_file)

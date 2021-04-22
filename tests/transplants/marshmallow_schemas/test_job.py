@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from test.test_utils.load_job import load_job
+from tests.test_utils.load_job import load_job
 from transplants.marshmallow_schemas import JobSchema
 
 

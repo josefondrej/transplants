@@ -23,7 +23,7 @@ def load_donors_recipients_from_file(file_path: str) -> Tuple[List[Donor], List[
 
 
 if __name__ == '__main__':
-    test_donors, test_recipients = load_donors_recipients_from_file("./test/test_utils/patient_pool_example.json")
+    test_donors, test_recipients = load_donors_recipients_from_file("./tests/test_utils/patient_pool_example.json")
     test_patients = test_donors + test_recipients
 
     for test_patient in test_patients:

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from test.test_utils.load_solution import load_solution
+from tests.test_utils.load_solution import load_solution
 from transplants.marshmallow_schemas import SolutionSchema
 
 

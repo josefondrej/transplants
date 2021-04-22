@@ -1,4 +1,4 @@
-from test.test_utils.default_ids import SOLVER_CONFIG_ID
+from tests.test_utils.default_ids import SOLVER_CONFIG_ID
 from transplants.solver.solver_config import SolverConfig
 
 

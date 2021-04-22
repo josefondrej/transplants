@@ -1,4 +1,4 @@
-from test.test_utils.default_ids import JOB_ID, PROBLEM_ID, SOLVER_CONFIG_ID
+from tests.test_utils.default_ids import JOB_ID, PROBLEM_ID, SOLVER_CONFIG_ID
 from transplants.solve_api.job import Job
 
 

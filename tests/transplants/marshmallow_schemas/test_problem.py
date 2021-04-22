@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from test.test_utils.load_problem import load_problem
+from tests.test_utils.load_problem import load_problem
 from transplants.marshmallow_schemas import ProblemSchema
 
 
