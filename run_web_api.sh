@@ -2,7 +2,7 @@
 echo "Starting MongoDB ..."
 sudo systemctl start mongod
 
-export MONGO_DATABASE_NAME="kidney_exchange_test"
+export MONGO_DATABASE_NAME="kidney_exchange"
 export PYTHONPATH="$PWD"
 
 echo $PYTHONPATH
