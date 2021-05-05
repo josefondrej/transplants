@@ -1,5 +1,5 @@
 from tests.test_utils.default_ids import PROBLEM_ID, SOLVER_CONFIG_ID
-from transplants.marshmallow_schemas import SolutionSchema
+from transplants.solution.solution import Solution
 
 
 def load_solution(problem_id: str = PROBLEM_ID, solver_config_id: str = SOLVER_CONFIG_ID, solution_id: str = None):
@@ -29,5 +29,4 @@ def load_solution(problem_id: str = PROBLEM_ID, solver_config_id: str = SOLVER_C
         ]
     }
 
-    solution_schema = SolutionSchema()
-    return solution_schema.load(solution_serialized)
+    return Solution.from_dict(solution_serialized)

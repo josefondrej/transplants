@@ -1,7 +1,13 @@
 from typing import Optional, Dict, Any, Union, List
 
+from marshmallow import fields
 
-class SolverConfig:
+from transplants.serialization.serialization_mixin import SerializationMixin, add_marshmallow_schema, \
+    serializable_property
+
+
+@add_marshmallow_schema
+class SolverConfig(SerializationMixin):
     def __init__(self, solver_config_id: str, solver_name: str, parameters: Optional[Dict] = None):
         self._solver_config_id = solver_config_id
         self._solver_name = solver_name
@@ -17,15 +23,15 @@ class SolverConfig:
     def __hash__(self):
         return hash((self.solver_config_id, self.solver_name, frozenset(self.parameters)))
 
-    @property
+    @serializable_property(fields.String())
     def solver_config_id(self) -> str:
         return self._solver_config_id
 
-    @property
+    @serializable_property(fields.String())
     def solver_name(self):
         return self._solver_name
 
-    @property
+    @serializable_property(fields.Dict())
     def parameters(self) -> Dict:
         return self._parameters
 

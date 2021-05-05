@@ -3,7 +3,7 @@ from typing import Tuple, List
 
 from transplants.problem.patient.donor import Donor
 from transplants.problem.patient.recipient import Recipient
-from transplants.marshmallow_schemas.problem.patient import PatientSchema as PatientSchema
+from transplants.serialization.problem.patient import PatientSchema as PatientSchema
 
 _patient_schema = PatientSchema()
 

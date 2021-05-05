@@ -1,9 +1,14 @@
 from typing import List
 
+from marshmallow import fields
+
+from transplants.serialization.serialization_mixin import SerializationMixin, add_marshmallow_schema, \
+    serializable_property
 from transplants.solution.matching import Matching
 
 
-class Solution:
+@add_marshmallow_schema
+class Solution(SerializationMixin):
     """Contains information about the solution
     and the method that was used to find it
 
@@ -34,18 +39,18 @@ class Solution:
     def __hash__(self):
         return hash((self._solution_id, self._problem_id, tuple(hash(matching) for matching in self.matchings)))
 
-    @property
+    @serializable_property(fields.String())
     def solution_id(self):
         return self._solution_id
 
-    @property
+    @serializable_property(fields.String())
     def problem_id(self) -> str:
         return self._problem_id
 
-    @property
+    @serializable_property(fields.String())
     def solver_config_id(self) -> str:
         return self._solver_config_id
 
-    @property
+    @serializable_property(fields.List(fields.Nested(Matching.marshmallow_schema)))
     def matchings(self) -> List[Matching]:
         return self._matchings

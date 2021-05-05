@@ -1,9 +1,9 @@
 from unittest import TestCase
 
-from transplants.marshmallow_schemas.solution.chain_schema import ChainSchema
-from transplants.marshmallow_schemas.solution.matching_schema import MatchingSchema
-from transplants.marshmallow_schemas.solution.solution_schema import SolutionSchema
-from transplants.marshmallow_schemas.solution.transplant_schema import TransplantSchema
+from transplants.solution.chain import Chain
+from transplants.solution.matching import Matching
+from transplants.solution.solution import Solution
+from transplants.solution.transplant import Transplant
 
 
 class TestSolutionSchema(TestCase):
@@ -33,20 +33,15 @@ class TestSolutionSchema(TestCase):
             "matchings": [matching_serialized]
         }
 
-        transplant_schema = TransplantSchema()
-        chain_schema = ChainSchema()
-        matching_schema = MatchingSchema()
-        solution_schema = SolutionSchema()
-
         self.assertDictEqual(transplant_serialized,
-                             transplant_schema.dump(transplant_schema.load(transplant_serialized)))
+                             Transplant.to_dict(Transplant.from_dict(transplant_serialized)))
 
-        self.assertDictEqual(chain_one_serialized, chain_schema.dump(chain_schema.load(chain_one_serialized)))
-        self.assertDictEqual(chain_two_serialized, chain_schema.dump(chain_schema.load(chain_two_serialized)))
+        self.assertDictEqual(chain_one_serialized, Chain.to_dict(Chain.from_dict(chain_one_serialized)))
+        self.assertDictEqual(chain_two_serialized, Chain.to_dict(Chain.from_dict(chain_two_serialized)))
 
-        self.assertDictEqual(matching_serialized, matching_schema.dump(matching_schema.load(matching_serialized)))
+        self.assertDictEqual(matching_serialized, Matching.to_dict(Matching.from_dict(matching_serialized)))
 
-        self.assertDictEqual(solution_serialized, solution_schema.dump(solution_schema.load(solution_serialized)))
+        self.assertDictEqual(solution_serialized, Solution.to_dict(Solution.from_dict(solution_serialized)))
 
     def test_assert_dict_equals_works_as_expected(self):
         self.assertDictEqual({"X": {"A": 1, "B": 2}}, {"X": {"B": 2, "A": 1}})

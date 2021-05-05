@@ -1,10 +1,15 @@
 from typing import Set
 
+from marshmallow import fields
+
+from transplants.serialization.serialization_mixin import SerializationMixin, add_marshmallow_schema, \
+    serializable_property
 from transplants.solution.chain import Chain
 from transplants.solution.scored_mixin import ScoredMixin
 
 
-class Matching(ScoredMixin):
+@add_marshmallow_schema
+class Matching(ScoredMixin, SerializationMixin):
     """Set of several transplant chains which can be either cycles or sequences"""
 
     def __init__(self, chains: Set[Chain]):
@@ -20,6 +25,6 @@ class Matching(ScoredMixin):
         ordered_chains = sorted(self.chains, key=hash)
         return hash(tuple(hash(chain) for chain in ordered_chains))
 
-    @property
+    @serializable_property(fields.List(fields.Nested(Chain.marshmallow_schema)))
     def chains(self) -> Set[Chain]:
         return self._chains

@@ -2,8 +2,8 @@ import json
 from pprint import pprint
 from unittest import TestCase
 
-from transplants.marshmallow_schemas.problem.problem_schema import ProblemSchema as ProblemSchema
-from transplants.marshmallow_schemas.solution.solution_schema import SolutionSchema as SolutionSchema
+from transplants.problem.problem import Problem
+from transplants.solution.solution import Solution
 from transplants.solver.or_tools_solver import ORToolsSolver
 from transplants.solver.scorer.default_forbidden_transplants import get_default_forbidden_transplants
 from transplants.solver.scorer.hla_blood_type_additive_scorer import HLABloodTypeAdditiveScorer
@@ -17,9 +17,6 @@ class TestFindExchanges(TestCase):
         with open(patients_data_path, "r") as patients_data_file:
             serialized_patients = json.load(patients_data_file)
 
-        self.problem_schema = ProblemSchema()
-        self.solution_schema = SolutionSchema()
-
         self.solution_id = "test_solution_id"
         self.problem_id = "test_problem_id"
         self.solver_config_id = "test_solver_config_id"
@@ -28,7 +25,7 @@ class TestFindExchanges(TestCase):
             "problem_id": self.problem_id,
             "patients": serialized_patients
         }
-        self.problem = self.problem_schema.load(self.problem_serialized)
+        self.problem = Problem.from_dict(self.problem_serialized)
 
         self.expected_solution_serialized = {
             "solution_id": self.solution_id,
@@ -51,7 +48,7 @@ class TestFindExchanges(TestCase):
                 ], "score": 150.0}
             ]
         }
-        self.expected_solution = self.solution_schema.load(self.expected_solution_serialized)
+        self.expected_solution = Solution.from_dict(self.expected_solution_serialized)
 
         self.forbidden_transplants = get_default_forbidden_transplants(patients=self.problem.patients)
 
@@ -66,7 +63,7 @@ class TestFindExchanges(TestCase):
         calculated_solution = solver.solve(problem=self.problem)
         calculated_solution._solution_id = self.solution_id
 
-        calculated_solution_serialized = self.solution_schema.dump(calculated_solution)
+        calculated_solution_serialized = Solution.to_dict(calculated_solution)
 
         pprint(calculated_solution_serialized)
         pprint(self.expected_solution_serialized)

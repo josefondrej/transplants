@@ -1,11 +1,16 @@
 from typing import List
 
+from marshmallow import fields
+
 from transplants.problem.patient.donor import Donor
 from transplants.problem.patient.patient import Patient
 from transplants.problem.patient.recipient import Recipient
+from transplants.serialization.serialization_mixin import SerializationMixin, add_marshmallow_schema, \
+    serializable_property
 
 
-class Problem:
+@add_marshmallow_schema
+class Problem(SerializationMixin):
     """Description of the Kidney Exchange Matching problem
     Does not contain any information on how we should find solution or evaluate it's quality
     """
@@ -25,11 +30,12 @@ class Problem:
     def __hash__(self):
         return hash(tuple(sorted(self.patients, key=hash)))
 
-    @property
+    @serializable_property(fields.String())
     def problem_id(self) -> str:
         return self._problem_id
 
-    @property
+    @serializable_property(
+        fields.List(fields.Nested(Recipient.marshmallow_schema)))
     def patients(self) -> List[Patient]:
         return self._patients
 

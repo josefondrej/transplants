@@ -1,7 +1,13 @@
 from datetime import datetime
 
+from marshmallow import fields
 
-class Job:
+from transplants.serialization.serialization_mixin import SerializationMixin, add_marshmallow_schema, \
+    serializable_property
+
+
+@add_marshmallow_schema
+class Job(SerializationMixin):
     def __init__(self, job_id: str, problem_id: str, solver_config_id: str,
                  solution_id: str = None,
                  submission_timestamp: datetime = None,
@@ -31,30 +37,30 @@ class Job:
         return hash((self.job_id, self.problem_id, self.solver_config_id, self.solution_id,
                      str(self.submission_timestamp), str(self.solution_timestamp)))
 
-    @property
+    @serializable_property(fields.Str())
     def job_id(self) -> str:
         return self._job_id
 
-    @property
+    @serializable_property(fields.Str())
     def problem_id(self) -> str:
         return self._problem_id
 
-    @property
+    @serializable_property(fields.Str())
     def solver_config_id(self) -> str:
         return self._solver_config_id
 
-    @property
+    @serializable_property(fields.Str(allow_none=True, required=False))
     def solution_id(self) -> str:
         return self._solution_id
 
-    @property
+    @serializable_property(fields.DateTime(allow_none=True, required=False))
     def submission_timestamp(self) -> datetime:
         return self._submission_timestamp
 
-    @property
+    @serializable_property(fields.DateTime(allow_none=True, required=False))
     def solution_start_timestamp(self) -> datetime:
         return self._solution_start_timestamp
 
-    @property
+    @serializable_property(fields.DateTime(allow_none=True, required=False))
     def solution_end_timestamp(self) -> datetime:
         return self._solution_end_timestamp

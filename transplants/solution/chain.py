@@ -2,12 +2,16 @@ from abc import ABC
 from typing import List, Optional
 
 import numpy as np
+from marshmallow import fields
 
+from transplants.serialization.serialization_mixin import add_marshmallow_schema, SerializationMixin, \
+    serializable_property
 from transplants.solution.scored_mixin import ScoredMixin
 from transplants.solution.transplant import Transplant
 
 
-class Chain(ABC, ScoredMixin):
+@add_marshmallow_schema
+class Chain(ABC, ScoredMixin, SerializationMixin):
     """General base class for chain of transplants"""
 
     def __init__(self, transplants: List[Transplant], is_cycle: bool = None):
@@ -36,11 +40,11 @@ class Chain(ABC, ScoredMixin):
 
         return hash(tuple(hash(transplant) for transplant in ordered_transplants))
 
-    @property
+    @serializable_property(fields.List(fields.Nested(Transplant.marshmallow_schema)))
     def transplants(self) -> List[Transplant]:
         return self._transplants
 
-    @property
+    @serializable_property(fields.Bool())
     def is_cycle(self) -> bool:
         return self._is_cycle
 

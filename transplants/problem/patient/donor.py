@@ -1,6 +1,8 @@
 from transplants.problem.patient.patient import Patient
+from transplants.serialization.serialization_mixin import add_marshmallow_schema
 
 
+@add_marshmallow_schema
 class Donor(Patient):
     @property
     def is_donor(self) -> bool:

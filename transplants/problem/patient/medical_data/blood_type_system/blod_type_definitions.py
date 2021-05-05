@@ -1,14 +1,6 @@
-import transplants.problem.patient.medical_data.blood_type_system.blood_type_antigen_definitions as blood_antigen
-from transplants.problem.patient.medical_data.antigen_antibody_system.utils import anti
-from transplants.problem.patient.medical_data.blood_type_system.blood_type import BloodType
+from transplants.problem.patient.medical_data.blood_type_system.blood_type import all_types
 
-ZERO = BloodType(antigens=set(), antibodies={anti(blood_antigen.A), anti(blood_antigen.B)})
-A = BloodType(antigens={blood_antigen.A}, antibodies={anti(blood_antigen.B)})
-B = BloodType(antigens={blood_antigen.B}, antibodies={anti(blood_antigen.A)})
-AB = BloodType(antigens={blood_antigen.A, blood_antigen.B}, antibodies=set())
-
-all_types = [ZERO, A, B, AB]
-
+# TODO: Delete
 if __name__ == '__main__':
     def _bool_to_symbol(value: bool) -> str:
         return "o" if value else "x"
