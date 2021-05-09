@@ -18,12 +18,3 @@ def load_donors_recipients_from_file(file_path: str) -> Tuple[List[Donor], List[
         serialized_patients = json.load(serialized_patients_file)
 
     return load_donors_recipients(serialized_patients)
-
-
-if __name__ == '__main__':
-    test_donors, test_recipients = load_donors_recipients_from_file("./tests/test_utils/patient_pool_example.json")
-    test_patients = test_donors + test_recipients
-
-    for test_patient in test_patients:
-        serialized_patient = test_patient.to_dict()
-        print(serialized_patient)

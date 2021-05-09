@@ -1,10 +1,11 @@
 from transplants.problem.patient.medical_data.blood_type_system.blood_type import all_types
 
-if __name__ == '__main__':
-    def _bool_to_symbol(value: bool) -> str:
-        return "o" if value else "x"
+
+def _bool_to_symbol(value: bool) -> str:
+    return "o" if value else "x"
 
 
+def print_blood_type_compatibility_table():
     print("Donor -> Recipient Compatibility Table")
     print("-" * 38)
     print("\t" + "\t".join([str(blood_type) for blood_type in all_types]))
