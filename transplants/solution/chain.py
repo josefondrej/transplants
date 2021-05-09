@@ -38,7 +38,7 @@ class Chain(ABC, ScoredMixin, SerializationMixin):
             first_donor_index = np.argmin([str(transplant.donor_id) for transplant in self.transplants])
             ordered_transplants = self.transplants[first_donor_index:] + self.transplants[:first_donor_index]
 
-        return hash(tuple(hash(transplant) for transplant in ordered_transplants))
+        return hash(tuple(transplant for transplant in ordered_transplants))
 
     @serializable_property(fields.List(fields.Nested(Transplant.marshmallow_schema)))
     def transplants(self) -> List[Transplant]:

@@ -20,7 +20,7 @@ class Transplant(ScoredMixin, SerializationMixin):
         return (self.donor_id == other.donor_id) and (self.recipient_id == other.recipient_id)
 
     def __hash__(self):
-        return hash((hash(self.donor_id), hash(self.recipient_id)))
+        return hash((self.donor_id, self.recipient_id))
 
     @serializable_property(fields.String(), serialize_name="donor")
     def donor_id(self) -> str:

@@ -40,7 +40,7 @@ class Solution(SerializationMixin, DatabaseMixin):
         return self.matchings == other.matchings
 
     def __hash__(self):
-        return hash((self._solution_id, self._problem_id, tuple(hash(matching) for matching in self.matchings)))
+        return hash((self._solution_id, self._problem_id, tuple(matching for matching in self.matchings)))
 
     @serializable_property(fields.String())
     def solution_id(self):

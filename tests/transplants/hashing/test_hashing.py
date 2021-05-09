@@ -37,14 +37,14 @@ class TestHashing(TestCase):
         self.assertEqual(hash(self.patient_a), hash(self.patient_id_a))
 
     def test_transplant_hashing(self):
-        self.assertEqual(hash(self.transplant_one), hash((hash(self.patient_id_a), hash(self.patient_id_b))))
+        self.assertEqual(hash(self.transplant_one), hash((self.patient_id_a, self.patient_id_b)))
 
     def test_sequence_hashing(self):
         chain = Sequence(transplants=[self.transplant_one, self.transplant_two])
         self.assertEqual(
             first=hash(chain),
             second=hash(
-                (hash(self.transplant_one), hash(self.transplant_two))
+                (self.transplant_one, self.transplant_two)
             )
         )
 
@@ -56,14 +56,14 @@ class TestHashing(TestCase):
         self.assertEqual(
             first=hash(cycle_one),
             second=hash(
-                (hash(self.transplant_one), hash(self.transplant_two), hash(self.transplant_three))
+                (self.transplant_one, self.transplant_two, self.transplant_three)
             )
         )
 
         self.assertNotEqual(
             first=hash(cycle_one),
             second=hash(
-                (hash(self.transplant_one), hash(self.transplant_three), hash(self.transplant_two))
+                (self.transplant_one, self.transplant_three, self.transplant_two)
             )
         )
         self.assertEqual(hash(cycle_one), hash(cycle_one_shifted))
@@ -78,6 +78,6 @@ class TestHashing(TestCase):
 
         self.assertEqual(
             first=hash(matching),
-            second=hash(tuple(hash(chain) for chain in sorted(matching.chains, key=hash)))
+            second=hash(tuple(chain for chain in sorted(matching.chains, key=hash)))
         )
         self.assertEqual(hash(matching), hash(matching_shuffled))

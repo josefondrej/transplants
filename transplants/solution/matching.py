@@ -23,7 +23,7 @@ class Matching(ScoredMixin, SerializationMixin):
 
     def __hash__(self):
         ordered_chains = sorted(self.chains, key=hash)
-        return hash(tuple(hash(chain) for chain in ordered_chains))
+        return hash(tuple(chain for chain in ordered_chains))
 
     @serializable_property(fields.List(fields.Nested(Chain.marshmallow_schema)))
     def chains(self) -> Set[Chain]:
