@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 from transplants.problem.patient.medical_data.medical_data import MedicalData
 from transplants.problem.patient.patient import Patient
@@ -18,7 +18,7 @@ class Recipient(Patient):
     """
 
     def __init__(self, identifier: str, medical_data: MedicalData, related_donor_ids: List[str],
-                 require_better_than_related_match: bool = False, country: str = None):
+                 require_better_than_related_match: bool = False, country: Optional[str] = None):
         self._related_donor_ids = related_donor_ids
         self._require_better_than_related_match = require_better_than_related_match
         super().__init__(identifier=identifier, medical_data=medical_data, country=country)

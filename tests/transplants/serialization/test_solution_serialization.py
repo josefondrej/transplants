@@ -1,12 +1,13 @@
 from unittest import TestCase
 
+from tests.test_utils.load_solution import load_solution
 from transplants.solution.chain import Chain
 from transplants.solution.matching import Matching
 from transplants.solution.solution import Solution
 from transplants.solution.transplant import Transplant
 
 
-class TestSolutionSchema(TestCase):
+class TestSolutionSerialization(TestCase):
     def test_serialize_deserialize(self):
         transplant_serialized = {"donor": "07c54b8", "recipient": "dfa96d8", "score": 17.0}
 
@@ -45,3 +46,12 @@ class TestSolutionSchema(TestCase):
 
     def test_assert_dict_equals_works_as_expected(self):
         self.assertDictEqual({"X": {"A": 1, "B": 2}}, {"X": {"B": 2, "A": 1}})
+
+    def test_original_equals_deserialized_serialized(self):
+        solution = load_solution()
+        solution_schema = Solution.marshmallow_schema()
+
+        serialized_solution = solution_schema.dump(solution)
+        deserialized_solution = solution_schema.load(serialized_solution)
+
+        self.assertEqual(solution, deserialized_solution)

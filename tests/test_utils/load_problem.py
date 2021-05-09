@@ -2,7 +2,6 @@ import json
 
 from tests.test_utils.default_ids import PROBLEM_ID
 from transplants.problem.patient import Patient
-from transplants.problem.patient.recipient import Recipient
 from transplants.problem.problem import Problem
 from transplants.utils.paths import get_abs_path
 

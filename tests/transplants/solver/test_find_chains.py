@@ -45,7 +45,8 @@ class FindChainsTest(TestCase):
 
     def test_4_cycles(self):
         self.assert_solver_result(
-            graph_description="1 -> 2 | 2 -> 1 | 3 -> 4 | 4 -> 3 | 5 -> 6 | 6 -> 7 | 7 -> 8 | 8 -> 5 | 9 -> 10 | 10 -> 11 | 11 -> 9",
+            graph_description="1 -> 2 | 2 -> 1 | 3 -> 4 | 4 -> 3 | 5 -> 6 | 6 -> 7 | 7 -> 8 | 8 -> 5 | 9 -> 10 | "
+                              "10 -> 11 | 11 -> 9",
             expected_chains=[([1, 2], cyc), ([3, 4], cyc), ([5, 6, 7, 8], cyc), ([9, 10, 11], cyc)]
         )
 
@@ -81,8 +82,9 @@ class FindChainsTest(TestCase):
 
     def test_4_cycles_4_sequences(self):
         self.assert_solver_result(
-            graph_description="1 -> 2 | 2 -> 1 | 3 -> 4 | 4 -> 3 | 5 -> 6 | 6 -> 7 | 7 -> 8 | 8 -> 5 | 9 -> 10 | 10 -> 11 | 11 -> 9 "
-                              "| 100 -> 200 | 300 -> 400 | 500 -> 600 | 600 -> 700 | 800 -> 900 | 900 -> 1000 | 1000 -> 1100",
+            graph_description="1 -> 2 | 2 -> 1 | 3 -> 4 | 4 -> 3 | 5 -> 6 | 6 -> 7 | 7 -> 8 | 8 -> 5 | 9 -> 10 | "
+                              "10 -> 11 | 11 -> 9 | 100 -> 200 | 300 -> 400 | 500 -> 600 | 600 -> 700 | 800 -> 900 | "
+                              "900 -> 1000 | 1000 -> 1100",
             expected_chains=[([1, 2], cyc), ([3, 4], cyc), ([5, 6, 7, 8], cyc), ([9, 10, 11], cyc),
                              ([100, 200], seq), ([300, 400], seq), ([500, 600, 700], seq),
                              ([800, 900, 1000, 1100], seq)]

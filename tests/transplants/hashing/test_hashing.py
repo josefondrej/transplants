@@ -1,6 +1,9 @@
 from unittest import TestCase
 
 from transplants.problem.patient.donor import Donor
+from transplants.problem.patient.medical_data.blood_type_system.blood_type import A
+from transplants.problem.patient.medical_data.hla_system.hla_system import HLASystem
+from transplants.problem.patient.medical_data.medical_data import MedicalData
 from transplants.problem.patient.recipient import Recipient
 from transplants.solution.cycle import Cycle
 from transplants.solution.matching import Matching
@@ -17,12 +20,14 @@ class TestHashing(TestCase):
         self.patient_id_e = "eeee5555"
         self.patient_id_f = "ffff6666"
 
-        self.patient_a = Donor(identifier=self.patient_id_a, medical_data=None)
-        self.patient_b = Recipient(identifier=self.patient_id_b, medical_data=None, related_donor_ids=[])
-        self.patient_c = Donor(identifier=self.patient_id_c, medical_data=None)
-        self.patient_d = Recipient(identifier=self.patient_id_d, medical_data=None, related_donor_ids=[])
-        self.patient_e = Donor(identifier=self.patient_id_e, medical_data=None)
-        self.patient_f = Recipient(identifier=self.patient_id_f, medical_data=None, related_donor_ids=[])
+        test_medical_data = MedicalData(blood_type=A, hla_system=HLASystem(antigens=set(), antibodies=set()))
+
+        self.patient_a = Donor(identifier=self.patient_id_a, medical_data=test_medical_data)
+        self.patient_b = Recipient(identifier=self.patient_id_b, medical_data=test_medical_data, related_donor_ids=[])
+        self.patient_c = Donor(identifier=self.patient_id_c, medical_data=test_medical_data)
+        self.patient_d = Recipient(identifier=self.patient_id_d, medical_data=test_medical_data, related_donor_ids=[])
+        self.patient_e = Donor(identifier=self.patient_id_e, medical_data=test_medical_data)
+        self.patient_f = Recipient(identifier=self.patient_id_f, medical_data=test_medical_data, related_donor_ids=[])
 
         self.transplant_one = Transplant(donor_id=self.patient_id_a, recipient_id=self.patient_id_b)
         self.transplant_two = Transplant(donor_id=self.patient_id_c, recipient_id=self.patient_id_d)
@@ -68,8 +73,8 @@ class TestHashing(TestCase):
     def test_matching_hashing(self):
         chain_one = Cycle(transplants=[self.transplant_one, self.transplant_two])
         chain_two = Sequence(transplants=[self.transplant_three])
-        matching = Matching(chains=[chain_one, chain_two])
-        matching_shuffled = Matching(chains=[chain_two, chain_one])
+        matching = Matching(chains={chain_one, chain_two})
+        matching_shuffled = Matching(chains={chain_two, chain_one})
 
         self.assertEqual(
             first=hash(matching),

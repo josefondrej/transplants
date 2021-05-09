@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List
+from typing import List, Optional
 
 from marshmallow import fields
 from marshmallow.validate import OneOf
@@ -23,7 +23,7 @@ class Patient(ABC, SerializationMixin):
     """
     type_to_constructor = dict()
 
-    def __init__(self, identifier: str, medical_data: MedicalData, country: str = None):
+    def __init__(self, identifier: str, medical_data: MedicalData, country: Optional[str] = None):
         self._identifier = identifier
         self._medical_data = medical_data
         self._country = country

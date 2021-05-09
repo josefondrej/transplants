@@ -4,7 +4,7 @@ from tests.test_utils.load_job import load_job
 from transplants.solve_api.job import Job
 
 
-class TestJob(TestCase):
+class TestJobSerialization(TestCase):
     def test_original_equals_deserialized_serialized(self):
         job = load_job()
 
