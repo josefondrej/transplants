@@ -75,13 +75,6 @@ class Patient(ABC, SerializationMixin):
         data.patient_type = str(data.type.value)
         return data
 
-    @classmethod
-    def _marshmallow_post_load(cls, data):
-        data = dict(data)
-        patient_type = data.pop("patient_type")
-        constructor = Patient.type_to_constructor[patient_type]
-        return constructor(**data)
-
     @serializable_property(fields.List(fields.String(), required=False), serialize_name="related_donors")
     def related_donor_ids(self) -> List[str]:
         return self._related_donor_ids
@@ -89,3 +82,10 @@ class Patient(ABC, SerializationMixin):
     @serializable_property(fields.Bool(required=False))
     def require_better_than_related_match(self) -> bool:
         return self._require_better_than_related_match
+
+    @classmethod
+    def _marshmallow_post_load(cls, data):
+        data = dict(data)
+        patient_type = data.pop("patient_type")
+        constructor = Patient.type_to_constructor[patient_type]
+        return constructor(**data)

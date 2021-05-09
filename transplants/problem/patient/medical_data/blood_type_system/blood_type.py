@@ -15,7 +15,7 @@ from transplants.problem.patient.medical_data.blood_type_system.blood_type_codes
 from transplants.serialization.serialization_mixin import SerializationMixin, add_marshmallow_schema, \
     serializable_property
 
-_blood_type_code_validator = OneOf([str(blood_type_code) for blood_type_code in all_blood_type_codes])
+_blood_type_code_validator = OneOf([blood_type_code for blood_type_code in all_blood_type_codes])
 
 
 @add_marshmallow_schema

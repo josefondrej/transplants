@@ -10,3 +10,12 @@ class Sequence(Chain):
 
     def __init__(self, transplants: List[Transplant]):
         super().__init__(transplants=transplants, is_cycle=False)
+
+    def __eq__(self, other):
+        if not isinstance(other, Sequence):
+            return False
+
+        return self.transplants == other.transplants
+
+    def __hash__(self):
+        return hash(tuple(transplant for transplant in self.transplants))

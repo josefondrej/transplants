@@ -19,10 +19,10 @@ class ScoredMixin:
             return None
 
     @classmethod
-    def _marshmallow_post_load(cls, dictionary: Dict):
-        dictionary = dict(dictionary)
-        score = dictionary.pop("score")
-        model = cls(**dictionary)
+    def _marshmallow_post_load(cls, data: Dict):
+        data = dict(data)
+        score = data.pop("score")
+        model = cls(**data)
         model.set_score(score)
         return model
 
