@@ -10,17 +10,17 @@ class AntigenAntibodySystem(ABC):
         self._antigens = antigens
 
         if not isinstance(antibodies, dict):
-            self._antibody_to_concentration = {antibody: None for antibody in antibodies}
+            self._antibodies = {antibody: None for antibody in antibodies}
         else:
-            self._antibody_to_concentration = dict(antibodies)
+            self._antibodies = dict(antibodies)
 
     @property
     def antigens(self) -> Set[Antigen]:
         return self._antigens
 
     @property
-    def antibodies(self) -> Set[Antibody]:
-        return set(self._antibody_to_concentration.keys())
+    def antibodies(self) -> Dict[Antibody, float]:
+        return self._antibodies
 
     def has_antigens_for(self, antibodies: Set[Antibody]) -> bool:
         return len(set.intersection({antibody.antigen for antibody in antibodies}, self._antigens)) > 0
@@ -30,4 +30,4 @@ class AntigenAntibodySystem(ABC):
 
     @property
     def antibody_to_concentration(self) -> Dict[Antibody, float]:
-        return self._antibody_to_concentration
+        return self._antibodies

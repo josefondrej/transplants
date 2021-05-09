@@ -1,15 +1,13 @@
 import json
 from typing import Tuple, List
 
+from transplants.problem.patient import Patient
 from transplants.problem.patient.donor import Donor
 from transplants.problem.patient.recipient import Recipient
-from transplants.serialization.problem.patient import PatientSchema as PatientSchema
-
-_patient_schema = PatientSchema()
 
 
 def load_donors_recipients(serialized_patients: List) -> Tuple[List[Donor], List[Recipient]]:
-    patients = [_patient_schema.load(dictionary) for dictionary in serialized_patients]
+    patients = [Patient.from_dict(dictionary) for dictionary in serialized_patients]
     donors: List[Donor] = [patient for patient in patients if patient.is_donor]
     recipients: List[Recipient] = [patient for patient in patients if patient.is_recipient]
     return donors, recipients
@@ -27,5 +25,5 @@ if __name__ == '__main__':
     test_patients = test_donors + test_recipients
 
     for test_patient in test_patients:
-        serialized_patient = _patient_schema.dump(test_patient)
+        serialized_patient = test_patient.to_dict()
         print(serialized_patient)

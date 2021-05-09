@@ -30,14 +30,14 @@ job_collection = kidney_exchange_database.get_collection(JOB_COLLECTION_NAME)
 
 
 def initialize_db(database: Database):
-    problem_collection = database.get_collection(PROBLEMS_COLLECTION_NAME)
-    problem_collection.create_index("problem_id", unique=True)
+    db_problem_collection = database.get_collection(PROBLEMS_COLLECTION_NAME)
+    db_problem_collection.create_index("problem_id", unique=True)
 
-    solution_collection = database.get_collection(SOLUTIONS_COLLECTION_NAME)
-    solution_collection.create_index("solution_id", unique=True)
+    db_solution_collection = database.get_collection(SOLUTIONS_COLLECTION_NAME)
+    db_solution_collection.create_index("solution_id", unique=True)
 
-    solver_config_collection = database.get_collection(SOLVER_CONFIG_COLLECTION_NAME)
-    solver_config_collection.create_index("solver_config_id", unique=True)
+    db_solver_config_collection = database.get_collection(SOLVER_CONFIG_COLLECTION_NAME)
+    db_solver_config_collection.create_index("solver_config_id", unique=True)
 
-    job_collection = database.get_collection(JOB_COLLECTION_NAME)
-    job_collection.create_index("job_id", unique=True)
+    db_job_collection = database.get_collection(JOB_COLLECTION_NAME)
+    db_job_collection.create_index("job_id", unique=True)

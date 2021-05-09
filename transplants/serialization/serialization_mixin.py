@@ -1,26 +1,26 @@
 from typing import Dict, Callable, Optional
 
-from marshmallow import fields, Schema, post_load
+from marshmallow import Schema, post_load
+from marshmallow.fields import Field
 
 _MARSHMALLOW_FIELD_TYPE_ATTRIBUTE_NAME = "__marshmallow_field_type__"
 _SERIALIZE_NAME_ATTRIBUTE_NAME = "__serialize_as__"
-_CLS_NAME_FIELD_NAME = "__cls_name__"
 
 
 class _SerializableProperty(property):
     pass
 
 
-def _set_marshmallow_field_type(obj: object, marshmallow_field_type: type):
+def _set_marshmallow_field_type(obj: object, marshmallow_field_type: Field):
     setattr(obj, _MARSHMALLOW_FIELD_TYPE_ATTRIBUTE_NAME, marshmallow_field_type)
-
-
-def _set_serialize_name(obj: object, serialize_name: Optional[str] = None):
-    setattr(obj, _SERIALIZE_NAME_ATTRIBUTE_NAME, serialize_name)
 
 
 def _get_marshmallow_field_type(obj: object):
     return getattr(obj, _MARSHMALLOW_FIELD_TYPE_ATTRIBUTE_NAME, None)
+
+
+def _set_serialize_name(obj: object, serialize_name: Optional[str] = None):
+    setattr(obj, _SERIALIZE_NAME_ATTRIBUTE_NAME, serialize_name)
 
 
 def _get_serialize_name(obj: object):
@@ -76,9 +76,9 @@ def add_marshmallow_schema(cls):
     return cls
 
 
-def serializable_property(marshmallow_field_type: type, serialize_name: Optional[str] = None) -> Callable[
-    [Callable], Callable]:
-    def decorator(func: Callable) -> Callable:
+def serializable_property(marshmallow_field_type: Field, serialize_name: Optional[str] = None) \
+        -> Callable[[Callable], _SerializableProperty]:
+    def decorator(func: Callable) -> _SerializableProperty:
         decorated_func = _SerializableProperty(func)
         _set_marshmallow_field_type(decorated_func, marshmallow_field_type)
         _set_serialize_name(decorated_func, serialize_name)
@@ -88,6 +88,19 @@ def serializable_property(marshmallow_field_type: type, serialize_name: Optional
 
 
 class SerializationMixin:
+    """
+    Adds fields
+        marshmallow_schema
+        marshmallow_schema_instance
+    to a class, which are then used in methods .to_dict() and cls.from_dict() to serialize / deserialize
+    instances of the class.
+    The marshmallow schema is created based on properties decorated as @serializable_property
+    The marshmallow @post_load behaviour can be customized using the _marshmallow_post_load function
+    which takes as argument `data` that is then passed to the @post_load function of the cls.marshmallow_schema
+    """
+    marshmallow_schema = None
+    marshmallow_schema_instance = None
+
     def to_dict(self) -> Dict:
         return self.marshmallow_schema_instance.dump(self)
 
@@ -99,28 +112,3 @@ class SerializationMixin:
     @classmethod
     def _marshmallow_post_load(cls, data):
         return cls(**data)
-
-
-if __name__ == '__main__':
-    # TODO: Add to tests
-    @add_marshmallow_schema
-    class Foo(SerializationMixin):
-        def __init__(self, first_property: int, second_property: int = None):
-            self._first = first_property
-            self._second = second_property
-
-        @serializable_property(fields.String(), serialize_name="frs_prp")
-        def first_property(self):
-            return self._first
-
-        @property
-        def second_property(self):
-            return self._second
-
-
-    foo = Foo(first_property=123)
-    dictionary = foo.to_dict()
-    print(dictionary)
-
-    foo_deserialized = Foo.from_dict(dictionary)
-    print(foo_deserialized.first_property)

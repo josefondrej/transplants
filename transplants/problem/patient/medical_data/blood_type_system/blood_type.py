@@ -47,8 +47,8 @@ class BloodType(AntigenAntibodySystem, SerializationMixin):
         representation = "".join(sorted(map(str, self.antigens)))
         return "0" if len(representation) == 0 else representation
 
-    @serializable_property(
-        fields.List(fields.Str(validate=_blood_type_code_validator), allow_none=True), serialize_name="forbidden_types")
+    @serializable_property(fields.List(fields.String(validate=_blood_type_code_validator), allow_none=True),
+                           serialize_name="forbidden_types")
     def forbidden_blood_types(self) -> Set["BloodType"]:
         return self._forbidden_blood_types
 

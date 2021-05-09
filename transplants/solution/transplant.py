@@ -3,11 +3,6 @@ from marshmallow import fields
 from transplants.serialization.serialization_mixin import add_marshmallow_schema, SerializationMixin, \
     serializable_property
 from transplants.solution.scored_mixin import ScoredMixin
-from marshmallow import fields
-
-from transplants.serialization.serialization_mixin import add_marshmallow_schema, SerializationMixin, \
-    serializable_property
-from transplants.solution.scored_mixin import ScoredMixin
 
 
 @add_marshmallow_schema

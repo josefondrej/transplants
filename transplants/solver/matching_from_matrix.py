@@ -3,6 +3,7 @@ from typing import List, Tuple, Dict, Set, Union
 
 import numpy as np
 
+from transplants.problem.patient import Patient
 from transplants.problem.patient.donor import Donor
 from transplants.problem.patient.recipient import Recipient
 from transplants.problem.problem import Problem
@@ -54,8 +55,7 @@ def _get_arguments_from_transplant_matrix_and_patients(transplant_matrix: np.nda
     Get arguments for function `find_chains`
     Args:
         transplant_matrix: transplant_matrix[i,j] = Indicator(transplant donors[i] -> recipients[j] is performed)
-        donors: List of donors
-        recipients: List of recipients
+        problem:
 
     Returns:
         edges: edges of graph where edge between patients i -> j means either:
@@ -66,8 +66,8 @@ def _get_arguments_from_transplant_matrix_and_patients(transplant_matrix: np.nda
     donors = problem.donors
     recipients = problem.recipients
     vertex_to_patient = {pat_ix: patient for pat_ix, patient in enumerate(donors + recipients)}
-    patient_to_vertex: Dict[Union[Donor, Recipient], int] = {patient: pat_ix for pat_ix, patient
-                                                             in vertex_to_patient.items()}
+    patient_to_vertex: Dict[Patient, int] = {patient: pat_ix for pat_ix, patient
+                                             in vertex_to_patient.items()}
 
     transplant_donor_recipient_indices = list(zip(*np.where(transplant_matrix)))
     transplants = [(donors[donor_ix], recipients[recipient_ix]) for donor_ix, recipient_ix

@@ -4,7 +4,7 @@ from marshmallow import fields
 
 from transplants.database.database_mixin import DatabaseMixin
 from transplants.database.mongo_db import problem_collection
-from transplants.problem.patient.donor import Donor
+from transplants.problem.patient import Donor
 from transplants.problem.patient.patient import Patient
 from transplants.problem.patient.recipient import Recipient
 from transplants.serialization.serialization_mixin import SerializationMixin, add_marshmallow_schema, \

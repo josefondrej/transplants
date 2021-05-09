@@ -2,13 +2,8 @@ from typing import Optional
 
 
 class DatabaseMixin:
-    """Add model_class().save_to_db() and model_class.find_by_id(identifier)
-
-    Args:
-        model_class: Class to add the methods to
-        collection: pymongo Collection to use for loading / saving the data
-        id_name: Name of the key that stores the identifier
-    """
+    id_name = None  # pymongo Collection to use for loading / saving the data
+    collection = None  # Name of the key that stores the identifier
 
     def save_to_db(self):
         cls = self.__class__
@@ -21,7 +16,7 @@ class DatabaseMixin:
                                   update={"$set": {field_name: value}})
 
     @classmethod
-    def find_by_id(cls, identifier: str) -> Optional["model_class"]:
+    def find_by_id(cls, identifier: str) -> Optional["DatabaseMixin"]:
         one = cls.collection.find_one({cls.id_name: identifier})
         if one is None:
             return

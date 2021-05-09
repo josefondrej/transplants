@@ -22,8 +22,8 @@ class SolverConfig(SerializationMixin, DatabaseMixin):
         if not isinstance(other, SolverConfig):
             return False
 
-        return (self.solver_config_id == other.solver_config_id) and (self.solver_name == other.solver_name) \
-               and (self.parameters == other.parameters)
+        return (self.solver_config_id == other.solver_config_id) and (self.solver_name == other.solver_name) and \
+               (self.parameters == other.parameters)
 
     def __hash__(self):
         return hash((self.solver_config_id, self.solver_name, frozenset(self.parameters)))

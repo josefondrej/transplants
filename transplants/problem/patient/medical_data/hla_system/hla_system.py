@@ -22,7 +22,7 @@ class HLASystem(AntigenAntibodySystem, SerializationMixin):
 
     @serializable_property(fields.Dict(keys=fields.String(), values=fields.Float(allow_none=True)))
     def antibodies(self) -> Set[HLAAntibody]:
-        return self._antibody_to_concentration
+        return self._antibodies
 
     @classmethod
     def _marshmallow_post_load(cls, data):

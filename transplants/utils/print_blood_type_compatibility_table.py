@@ -1,6 +1,5 @@
 from transplants.problem.patient.medical_data.blood_type_system.blood_type import all_types
 
-# TODO: Delete
 if __name__ == '__main__':
     def _bool_to_symbol(value: bool) -> str:
         return "o" if value else "x"
