@@ -1,5 +1,5 @@
 from tests.test_utils.default_ids import JOB_ID, PROBLEM_ID, SOLVER_CONFIG_ID
-from transplants.solve_api.job import Job
+from transplants.api.job import Job
 
 
 def load_job(job_id: str = JOB_ID, problem_id: str = PROBLEM_ID, solver_config_id: str = SOLVER_CONFIG_ID) -> Job:

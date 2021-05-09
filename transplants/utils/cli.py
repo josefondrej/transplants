@@ -12,7 +12,7 @@ parser.add_argument("--purge-db", required=False, help="Purge database")
 parser.add_argument("--show-test-patients", required=False, help="Show test patients")
 parser.add_argument("--print-blood-type-compatibility-table", required=False,
                     help="Prints blood type compatibility table")
-parser.add_argument("--visualise-test-problem", required=False, help="Visualise test problem")
+parser.add_argument("--visualise-test-problem", required=False, help="Visualise test model")
 
 args = parser.parse_args()
 

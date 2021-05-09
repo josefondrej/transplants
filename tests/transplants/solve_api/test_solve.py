@@ -4,11 +4,11 @@ from tests.test_utils.load_job import load_job
 from tests.test_utils.load_problem import load_problem
 from tests.test_utils.load_solution import load_solution
 from tests.test_utils.load_solver_config import load_solver_config
+from transplants.api.solve import solve
+from transplants.api.solve_job import solve_job
 from transplants.database.mongo_db import initialize_db, kidney_exchange_database
 from transplants.database.purge_db import purge_db
-from transplants.solution.solution import Solution
-from transplants.solve_api.solve import solve
-from transplants.solve_api.solve_job import solve_job
+from transplants.model.solution import Solution
 
 
 class TestSolve(TestCase):

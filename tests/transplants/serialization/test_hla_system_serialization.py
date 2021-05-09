@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from transplants.problem.patient.medical_data.hla_system.hla_system import HLASystem
+from transplants.model.medical_data.hla_system.hla_system import HLASystem
 
 
 class TestHLASystemSerialization(TestCase):

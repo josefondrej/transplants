@@ -2,11 +2,11 @@ import json
 from pprint import pprint
 from unittest import TestCase
 
-from transplants.problem.problem import Problem
-from transplants.solution.solution import Solution
-from transplants.solver.or_tools_solver import ORToolsSolver
-from transplants.solver.scorer.default_forbidden_transplants import get_default_forbidden_transplants
-from transplants.solver.scorer.hla_blood_type_additive_scorer import HLABloodTypeAdditiveScorer
+from transplants.backend.or_tools_solver import ORToolsSolver
+from transplants.backend.scorer.default_forbidden_transplants import get_default_forbidden_transplants
+from transplants.backend.scorer.hla_blood_type_additive_scorer import HLABloodTypeAdditiveScorer
+from transplants.model.problem import Problem
+from transplants.model.solution import Solution
 from transplants.utils.paths import get_abs_path
 
 

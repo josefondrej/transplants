@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from tests.test_utils.load_problem import load_problem
-from transplants.problem.problem import Problem
+from transplants.model.problem import Problem
 
 
 class TestProblemSerialization(TestCase):

@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from tests.test_utils.load_solver_config import load_solver_config
-from transplants.solver.solver_config import SolverConfig
+from transplants.model.solver_config import SolverConfig
 
 
 class TestSolverConfigSerialization(TestCase):

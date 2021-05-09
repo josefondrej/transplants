@@ -1,7 +1,7 @@
 import json
 from unittest import TestCase
 
-from transplants.problem.patient.patient import Patient
+from transplants.model.patient import Patient
 from transplants.utils.paths import get_abs_path
 
 

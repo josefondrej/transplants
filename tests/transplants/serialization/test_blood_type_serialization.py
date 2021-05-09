@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from transplants.problem.patient.medical_data.blood_type_system.blood_type import BloodType
+from transplants.model.medical_data.blood_type_system.blood_type import BloodType
 
 
 class TestBloodTypeSerialization(TestCase):

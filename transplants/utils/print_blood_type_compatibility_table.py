@@ -1,4 +1,4 @@
-from transplants.problem.patient.medical_data.blood_type_system.blood_type import all_types
+from transplants.model.medical_data.blood_type_system.blood_type import all_types
 
 
 def _bool_to_symbol(value: bool) -> str:

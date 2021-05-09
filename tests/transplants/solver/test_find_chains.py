@@ -3,7 +3,7 @@ from unittest import TestCase
 
 import numpy as np
 
-from transplants.solver.matching_from_matrix import _find_chains
+from transplants.backend.matching_from_matrix import _find_chains
 
 _expected_chain_type = List[Tuple[List[int], bool]]
 

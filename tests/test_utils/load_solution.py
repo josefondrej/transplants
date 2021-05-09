@@ -1,5 +1,5 @@
 from tests.test_utils.default_ids import PROBLEM_ID, SOLVER_CONFIG_ID
-from transplants.solution.solution import Solution
+from transplants.model.solution import Solution
 
 
 def load_solution(problem_id: str = PROBLEM_ID, solver_config_id: str = SOLVER_CONFIG_ID, solution_id: str = None):

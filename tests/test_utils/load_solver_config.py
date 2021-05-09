@@ -1,5 +1,5 @@
 from tests.test_utils.default_ids import SOLVER_CONFIG_ID
-from transplants.solver.solver_config import SolverConfig
+from transplants.model.solver_config import SolverConfig
 
 
 def load_solver_config(solver_config_id: str = SOLVER_CONFIG_ID):

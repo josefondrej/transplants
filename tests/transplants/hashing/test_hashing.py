@@ -1,14 +1,14 @@
 from unittest import TestCase
 
-from transplants.problem.patient.donor import Donor
-from transplants.problem.patient.medical_data.blood_type_system.blood_type import A
-from transplants.problem.patient.medical_data.hla_system.hla_system import HLASystem
-from transplants.problem.patient.medical_data.medical_data import MedicalData
-from transplants.problem.patient.recipient import Recipient
-from transplants.solution.cycle import Cycle
-from transplants.solution.matching import Matching
-from transplants.solution.sequence import Sequence
-from transplants.solution.transplant import Transplant
+from transplants.model.cycle import Cycle
+from transplants.model.donor import Donor
+from transplants.model.matching import Matching
+from transplants.model.medical_data.blood_type_system.blood_type import A
+from transplants.model.medical_data.hla_system.hla_system import HLASystem
+from transplants.model.medical_data.medical_data import MedicalData
+from transplants.model.recipient import Recipient
+from transplants.model.sequence import Sequence
+from transplants.model.transplant import Transplant
 
 
 class TestHashing(TestCase):

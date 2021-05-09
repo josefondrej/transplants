@@ -5,12 +5,12 @@ from tests.test_utils.load_job import load_job
 from tests.test_utils.load_problem import load_problem
 from tests.test_utils.load_solution import load_solution
 from tests.test_utils.load_solver_config import load_solver_config
+from transplants.api.solve_job import serialize_datetime
 from transplants.database.mongo_db import kidney_exchange_database, initialize_db
 from transplants.database.purge_db import purge_db
-from transplants.problem.problem import Problem
-from transplants.solution.solution import Solution
-from transplants.solve_api.solve_job import serialize_datetime
-from transplants.solver.solver_config import SolverConfig
+from transplants.model.problem import Problem
+from transplants.model.solution import Solution
+from transplants.model.solver_config import SolverConfig
 
 
 class TestDatabase(TestCase):

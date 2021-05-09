@@ -7,14 +7,14 @@ import matplotlib.pyplot as plt
 import networkx as nx
 from networkx import Graph
 
-from transplants.problem.problem import Problem
-from transplants.solution.matching import Matching
-from transplants.solution.transplant import Transplant
-from transplants.solver.or_tools_solver import ORToolsSolver
-from transplants.solver.scorer.additive_scorer_base import AdditiveScorerBase
-from transplants.solver.scorer.default_forbidden_transplants import get_default_forbidden_transplants
-from transplants.solver.scorer.hla_blood_type_additive_scorer import HLABloodTypeAdditiveScorer
-from transplants.solver.scorer.scorer_base import TRANSPLANT_IMPOSSIBLE
+from transplants.backend.or_tools_solver import ORToolsSolver
+from transplants.backend.scorer.additive_scorer_base import AdditiveScorerBase
+from transplants.backend.scorer.default_forbidden_transplants import get_default_forbidden_transplants
+from transplants.backend.scorer.hla_blood_type_additive_scorer import HLABloodTypeAdditiveScorer
+from transplants.backend.scorer.scorer_base import TRANSPLANT_IMPOSSIBLE
+from transplants.model.problem import Problem
+from transplants.model.solution import Matching
+from transplants.model.transplant import Transplant
 from transplants.utils.load_donors_recipients import load_donors_recipients_from_file
 from transplants.utils.paths import get_abs_path
 

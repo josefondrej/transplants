@@ -1,10 +1,10 @@
 from unittest import TestCase
 
 from tests.test_utils.load_solution import load_solution
-from transplants.solution.chain import Chain
-from transplants.solution.matching import Matching
-from transplants.solution.solution import Solution
-from transplants.solution.transplant import Transplant
+from transplants.model.chain import Chain
+from transplants.model.matching import Matching
+from transplants.model.solution import Solution
+from transplants.model.transplant import Transplant
 
 
 class TestSolutionSerialization(TestCase):

@@ -1,9 +1,9 @@
 import json
 from typing import Tuple, List
 
-from transplants.problem.patient import Patient
-from transplants.problem.patient.donor import Donor
-from transplants.problem.patient.recipient import Recipient
+from transplants.model.donor import Donor
+from transplants.model.patient import Patient
+from transplants.model.recipient import Recipient
 
 
 def load_donors_recipients(serialized_patients: List) -> Tuple[List[Donor], List[Recipient]]:
