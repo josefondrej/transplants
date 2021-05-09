@@ -3,7 +3,7 @@ from queue import Queue
 from threading import Thread
 from typing import List
 
-from transplants.database import job_collection
+from transplants.database.mongo_db import job_collection
 from transplants.solve_api.job import Job
 from transplants.solve_api.solve_job import solve_job
 

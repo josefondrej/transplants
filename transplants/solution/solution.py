@@ -2,16 +2,19 @@ from typing import List
 
 from marshmallow import fields
 
+from transplants.database.database_mixin import DatabaseMixin
+from transplants.database.mongo_db import solution_collection
 from transplants.serialization.serialization_mixin import SerializationMixin, add_marshmallow_schema, \
     serializable_property
 from transplants.solution.matching import Matching
 
 
 @add_marshmallow_schema
-class Solution(SerializationMixin):
-    """Contains information about the solution
-    and the method that was used to find it
+class Solution(SerializationMixin, DatabaseMixin):
+    id_name = "solution_id"
+    collection = solution_collection
 
+    """
     Args:
         solution_id: Unique identifier of the solution
         problem_id: Unique identifier of the problem this solution solves

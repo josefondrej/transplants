@@ -2,12 +2,17 @@ from datetime import datetime
 
 from marshmallow import fields
 
+from transplants.database.database_mixin import DatabaseMixin
+from transplants.database.mongo_db import job_collection
 from transplants.serialization.serialization_mixin import SerializationMixin, add_marshmallow_schema, \
     serializable_property
 
 
 @add_marshmallow_schema
-class Job(SerializationMixin):
+class Job(SerializationMixin, DatabaseMixin):
+    id_name = "job_id"
+    collection = job_collection
+
     def __init__(self, job_id: str, problem_id: str, solver_config_id: str,
                  solution_id: str = None,
                  submission_timestamp: datetime = None,

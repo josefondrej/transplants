@@ -2,12 +2,17 @@ from typing import Optional, Dict, Any, Union, List
 
 from marshmallow import fields
 
+from transplants.database.database_mixin import DatabaseMixin
+from transplants.database.mongo_db import solver_config_collection
 from transplants.serialization.serialization_mixin import SerializationMixin, add_marshmallow_schema, \
     serializable_property
 
 
 @add_marshmallow_schema
-class SolverConfig(SerializationMixin):
+class SolverConfig(SerializationMixin, DatabaseMixin):
+    id_name = "solver_config_id"
+    collection = solver_config_collection
+
     def __init__(self, solver_config_id: str, solver_name: str, parameters: Optional[Dict] = None):
         self._solver_config_id = solver_config_id
         self._solver_name = solver_name

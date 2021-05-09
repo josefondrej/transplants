@@ -2,6 +2,8 @@ from typing import List
 
 from marshmallow import fields
 
+from transplants.database.database_mixin import DatabaseMixin
+from transplants.database.mongo_db import problem_collection
 from transplants.problem.patient.donor import Donor
 from transplants.problem.patient.patient import Patient
 from transplants.problem.patient.recipient import Recipient
@@ -10,10 +12,9 @@ from transplants.serialization.serialization_mixin import SerializationMixin, ad
 
 
 @add_marshmallow_schema
-class Problem(SerializationMixin):
-    """Description of the Kidney Exchange Matching problem
-    Does not contain any information on how we should find solution or evaluate it's quality
-    """
+class Problem(SerializationMixin, DatabaseMixin):
+    id_name = "problem_id"
+    collection = problem_collection
 
     def __init__(self, problem_id: str, patients: List[Patient]):
         self._problem_id = problem_id

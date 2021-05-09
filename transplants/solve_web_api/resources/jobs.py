@@ -1,6 +1,6 @@
 from flask_apispec import MethodResource
 
-from transplants.database import job_collection
+from transplants.database.mongo_db import job_collection
 
 
 class Jobs(MethodResource):
