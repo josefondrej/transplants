@@ -20,7 +20,7 @@ class Problem(SerializationMixin, DatabaseMixin):
         self._problem_id = problem_id
         self._patients = patients
 
-        self._patient_id_to_patient = {patient.identifier: patient for patient in self._patients}
+        self._patient_id_to_patient = {patient.patient_id: patient for patient in self._patients}
 
     def __eq__(self, other):
         if not isinstance(other, Problem):

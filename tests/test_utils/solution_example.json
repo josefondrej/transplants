@@ -1,0 +1,64 @@
+{
+  "problem_id": "test_problem",
+  "solver_config_id": "test_solver_config",
+  "solution_id": "test_solution",
+  "matchings": [
+    {
+      "chains": [
+        {
+          "transplants": [
+            {
+              "donor_id": "07c54b8",
+              "recipient_id": "dfa96d8",
+              "score": 17.0
+            },
+            {
+              "donor_id": "180effe",
+              "recipient_id": "d39b597",
+              "score": 36.0
+            },
+            {
+              "donor_id": "dbc9028",
+              "recipient_id": "7cb6d98",
+              "score": 2.0
+            },
+            {
+              "donor_id": "78ee9c5",
+              "recipient_id": "fd2fee8",
+              "score": 1.0
+            },
+            {
+              "donor_id": "7e4427f",
+              "recipient_id": "15fe2d9",
+              "score": 20.0
+            },
+            {
+              "donor_id": "c999a2c",
+              "recipient_id": "26fe98e",
+              "score": 36.0
+            }
+          ],
+          "is_cycle": false,
+          "score": 112.0
+        },
+        {
+          "transplants": [
+            {
+              "donor_id": "826a39c",
+              "recipient_id": "03f543f",
+              "score": 13.0
+            },
+            {
+              "donor_id": "3567fde",
+              "recipient_id": "4394ac9",
+              "score": 25.0
+            }
+          ],
+          "is_cycle": false,
+          "score": 38.0
+        }
+      ],
+      "score": 150.0
+    }
+  ]
+}

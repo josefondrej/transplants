@@ -32,9 +32,11 @@ To start the web api run:
 make run-web-api
 ```
 
-Once the API starts go to [localhost:5000/swagger-ui/](http://localhost:5000/swagger-ui/) to see automatically generated documentation. 
+Once the API starts go to [localhost:5000/swagger-ui/](http://localhost:5000/swagger-ui/) to see automatically generated
+documentation.
 
-To see some examples on how to use the API see this [postman collection](https://www.postman.com/josef-ondrej/workspace/kidney-exchange-problem-solver/).
+To see some examples on how to use the API see
+this [postman collection](https://www.postman.com/josef-ondrej/workspace/kidney-exchange-problem-solver/).
 
 ## Medical Background
 

@@ -14,6 +14,7 @@ PROBLEMS_COLLECTION_NAME = "model"
 SOLUTIONS_COLLECTION_NAME = "solution"
 SOLVER_CONFIG_COLLECTION_NAME = "solver_config"
 JOB_COLLECTION_NAME = "job"
+PATIENT_COLLECTION_NAME = "patient"
 
 kidney_exchange_database_name = os.environ.get(KIDNEY_EXCHANGE_DATABASE_NAME_ENV_VAR_NAME,
                                                DEFAULT_KIDNEY_EXCHANGE_DATABASE_NAME)
@@ -41,3 +42,6 @@ def initialize_db(database: Database):
 
     db_job_collection = database.get_collection(JOB_COLLECTION_NAME)
     db_job_collection.create_index("job_id", unique=True)
+
+    db_patient_collection = database.get_collection(PATIENT_COLLECTION_NAME)
+    db_patient_collection.create_index("patient_id")

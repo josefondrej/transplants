@@ -18,23 +18,23 @@ class Patient(ABC, SerializationMixin):
     """Base class representing patient. It should not be instantiated
 
     Args:
-        identifier: Unique identifier for the patient
+        patient_id: Unique identifier for the patient
         medical_data: Patient's medical data
     """
     type_to_constructor = dict()
 
-    def __init__(self, identifier: str, medical_data: MedicalData, country: Optional[str] = None):
-        self._identifier = identifier
+    def __init__(self, patient_id: str, medical_data: MedicalData, country: Optional[str] = None):
+        self._identifier = patient_id
         self._medical_data = medical_data
         self._country = country
 
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
-        return self.identifier == other.identifier
+        return self.patient_id == other.patient_id
 
     def __hash__(self):
-        return hash(self.identifier)
+        return hash(self.patient_id)
 
     def __str__(self):
         return self._identifier
@@ -44,7 +44,7 @@ class Patient(ABC, SerializationMixin):
         return self._country
 
     @serializable_property(fields.String())
-    def identifier(self) -> str:
+    def patient_id(self) -> str:
         return self._identifier
 
     @serializable_property(fields.Nested(MedicalData.marshmallow_schema))
@@ -75,7 +75,7 @@ class Patient(ABC, SerializationMixin):
         data.patient_type = str(data.type.value)
         return data
 
-    @serializable_property(fields.List(fields.String(), required=False), serialize_name="related_donors")
+    @serializable_property(fields.List(fields.String(), required=False))
     def related_donor_ids(self) -> List[str]:
         return self._related_donor_ids
 

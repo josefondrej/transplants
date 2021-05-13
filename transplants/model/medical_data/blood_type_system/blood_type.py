@@ -47,9 +47,8 @@ class BloodType(AntigenAntibodySystem, SerializationMixin):
         representation = "".join(sorted(map(str, self.antigens)))
         return "0" if len(representation) == 0 else representation
 
-    @serializable_property(fields.List(fields.String(validate=_blood_type_code_validator), allow_none=True),
-                           serialize_name="forbidden_types")
-    def forbidden_blood_types(self) -> Set["BloodType"]:
+    @serializable_property(fields.List(fields.String(validate=_blood_type_code_validator), allow_none=True))
+    def forbidden_types(self) -> Set["BloodType"]:
         return self._forbidden_blood_types
 
     @serializable_property(fields.String())
@@ -59,7 +58,7 @@ class BloodType(AntigenAntibodySystem, SerializationMixin):
     @classmethod
     def _marshmallow_post_load(cls, data):
         code = data["type"]
-        forbidden_codes = data["forbidden_blood_types"]
+        forbidden_codes = data["forbidden_types"]
         model = copy.deepcopy(code_to_blood_type[code])
         model._forbidden_blood_types = None if forbidden_codes is None \
             else [code_to_blood_type[code] for code in forbidden_codes]

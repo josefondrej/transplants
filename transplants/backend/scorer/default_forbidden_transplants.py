@@ -9,7 +9,7 @@ def get_default_forbidden_transplants(patients: List[Patient]) -> List[Tuple[str
     -- if recipient is not looking for better match we assume by
     default he can't be transplanted with any of his related donors"""
     default_forbidden_transplants = [
-        (donor_id, patient.identifier)
+        (donor_id, patient.patient_id)
         for patient in patients
         if patient.is_recipient and not patient.require_better_than_related_match
         for donor_id in patient.related_donor_ids

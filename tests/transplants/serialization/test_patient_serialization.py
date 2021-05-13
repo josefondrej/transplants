@@ -21,7 +21,7 @@ class TestPatientSerialization(TestCase):
         self.maxDiff = None
         for serialized_patient, serialized_deserialized_patient in zip(serialized_patients,
                                                                        serialized_deserialized_patients):
-            self.assertEqual(serialized_patient["identifier"], serialized_deserialized_patient["identifier"])
+            self.assertEqual(serialized_patient["patient_id"], serialized_deserialized_patient["patient_id"])
             self.assertEqual(serialized_patient["patient_type"], serialized_deserialized_patient["patient_type"])
             self.assertEqual(serialized_patient["country"], serialized_deserialized_patient["country"])
             self.assertEqual(serialized_patient["medical_data"]["blood_type"],

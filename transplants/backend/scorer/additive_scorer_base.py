@@ -54,7 +54,7 @@ class AdditiveScorerBase(ScorerBase, ABC):
         recipient = problem.get_patient(transplant.recipient_id)
 
         # Impossible if explicitly forbidden
-        if (donor.identifier, recipient.identifier) in self._forbidden_transplants:
+        if (donor.patient_id, recipient.patient_id) in self._forbidden_transplants:
             return TRANSPLANT_IMPOSSIBLE
 
         # Impossible if base score < min required score
@@ -65,7 +65,7 @@ class AdditiveScorerBase(ScorerBase, ABC):
         # Impossible if recipient required better match than with all of his related donors
         if recipient.require_better_than_related_match:
             related_donors = transplant.recipient.related_donor_ids
-            potential_related_transplants = [Transplant(donor.identifier, transplant.recipient.identifier)
+            potential_related_transplants = [Transplant(donor.patient_id, transplant.recipient.patient_id)
                                              for donor in related_donors]
             potential_possible_related_transplants = [transplant for transplant in potential_related_transplants
                                                       if transplant not in self._forbidden_transplants]

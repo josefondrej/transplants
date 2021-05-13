@@ -53,7 +53,7 @@ class ORToolsSolver(AdditiveSolverBase):
         donors, recipients = problem.donors, problem.recipients
         transplant_score_matrix = self.get_score_matrix(problem=problem)
         i_to_donor = dict(enumerate(donors))
-        donor_id_to_i = {donor.identifier: i for i, donor in i_to_donor.items()}
+        donor_id_to_i = {donor.patient_id: i for i, donor in i_to_donor.items()}
 
         j_to_recipient = dict(enumerate(recipients))
 

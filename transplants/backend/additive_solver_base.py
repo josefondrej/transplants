@@ -18,7 +18,7 @@ class AdditiveSolverBase(SolverBase, ABC):
     def get_score_matrix(self, problem: Problem) -> np.ndarray:
         score_matrix = [
             [self._scorer.score_transplant(
-                Transplant(donor_id=donor.identifier, recipient_id=recipient.identifier),
+                Transplant(donor_id=donor.patient_id, recipient_id=recipient.patient_id),
                 problem=problem
             )
                 for recipient in problem.recipients]

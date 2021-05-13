@@ -22,12 +22,12 @@ class TestHashing(TestCase):
 
         test_medical_data = MedicalData(blood_type=A, hla_system=HLASystem(antigens=set(), antibodies=set()))
 
-        self.patient_a = Donor(identifier=self.patient_id_a, medical_data=test_medical_data)
-        self.patient_b = Recipient(identifier=self.patient_id_b, medical_data=test_medical_data, related_donor_ids=[])
-        self.patient_c = Donor(identifier=self.patient_id_c, medical_data=test_medical_data)
-        self.patient_d = Recipient(identifier=self.patient_id_d, medical_data=test_medical_data, related_donor_ids=[])
-        self.patient_e = Donor(identifier=self.patient_id_e, medical_data=test_medical_data)
-        self.patient_f = Recipient(identifier=self.patient_id_f, medical_data=test_medical_data, related_donor_ids=[])
+        self.patient_a = Donor(patient_id=self.patient_id_a, medical_data=test_medical_data)
+        self.patient_b = Recipient(patient_id=self.patient_id_b, medical_data=test_medical_data, related_donor_ids=[])
+        self.patient_c = Donor(patient_id=self.patient_id_c, medical_data=test_medical_data)
+        self.patient_d = Recipient(patient_id=self.patient_id_d, medical_data=test_medical_data, related_donor_ids=[])
+        self.patient_e = Donor(patient_id=self.patient_id_e, medical_data=test_medical_data)
+        self.patient_f = Recipient(patient_id=self.patient_id_f, medical_data=test_medical_data, related_donor_ids=[])
 
         self.transplant_one = Transplant(donor_id=self.patient_id_a, recipient_id=self.patient_id_b)
         self.transplant_two = Transplant(donor_id=self.patient_id_c, recipient_id=self.patient_id_d)

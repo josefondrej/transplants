@@ -1,6 +1,6 @@
 [
   {
-    "identifier": "a1b3398",
+    "patient_id": "a1b3398",
     "patient_type": "donor",
     "country": "CZE",
     "medical_data": {
@@ -30,7 +30,7 @@
     }
   },
   {
-    "identifier": "300ffe8",
+    "patient_id": "300ffe8",
     "patient_type": "donor",
     "country": "CZE",
     "medical_data": {
@@ -56,7 +56,7 @@
     }
   },
   {
-    "identifier": "1959daa",
+    "patient_id": "1959daa",
     "patient_type": "donor",
     "country": "CZE",
     "medical_data": {
@@ -81,7 +81,7 @@
     }
   },
   {
-    "identifier": "11c0286",
+    "patient_id": "11c0286",
     "patient_type": "donor",
     "country": "CZE",
     "medical_data": {
@@ -106,7 +106,7 @@
     }
   },
   {
-    "identifier": "02c454e",
+    "patient_id": "02c454e",
     "patient_type": "donor",
     "country": "CZE",
     "medical_data": {
@@ -134,7 +134,7 @@
     }
   },
   {
-    "identifier": "9b85c30",
+    "patient_id": "9b85c30",
     "patient_type": "donor",
     "country": "CZE",
     "medical_data": {
@@ -160,7 +160,7 @@
     }
   },
   {
-    "identifier": "a10feba",
+    "patient_id": "a10feba",
     "patient_type": "donor",
     "country": "CZE",
     "medical_data": {
@@ -186,7 +186,7 @@
     }
   },
   {
-    "identifier": "81274ba",
+    "patient_id": "81274ba",
     "patient_type": "donor",
     "country": "CZE",
     "medical_data": {
@@ -212,7 +212,7 @@
     }
   },
   {
-    "identifier": "180effe",
+    "patient_id": "180effe",
     "patient_type": "donor",
     "country": "CZE",
     "medical_data": {
@@ -233,7 +233,7 @@
     }
   },
   {
-    "identifier": "c999a2c",
+    "patient_id": "c999a2c",
     "patient_type": "donor",
     "country": "CZE",
     "medical_data": {
@@ -258,7 +258,7 @@
     }
   },
   {
-    "identifier": "aa5d720",
+    "patient_id": "aa5d720",
     "patient_type": "donor",
     "country": "CZE",
     "medical_data": {
@@ -284,7 +284,7 @@
     }
   },
   {
-    "identifier": "3567fde",
+    "patient_id": "3567fde",
     "patient_type": "donor",
     "country": "CZE",
     "medical_data": {
@@ -310,7 +310,7 @@
     }
   },
   {
-    "identifier": "007f19f",
+    "patient_id": "007f19f",
     "patient_type": "donor",
     "country": "CZE",
     "medical_data": {
@@ -335,7 +335,7 @@
     }
   },
   {
-    "identifier": "07c54b8",
+    "patient_id": "07c54b8",
     "patient_type": "donor",
     "country": "CZE",
     "medical_data": {
@@ -364,7 +364,7 @@
     }
   },
   {
-    "identifier": "826a39c",
+    "patient_id": "826a39c",
     "patient_type": "donor",
     "country": "CZE",
     "medical_data": {
@@ -389,7 +389,7 @@
     }
   },
   {
-    "identifier": "b60e385",
+    "patient_id": "b60e385",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -416,7 +416,7 @@
     }
   },
   {
-    "identifier": "fe2ba8c",
+    "patient_id": "fe2ba8c",
     "patient_type": "donor",
     "country": "IL",
     "medical_data": {
@@ -444,7 +444,7 @@
     }
   },
   {
-    "identifier": "9c05afd",
+    "patient_id": "9c05afd",
     "patient_type": "donor",
     "country": "IL",
     "medical_data": {
@@ -472,7 +472,7 @@
     }
   },
   {
-    "identifier": "b68688a",
+    "patient_id": "b68688a",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -500,7 +500,7 @@
     }
   },
   {
-    "identifier": "92421d9",
+    "patient_id": "92421d9",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -526,7 +526,7 @@
     }
   },
   {
-    "identifier": "62f0075",
+    "patient_id": "62f0075",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -553,7 +553,7 @@
     }
   },
   {
-    "identifier": "b3fc00a",
+    "patient_id": "b3fc00a",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -580,7 +580,7 @@
     }
   },
   {
-    "identifier": "496086e",
+    "patient_id": "496086e",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -608,7 +608,7 @@
     }
   },
   {
-    "identifier": "2c82235",
+    "patient_id": "2c82235",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -634,7 +634,7 @@
     }
   },
   {
-    "identifier": "2f94b5b",
+    "patient_id": "2f94b5b",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -662,7 +662,7 @@
     }
   },
   {
-    "identifier": "8581a3e",
+    "patient_id": "8581a3e",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -688,7 +688,7 @@
     }
   },
   {
-    "identifier": "5ee38ba",
+    "patient_id": "5ee38ba",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -715,7 +715,7 @@
     }
   },
   {
-    "identifier": "7764141",
+    "patient_id": "7764141",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -741,7 +741,7 @@
     }
   },
   {
-    "identifier": "02000e6",
+    "patient_id": "02000e6",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -768,7 +768,7 @@
     }
   },
   {
-    "identifier": "7e4427f",
+    "patient_id": "7e4427f",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -796,7 +796,7 @@
     }
   },
   {
-    "identifier": "24e6d5a",
+    "patient_id": "24e6d5a",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -829,7 +829,7 @@
     }
   },
   {
-    "identifier": "21444ce",
+    "patient_id": "21444ce",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -857,7 +857,7 @@
     }
   },
   {
-    "identifier": "dbc9028",
+    "patient_id": "dbc9028",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -883,7 +883,7 @@
     }
   },
   {
-    "identifier": "8adda96",
+    "patient_id": "8adda96",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -912,7 +912,7 @@
     }
   },
   {
-    "identifier": "4943b22",
+    "patient_id": "4943b22",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -940,7 +940,7 @@
     }
   },
   {
-    "identifier": "c17fb5b",
+    "patient_id": "c17fb5b",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -966,7 +966,7 @@
     }
   },
   {
-    "identifier": "3ad4cac",
+    "patient_id": "3ad4cac",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -996,7 +996,7 @@
     }
   },
   {
-    "identifier": "78ee9c5",
+    "patient_id": "78ee9c5",
     "patient_type": "donor",
     "country": "AUT",
     "medical_data": {
@@ -1033,9 +1033,9 @@
     }
   },
   {
-    "identifier": "22f4f7b",
+    "patient_id": "22f4f7b",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "a1b3398"
     ],
     "country": "CZE",
@@ -1071,9 +1071,9 @@
     }
   },
   {
-    "identifier": "78de922",
+    "patient_id": "78de922",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "300ffe8"
     ],
     "country": "CZE",
@@ -1195,9 +1195,9 @@
     }
   },
   {
-    "identifier": "2e4d95d",
+    "patient_id": "2e4d95d",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "1959daa"
     ],
     "country": "CZE",
@@ -1288,9 +1288,9 @@
     }
   },
   {
-    "identifier": "a3bc39a",
+    "patient_id": "a3bc39a",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "11c0286"
     ],
     "country": "CZE",
@@ -1349,9 +1349,9 @@
     }
   },
   {
-    "identifier": "68935e2",
+    "patient_id": "68935e2",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "02c454e"
     ],
     "country": "CZE",
@@ -1389,9 +1389,9 @@
     }
   },
   {
-    "identifier": "4b19e05",
+    "patient_id": "4b19e05",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "9b85c30"
     ],
     "country": "CZE",
@@ -1417,9 +1417,9 @@
     }
   },
   {
-    "identifier": "d180d1c",
+    "patient_id": "d180d1c",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "a10feba"
     ],
     "country": "CZE",
@@ -1490,9 +1490,9 @@
     }
   },
   {
-    "identifier": "cb06d95",
+    "patient_id": "cb06d95",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "81274ba"
     ],
     "country": "CZE",
@@ -1555,9 +1555,9 @@
     }
   },
   {
-    "identifier": "dfa96d8",
+    "patient_id": "dfa96d8",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "180effe"
     ],
     "country": "CZE",
@@ -1590,9 +1590,9 @@
     }
   },
   {
-    "identifier": "15fe2d9",
+    "patient_id": "15fe2d9",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "c999a2c"
     ],
     "country": "CZE",
@@ -1616,9 +1616,9 @@
     }
   },
   {
-    "identifier": "4394ac9",
+    "patient_id": "4394ac9",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "aa5d720"
     ],
     "country": "CZE",
@@ -1644,9 +1644,9 @@
     }
   },
   {
-    "identifier": "03f543f",
+    "patient_id": "03f543f",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "3567fde"
     ],
     "country": "CZE",
@@ -1669,9 +1669,9 @@
     }
   },
   {
-    "identifier": "913b7c2",
+    "patient_id": "913b7c2",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "b60e385"
     ],
     "country": "AUT",
@@ -1748,9 +1748,9 @@
     }
   },
   {
-    "identifier": "4461d3f",
+    "patient_id": "4461d3f",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "fe2ba8c"
     ],
     "country": "IL",
@@ -1782,9 +1782,9 @@
     }
   },
   {
-    "identifier": "e1db7c3",
+    "patient_id": "e1db7c3",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "9c05afd"
     ],
     "country": "IL",
@@ -1810,9 +1810,9 @@
     }
   },
   {
-    "identifier": "96b3513",
+    "patient_id": "96b3513",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "b68688a"
     ],
     "country": "AUT",
@@ -1870,9 +1870,9 @@
     }
   },
   {
-    "identifier": "b3d071e",
+    "patient_id": "b3d071e",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "92421d9"
     ],
     "country": "AUT",
@@ -1908,9 +1908,9 @@
     }
   },
   {
-    "identifier": "0be3f0b",
+    "patient_id": "0be3f0b",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "62f0075"
     ],
     "country": "AUT",
@@ -1974,9 +1974,9 @@
     }
   },
   {
-    "identifier": "cd62d13",
+    "patient_id": "cd62d13",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "b3fc00a"
     ],
     "country": "AUT",
@@ -2021,9 +2021,9 @@
     }
   },
   {
-    "identifier": "9c66b64",
+    "patient_id": "9c66b64",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "496086e"
     ],
     "country": "AUT",
@@ -2090,9 +2090,9 @@
     }
   },
   {
-    "identifier": "5f0cf93",
+    "patient_id": "5f0cf93",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "2c82235"
     ],
     "country": "AUT",
@@ -2125,9 +2125,9 @@
     }
   },
   {
-    "identifier": "eef7c20",
+    "patient_id": "eef7c20",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "2f94b5b"
     ],
     "country": "AUT",
@@ -2189,9 +2189,9 @@
     }
   },
   {
-    "identifier": "056e712",
+    "patient_id": "056e712",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "8581a3e"
     ],
     "country": "AUT",
@@ -2264,9 +2264,9 @@
     }
   },
   {
-    "identifier": "359988f",
+    "patient_id": "359988f",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "5ee38ba"
     ],
     "country": "AUT",
@@ -2289,9 +2289,9 @@
     }
   },
   {
-    "identifier": "26fe98e",
+    "patient_id": "26fe98e",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "7764141"
     ],
     "country": "AUT",
@@ -2311,9 +2311,9 @@
     }
   },
   {
-    "identifier": "a464a62",
+    "patient_id": "a464a62",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "02000e6"
     ],
     "country": "AUT",
@@ -2404,9 +2404,9 @@
     }
   },
   {
-    "identifier": "fd2fee8",
+    "patient_id": "fd2fee8",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "7e4427f"
     ],
     "country": "AUT",
@@ -2438,9 +2438,9 @@
     }
   },
   {
-    "identifier": "a0b674b",
+    "patient_id": "a0b674b",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "24e6d5a"
     ],
     "country": "AUT",
@@ -2537,9 +2537,9 @@
     }
   },
   {
-    "identifier": "af75e73",
+    "patient_id": "af75e73",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "21444ce"
     ],
     "country": "AUT",
@@ -2590,9 +2590,9 @@
     }
   },
   {
-    "identifier": "d39b597",
+    "patient_id": "d39b597",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "dbc9028"
     ],
     "country": "AUT",
@@ -2660,9 +2660,9 @@
     }
   },
   {
-    "identifier": "cb1ef5a",
+    "patient_id": "cb1ef5a",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "8adda96"
     ],
     "country": "AUT",
@@ -2797,9 +2797,9 @@
     }
   },
   {
-    "identifier": "e4e0ff8",
+    "patient_id": "e4e0ff8",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "4943b22"
     ],
     "country": "AUT",
@@ -2825,9 +2825,9 @@
     }
   },
   {
-    "identifier": "435eb00",
+    "patient_id": "435eb00",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "c17fb5b"
     ],
     "country": "AUT",
@@ -2892,9 +2892,9 @@
     }
   },
   {
-    "identifier": "067eeb6",
+    "patient_id": "067eeb6",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "3ad4cac"
     ],
     "country": "AUT",
@@ -2952,9 +2952,9 @@
     }
   },
   {
-    "identifier": "7cb6d98",
+    "patient_id": "7cb6d98",
     "patient_type": "recipient",
-    "related_donors": [
+    "related_donor_ids": [
       "78ee9c5"
     ],
     "country": "AUT",

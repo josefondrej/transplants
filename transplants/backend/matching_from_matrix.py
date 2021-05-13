@@ -98,8 +98,8 @@ def _index_chains_to_patient_chains(index_chains: List[Tuple[List[int], bool]],
         chain = chain_constructor(
             transplants=[
                 Transplant(
-                    donor_id=vertex_to_patient[index_chain[2 * i]].identifier,
-                    recipient_id=vertex_to_patient[index_chain[2 * i + 1]].identifier
+                    donor_id=vertex_to_patient[index_chain[2 * i]].patient_id,
+                    recipient_id=vertex_to_patient[index_chain[2 * i + 1]].patient_id
                 ) for i in range(len(index_chain) // 2)
             ]
         )

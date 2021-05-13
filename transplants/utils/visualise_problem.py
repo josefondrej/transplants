@@ -44,18 +44,18 @@ def _build_networkx_graph(problem: Problem, scorer: AdditiveScorerBase) -> Graph
     graph = nx.Graph()
     donors, recipients = problem.donors, problem.recipients
     for patient in donors + recipients:
-        graph.add_node(patient.identifier, is_donor=patient.is_donor)
+        graph.add_node(patient.patient_id, is_donor=patient.is_donor)
 
     for donor in donors:
         for recipient in recipients:
-            score = scorer.score_transplant(Transplant(donor_id=donor.identifier, recipient_id=recipient.identifier),
+            score = scorer.score_transplant(Transplant(donor_id=donor.patient_id, recipient_id=recipient.patient_id),
                                             problem)
             if score != TRANSPLANT_IMPOSSIBLE:
-                graph.add_edge(donor.identifier, recipient.identifier, score=score, is_transplant=True)
+                graph.add_edge(donor.patient_id, recipient.patient_id, score=score, is_transplant=True)
 
     for recipient in recipients:
         for donor_id in recipient.related_donor_ids:
-            graph.add_edge(recipient.identifier, donor_id, is_transplant=False)
+            graph.add_edge(recipient.patient_id, donor_id, is_transplant=False)
 
     return graph
 
@@ -118,8 +118,8 @@ def visualise_problem(problem: Problem, scorer: AdditiveScorerBase,
     _highlight_solution(graph, solution)
 
     pos = dict()
-    pos.update({donor.identifier: [0, i] for i, donor in enumerate(donors)})
-    pos.update({recipient.identifier: [1, i] for i, recipient in enumerate(recipients)})
+    pos.update({donor.patient_id: [0, i] for i, donor in enumerate(donors)})
+    pos.update({recipient.patient_id: [1, i] for i, recipient in enumerate(recipients)})
 
     if align == "horizontal":
         pos = {node: [j, 1 - i] for node, (i, j) in pos.items()}
