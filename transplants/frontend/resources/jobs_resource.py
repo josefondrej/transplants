@@ -3,7 +3,7 @@ from flask_apispec import MethodResource
 from transplants.model.job import Job
 
 
-class Jobs(MethodResource):
+class JobsResource(MethodResource):
     def get(self):
         job_collection = Job.get_collection()
         all_jobs = job_collection.find()

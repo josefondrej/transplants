@@ -8,21 +8,21 @@ from pymongo.database import Database
 from transplants.api.job_processing import start_job_processing
 from transplants.database.mongo_db import kidney_exchange_database
 from transplants.database.setup_db import setup_db
-from transplants.frontend.resources.job import Job
-from transplants.frontend.resources.jobs import Jobs
-from transplants.frontend.resources.problem import Problem
-from transplants.frontend.resources.solution import Solution
-from transplants.frontend.resources.solver_config import SolverConfig
+from transplants.frontend.resources.job_resource import JobResource
+from transplants.frontend.resources.jobs_resource import JobsResource
+from transplants.frontend.resources.problem_resource import ProblemResource
+from transplants.frontend.resources.solution_resource import SolutionResource
+from transplants.frontend.resources.solver_config_resource import SolverConfigResource
 
 app = Flask(__name__)
 
 api = Api(app)
 
-api.add_resource(Problem, "/problem/<string:problem_id>")
-api.add_resource(SolverConfig, "/solver_config/<string:solver_config_id>")
-api.add_resource(Solution, "/solution/<string:solution_id>")
-api.add_resource(Job, "/job/<string:job_id>")
-api.add_resource(Jobs, "/jobs/")
+api.add_resource(ProblemResource, "/problem/<string:problem_id>")
+api.add_resource(SolverConfigResource, "/solver_config/<string:solver_config_id>")
+api.add_resource(SolutionResource, "/solution/<string:solution_id>")
+api.add_resource(JobResource, "/job/<string:job_id>")
+api.add_resource(JobsResource, "/jobs/")
 
 app.config.update({
     'APISPEC_SPEC': APISpec(
@@ -36,11 +36,11 @@ app.config.update({
 
 docs = FlaskApiSpec(app)
 
-docs.register(Problem)
-docs.register(SolverConfig)
-docs.register(Solution)
-docs.register(Job)
-docs.register(Jobs)
+docs.register(ProblemResource)
+docs.register(SolverConfigResource)
+docs.register(SolutionResource)
+docs.register(JobResource)
+docs.register(JobsResource)
 
 
 def start_app(database: Database, host: str = "localhost", port: int = 5000, debug: bool = True):
