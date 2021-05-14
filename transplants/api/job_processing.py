@@ -2,9 +2,8 @@ import logging
 from queue import Queue
 from threading import Thread
 
-from transplants.api.job import Job
 from transplants.api.solve_job import solve_job
-from transplants.database.mongo_db import job_collection
+from transplants.model.job import Job
 
 _job_ids_queue = Queue()
 
@@ -13,6 +12,7 @@ _logger = logging.getLogger(name="job_processing")
 
 def _update_job_ids_queue_from_database():
     _logger.info("Initializing job ids queue from database")
+    job_collection = Job.get_collection()
     new_jobs = job_collection.find(filter={"solution_start_timestamp": None})
     new_job_ids = [job["job_id"] for job in new_jobs]
     for job_id in new_job_ids:

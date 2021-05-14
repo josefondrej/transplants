@@ -1,18 +1,14 @@
-from unittest import TestCase
-
 from tests.test_utils.load_job import load_job
 from tests.test_utils.load_problem import load_problem
 from tests.test_utils.load_solution import load_solution
 from tests.test_utils.load_solver_config import load_solver_config
+from tests.test_utils.mock_db import MockDB
 from transplants.api.solve import solve
 from transplants.api.solve_job import solve_job
-from transplants.database.mongo_db import initialize_db, kidney_exchange_database
-from transplants.database.purge_db import purge_db
 from transplants.model.solution import Solution
 
 
-class TestSolve(TestCase):
-
+class TestSolve(MockDB):
     def test_solve(self):
         problem = load_problem()
         solver_config = load_solver_config()
@@ -26,9 +22,6 @@ class TestSolve(TestCase):
         self.assertEqual(solution, expected_solution)
 
     def test_solve_db(self):
-        initialize_db(kidney_exchange_database)
-        purge_db(kidney_exchange_database)
-
         problem = load_problem()
         solver_config = load_solver_config()
         job = load_job()

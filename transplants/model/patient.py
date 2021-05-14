@@ -4,6 +4,7 @@ from typing import List, Optional
 from marshmallow import fields
 from marshmallow.validate import OneOf
 
+from transplants.database.database_mixin import DatabaseMixin
 from transplants.model.medical_data.medical_data import MedicalData
 from transplants.model.patient_type import PatientType
 from transplants.serialization.serialization_mixin import SerializationMixin, serializable_property, \
@@ -14,13 +15,16 @@ _patient_type_validator = OneOf([patient_type for patient_type in list(_code_to_
 
 
 @add_marshmallow_schema
-class Patient(ABC, SerializationMixin):
+class Patient(ABC, SerializationMixin, DatabaseMixin):
     """Base class representing patient. It should not be instantiated
 
     Args:
         patient_id: Unique identifier for the patient
         medical_data: Patient's medical data
     """
+    db_id_name = "patient_id"
+    db_collection_name = "patient"
+
     type_to_constructor = dict()
 
     def __init__(self, patient_id: str, medical_data: MedicalData, country: Optional[str] = None):

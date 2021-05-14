@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from tests.test_utils.load_job import load_job
-from transplants.api.job import Job
+from transplants.model.job import Job
 
 
 class TestJobSerialization(TestCase):

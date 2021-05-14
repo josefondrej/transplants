@@ -5,7 +5,8 @@ from flask_apispec import FlaskApiSpec
 from flask_restful import Api
 
 from transplants.api.job_processing import start_job_processing
-from transplants.database.mongo_db import kidney_exchange_database, initialize_db
+from transplants.database.initialize_db import initialize_db
+from transplants.database.mongo_db import kidney_exchange_database
 from transplants.frontend.resources.job import Job
 from transplants.frontend.resources.jobs import Jobs
 from transplants.frontend.resources.problem import Problem

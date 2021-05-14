@@ -1,6 +1,6 @@
 from flask_apispec import MethodResource, use_kwargs, marshal_with
 
-from transplants.api.job import Job as JobModel
+from transplants.model.job import Job as JobModel
 
 
 class Job(MethodResource):

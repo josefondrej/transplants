@@ -2,8 +2,8 @@ from datetime import datetime
 
 from marshmallow import fields
 
-from transplants.api.job import Job
 from transplants.api.solve import solve
+from transplants.model.job import Job
 from transplants.model.problem import Problem
 from transplants.model.solver_config import SolverConfig
 

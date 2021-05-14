@@ -3,7 +3,6 @@ from typing import List
 from marshmallow import fields
 
 from transplants.database.database_mixin import DatabaseMixin
-from transplants.database.mongo_db import solution_collection
 from transplants.model.matching import Matching
 from transplants.serialization.serialization_mixin import SerializationMixin, add_marshmallow_schema, \
     serializable_property
@@ -11,8 +10,8 @@ from transplants.serialization.serialization_mixin import SerializationMixin, ad
 
 @add_marshmallow_schema
 class Solution(SerializationMixin, DatabaseMixin):
-    id_name = "solution_id"
-    collection = solution_collection
+    db_id_name = "solution_id"
+    db_collection_name = "solution"
 
     """
     Args:
