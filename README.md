@@ -23,13 +23,14 @@ make conda-activate
 To run tests run:
 
 ```
-make run-test
+make run-solve-api-test
+make run-tests 
 ``` 
 
 To start the web api run:
 
 ```
-make run-web-api
+make run-solve-api
 ```
 
 Once the API starts go to [localhost:5000/swagger-ui/](http://localhost:5000/swagger-ui/) to see automatically generated

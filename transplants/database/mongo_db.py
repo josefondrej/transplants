@@ -16,4 +16,3 @@ mongo_client = MongoClient(connection_string)
 kidney_exchange_database_name = os.environ.get(KIDNEY_EXCHANGE_DATABASE_NAME_ENV_VAR_NAME,
                                                DEFAULT_KIDNEY_EXCHANGE_DATABASE_NAME)
 kidney_exchange_database = mongo_client.get_database(kidney_exchange_database_name)
-kidney_exchange_database_test = mongo_client.get_database(TEST_KIDNEY_EXCHANGE_DATABASE_NAME)

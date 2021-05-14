@@ -13,7 +13,7 @@ from transplants.model.problem import Problem
 from transplants.model.solution import Solution
 from transplants.model.solver_config import SolverConfig
 
-_TEST_TIMEOUT = 1  # seconds
+_TEST_TIMEOUT = 3  # seconds
 
 
 class TestSolveAPI(MockDB):

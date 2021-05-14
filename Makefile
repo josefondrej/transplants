@@ -9,8 +9,11 @@ requirements-export:
 conda-activate:
 	conda activate $(CONDA_ENV)
 
+run-solve-api-test:
+	bash ./run_solve_api.sh kidney_exchange_test
+
 run-tests:
 	bash ./run_tests.sh
 
-run-web-api:
-	bash ./run_web_api.sh
+run-solve-api:
+	bash ./run_solve_api.sh
