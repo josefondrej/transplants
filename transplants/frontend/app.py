@@ -10,6 +10,7 @@ from transplants.database.mongo_db import kidney_exchange_database
 from transplants.database.setup_db import setup_db
 from transplants.frontend.resources.job_resource import JobResource
 from transplants.frontend.resources.jobs_resource import JobsResource
+from transplants.frontend.resources.patient_resource import PatientResource
 from transplants.frontend.resources.problem_resource import ProblemResource
 from transplants.frontend.resources.solution_resource import SolutionResource
 from transplants.frontend.resources.solver_config_resource import SolverConfigResource
@@ -23,6 +24,7 @@ api.add_resource(SolverConfigResource, "/solver_config/<string:solver_config_id>
 api.add_resource(SolutionResource, "/solution/<string:solution_id>")
 api.add_resource(JobResource, "/job/<string:job_id>")
 api.add_resource(JobsResource, "/jobs/")
+api.add_resource(PatientResource, "/patient/<string:patient_id>")
 
 app.config.update({
     'APISPEC_SPEC': APISpec(
@@ -41,6 +43,7 @@ docs.register(SolverConfigResource)
 docs.register(SolutionResource)
 docs.register(JobResource)
 docs.register(JobsResource)
+docs.register(PatientResource)
 
 
 def start_app(database: Database, host: str = "localhost", port: int = 5000, debug: bool = True):

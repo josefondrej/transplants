@@ -1,0 +1,58 @@
+{
+  "country": "AUT",
+  "medical_data": {
+    "blood_type": {
+      "forbidden_types": [
+        "A",
+        "AB",
+        "B"
+      ],
+      "type": "0"
+    },
+    "hla_system": {
+      "antibodies": {
+        "A11": null,
+        "A24": null,
+        "A25": null,
+        "A26": null,
+        "A29": null,
+        "A3": null,
+        "A30": null,
+        "A31": null,
+        "A32": null,
+        "A34": null,
+        "A36": null,
+        "A43": null,
+        "A66": null,
+        "A74": null,
+        "B13": null,
+        "B42": null,
+        "B49": null,
+        "B51": null,
+        "B52": null,
+        "B54": null,
+        "B55": null,
+        "B57": null,
+        "B58": null,
+        "B59": null,
+        "B63": null
+      },
+      "antigens": [
+        "B62",
+        "DR7",
+        "A1",
+        "B63",
+        "B15",
+        "B41",
+        "DR11",
+        "A2"
+      ]
+    }
+  },
+  "patient_id": "test_patient_id",
+  "patient_type": "recipient",
+  "related_donor_ids": [
+    "3ad4cac"
+  ],
+  "require_better_than_related_match": false
+}
