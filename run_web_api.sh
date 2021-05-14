@@ -7,4 +7,4 @@ export PYTHONPATH="$PWD"
 
 echo $PYTHONPATH
 
-python transplants/solve_web_api/app.py
+python transplants/frontend/app.py --mode "$1"

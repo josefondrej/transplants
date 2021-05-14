@@ -12,7 +12,7 @@ from transplants.model.solver_config import SolverConfig
 _registered_classes: List[DatabaseMixin] = [Problem, Solution, SolverConfig, Job, Patient]
 
 
-def initialize_db(database: Database):
+def create_db_indices(database: Database):
     for cls in _registered_classes:
         collection = database.get_collection(cls.db_collection_name)
         collection.create_index(cls.db_id_name, unique=True)
