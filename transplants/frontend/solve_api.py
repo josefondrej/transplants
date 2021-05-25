@@ -8,6 +8,8 @@ from pymongo.database import Database
 from transplants.api.job_processing import start_job_processing
 from transplants.database.mongo_db import kidney_exchange_database
 from transplants.database.setup_db import setup_db
+from transplants.frontend.resources.blood_type_codes_resource import BloodTypeCodesResource
+from transplants.frontend.resources.hla_codes_resource import HLACodesResource
 from transplants.frontend.resources.job_resource import JobResource
 from transplants.frontend.resources.jobs_resource import JobsResource
 from transplants.frontend.resources.patient_resource import PatientResource
@@ -25,6 +27,8 @@ api.add_resource(SolutionResource, "/solution/<string:solution_id>")
 api.add_resource(JobResource, "/job/<string:job_id>")
 api.add_resource(JobsResource, "/jobs/")
 api.add_resource(PatientResource, "/patient/<string:patient_id>")
+api.add_resource(HLACodesResource, "/hla_codes/")
+api.add_resource(BloodTypeCodesResource, "/blood_type_codes/")
 
 app.config.update({
     'APISPEC_SPEC': APISpec(
