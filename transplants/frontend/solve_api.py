@@ -2,6 +2,7 @@ from apispec import APISpec
 from apispec.ext.marshmallow import MarshmallowPlugin
 from flask import Flask
 from flask_apispec import FlaskApiSpec
+from flask_cors import CORS
 from flask_restful import Api
 from pymongo.database import Database
 
@@ -18,6 +19,7 @@ from transplants.frontend.resources.solution_resource import SolutionResource
 from transplants.frontend.resources.solver_config_resource import SolverConfigResource
 
 app = Flask(__name__)
+CORS(app=app)
 
 api = Api(app)
 
