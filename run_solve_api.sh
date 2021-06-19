@@ -9,4 +9,4 @@ export PYTHONPATH="$PWD"
 echo "MONGO_DATABASE_NAME=$MONGO_DATABASE_NAME"
 echo "PYTHONPATH=$PYTHONPATH"
 
-python transplants/frontend/app.py
+python transplants/frontend/solve_api.py
