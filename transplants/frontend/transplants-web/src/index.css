@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Ubuntu;
+}
+
+.envelope {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+    height: 100vh;
+    background-color: #444;
+    margin: 0;
+    padding: 0;
+    padding-top: 8vh;
+    padding-left: 2vw;
+    color: whitesmoke;
+}
+
+.content {
+    padding-top: 8vh;
+    padding-left: 4vw;
+    width: 85vw;
+}
+
+.link {
+    color: whitesmoke;
+    text-decoration: none;
+    margin-bottom: 2vh;
+    display: inline;
+}
+
+.link:hover {
+    color: silver;
+}
