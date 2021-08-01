@@ -7,35 +7,16 @@ from tests.test_utils.load_job import load_job_serialized
 from tests.test_utils.load_problem import load_problem_serialized
 from tests.test_utils.load_solution import load_solution_serialized
 from tests.test_utils.load_solver_config import load_solver_config_serialized
-from tests.test_utils.mock_db import MockDB
+from tests.test_utils.mock_server import MockServer
 from transplants.model.job import Job
 from transplants.model.problem import Problem
 from transplants.model.solution import Solution
 from transplants.model.solver_config import SolverConfig
 
-_TEST_TIMEOUT = 3  # seconds
+_SOLUTION_CALCULATION_TIMEOUT = 3  # seconds
 
 
-class TestSolveAPI(MockDB):
-    def setUp(self) -> None:
-        super().setUp()
-
-        self.host, self.port = "localhost", 5000
-
-        self.problem_url = f"http://{self.host}:{self.port}/problem/"
-        self.solver_config_url = f"http://{self.host}:{self.port}/solver_config/"
-        self.solution_url = f"http://{self.host}:{self.port}/solution/"
-        self.job_url = f"http://{self.host}:{self.port}/job/"
-        self.jobs_url = f"http://{self.host}:{self.port}/jobs/"
-
-        self.post_headers = {
-            'Content-Type': 'application/json'
-        }
-
-        self.get_headers = {
-            'Accept': 'application/json'
-        }
-
+class TestSolveAPI(MockServer):
     def post_get_problem(self):
         serialized_problem = load_problem_serialized()
         problem_id = serialized_problem[Problem.db_id_name]
@@ -119,7 +100,7 @@ class TestSolveAPI(MockDB):
         self.assertEqual(json.loads(response.text), {"job_ids": [job_id]})
 
     def get_solution(self):
-        time.sleep(_TEST_TIMEOUT)  # Give solver daemon some time to calculate the solution
+        time.sleep(_SOLUTION_CALCULATION_TIMEOUT)  # Give solver daemon some time to calculate the solution
         serialized_job = load_job_serialized()
         serialized_solution = load_solution_serialized()
         problem_id = serialized_job[Problem.db_id_name]

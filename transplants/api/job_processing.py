@@ -41,6 +41,6 @@ def _hook_job_save_to_db():
 def start_job_processing() -> Thread:
     _update_job_ids_queue_from_database()
     _hook_job_save_to_db()
-    thread = Thread(target=_solve_daemon)
+    thread = Thread(target=_solve_daemon, daemon=True)
     thread.start()
     return thread
